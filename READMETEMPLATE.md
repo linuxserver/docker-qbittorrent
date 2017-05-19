@@ -18,7 +18,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 The [qBittorrent][appurl] project aims to provide an open-source software alternative to µTorrent.
 qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.
 
-[![qbittorrent]()][appurl]
+[![qbittorrent](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qbittorrent-icon.png)][appurl]
 
 ## Usage
 
