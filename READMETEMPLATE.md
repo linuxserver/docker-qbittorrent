@@ -48,8 +48,8 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-p 6881` - the port(s)
 * `-p 6881/udp` - the port(s)
 * `-p 8080` - the port(s)
-* `-v /config` - Where qbittorrent should store its config files
-* `-v /downloads` - Path to downloads
+* `-v /config` - where qbittorrent should store its config files
+* `-v /downloads` - path to downloads
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e UMASK_SET` for umask setting of qbittorrent, *optional* , default if left unset is 022. 
