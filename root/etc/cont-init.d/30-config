@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+# make our folders
+mkdir -p \
+	/config/qBittorrent \
+	/config/data
+
+# copy config
+[[ ! -e /config/qBittorrent/qBittorrent.conf ]] && \
+	cp /defaults/qBittorrent.conf /config/qBittorrent/qBittorrent.conf
+
+# permissions
+chown -R abc:abc \
+	/config
