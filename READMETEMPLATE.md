@@ -28,8 +28,8 @@ docker create \
   -v <path to config>:/config \
   -v <path to downloads>:/downloads \
   -e PGID=<gid> -e PUID=<uid>  \
-  -e TZ=<timezone> \
   -e UMASK_SET=<022> \
+  -e TZ=<timezone> \
   -p 6881:6881 \
   -p 6881:6881/udp \
   -p 8080:8080 \
@@ -52,6 +52,8 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-v /downloads` - Path to downloads
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
+* `-e UMASK_SET` for umask setting of qbittorrent, *optional* , default if left unset is 022. 
+* `-e TZ` for timezone information, eg Europe/London
 
 It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it qbittorrent /bin/bash`.
 
