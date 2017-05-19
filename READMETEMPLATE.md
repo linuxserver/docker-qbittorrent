@@ -70,7 +70,8 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application
 
-The webui is at `<your-ip>:8080` and the default username/password is admin/adminadmin.
+The webui is at `<your-ip>:8080` and the default username/password is `admin/adminadmin`.
+
 Change username/password via the webui in the webui section of settings.
 
 
