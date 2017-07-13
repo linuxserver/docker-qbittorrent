@@ -76,8 +76,8 @@ Change username/password via the webui in the webui section of settings.
 
 ## Info
 
-* Shell access whilst the container is running: `docker exec -it qbittorrent /bin/bash`
-* To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
+Shell access whilst the container is running: `docker exec -it qbittorrent /bin/bash`
+To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
 
 * container version number 
 
