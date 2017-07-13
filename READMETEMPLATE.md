@@ -13,7 +13,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/qbittorrent
-[![](https://images.microbadger.com/badges/version/linuxserver/qbittorrent.svg)](https://microbadger.com/images/linuxserver/qbittorrent "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/qbittorrent.svg)](http://microbadger.com/images/linuxserver/qbittorrent "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/qbittorrent.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/qbittorrent.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-qbittorrent)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-qbittorrent/)
+[![](https://images.microbadger.com/badges/version/linuxserver/qbittorrent.svg)](https://microbadger.com/images/linuxserver/qbittorrent "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/qbittorrent.svg)](https://microbadger.com/images/linuxserver/qbittorrent "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/qbittorrent.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/qbittorrent.svg)][hub][![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Builders/x86-64/x86-64-qbittorrent)](https://ci.linuxserver.io/job/Docker-Builders/job/x86-64/job/x86-64-qbittorrent/)
 
 The [qBittorrent][appurl] project aims to provide an open-source software alternative to µTorrent.
 qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.
@@ -42,7 +42,6 @@ docker create \
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
-
 
 
 * `-p 6881` - the port(s)
@@ -90,4 +89,4 @@ Change username/password via the webui in the webui section of settings.
 
 ## Versions
 
-+ **dd.MM.yy:** Initial Release.
++ **13.07.17:** Initial Release.
