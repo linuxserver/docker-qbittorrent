@@ -7,8 +7,8 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package versions
-ARG QBITTORRENT_VER="3.3.12"
-ARG RASTERBAR_VER="1.0.11"
+ARG QBITTORRENT_VER="3.3.13"
+ARG RASTERBAR_VER="RC_1_0"
 
 # environment settings
 ENV HOME="/config" \
@@ -21,10 +21,16 @@ COPY patches/ /tmp/patches
 # install build packages
 RUN \
  apk add --no-cache --virtual=build-dependencies \
+	autoconf \
+	automake \
 	boost-dev \
 	cmake \
 	curl \
+	file \
 	g++ \
+	geoip-dev \
+	git \
+	libtool \
 	make \
 	qt5-qttools-dev && \
 
@@ -33,21 +39,19 @@ RUN \
 	boost-system \
 	boost-thread \
 	ca-certificates \
+	geoip \
 	qt5-qtbase && \
 
 # compile libtorrent rasterbar
- RASTERBAR_VER2=${RASTERBAR_VER//./_} && \
- mkdir -p \
-	/tmp/rasterbar-src && \
- curl -o \
- /tmp/rasterbar.tar.gz -L \
-	"https://github.com/arvidn/libtorrent/releases/download/libtorrent-${RASTERBAR_VER2}/libtorrent-rasterbar-${RASTERBAR_VER}.tar.gz" && \
- tar xf \
- /tmp/rasterbar.tar.gz -C \
-	/tmp/rasterbar-src --strip-components=1 && \
- cd /tmp/rasterbar-src && \
+ git clone https://github.com/arvidn/libtorrent.git /tmp/libtorrent && \
+ cd /tmp/libtorrent && \
+ git checkout ${RASTERBAR_VER} && \
+ ./autotool.sh && \
  ./configure \
-	--prefix=/usr && \
+	--disable-debug \
+	--enable-encryption \
+	--prefix=/usr \
+	--with-libgeoip=system && \
  make && \
  make install && \
  strip --strip-unneeded \
