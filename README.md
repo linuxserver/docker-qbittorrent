@@ -29,6 +29,7 @@ docker create \
   -v <path to downloads>:/downloads \
   -e PGID=<gid> -e PUID=<uid>  \
   -e UMASK_SET=<022> \
+  -e WEBUI_PORT=<8080> \
   -e TZ=<timezone> \
   -p 6881:6881 \
   -p 6881:6881/udp \
@@ -46,12 +47,13 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 
 * `-p 6881` - the port(s)
 * `-p 6881/udp` - the port(s)
-* `-p 8080` - the port(s)
+* `-p 8080` - webui port 
 * `-v /config` - where qbittorrent should store its config files
 * `-v /downloads` - path to downloads
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e UMASK_SET` for umask setting of qbittorrent, *optional* , default if left unset is 022. 
+* `-e WEBUI_PORT` for changing the port of the webui, see below for explanation
 * `-e TZ` for timezone information, eg Europe/London
 
 It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it qbittorrent /bin/bash`.
@@ -70,6 +72,9 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ## Setting up the application
 
 The webui is at `<your-ip>:8080` and the default username/password is `admin/adminadmin`.
+
+Due to issues with CSRF and port mapping, to change the port for the webui you need to change both sides of the `-p 8080` switch
+AND set the `WEBUI_PORT` variable to the new port, this should alleviate the "white screen" issue.
 
 Change username/password via the webui in the webui section of settings.
 
@@ -90,4 +95,5 @@ To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
 
 ## Versions
 
++ **16.09.17:** Bump to 3.3.16, Add WEBUI_PORT variable and notes to README to allow changing port of webui.
 + **01.08.17:** Initial Release.

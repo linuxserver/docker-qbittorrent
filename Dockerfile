@@ -7,7 +7,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package versions
-ARG QBITTORRENT_VER="3.3.14"
+ARG QBITTORRENT_VER="3.3.16"
 ARG RASTERBAR_VER="RC_1_0"
 
 # environment settings
