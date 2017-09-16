@@ -58,6 +58,12 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 
 It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it qbittorrent /bin/bash`.
 
+## WEBUI_PORT variable
+
+Due to issues with CSRF and port mapping, should you require to alter the port for the webui you need to change both sides of the `-p 8080` switch
+AND set the `WEBUI_PORT` variable to the new port, this should alleviate the "white screen" issue.
+For example,  to set the port to 8090 you need to set `-p 8090:8090` and `-e WEBUI_PORT=8090`
+
 ### User / Group Identifiers
 
 Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" ™.
@@ -72,9 +78,6 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ## Setting up the application
 
 The webui is at `<your-ip>:8080` and the default username/password is `admin/adminadmin`.
-
-Due to issues with CSRF and port mapping, to change the port for the webui you need to change both sides of the `-p 8080` switch
-AND set the `WEBUI_PORT` variable to the new port, this should alleviate the "white screen" issue.
 
 Change username/password via the webui in the webui section of settings.
 
