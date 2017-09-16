@@ -58,7 +58,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 
 It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it qbittorrent /bin/bash`.
 
-## WEBUI_PORT variable
+### WEBUI_PORT variable
 
 Due to issues with CSRF and port mapping, should you require to alter the port for the webui you need to change both sides of the `-p 8080` switch
 AND set the `WEBUI_PORT` variable to the new port, this should alleviate the "white screen" issue.
