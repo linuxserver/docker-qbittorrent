@@ -1,8 +1,9 @@
 #!/usr/bin/with-contenv bash
 
 UMASK_SET=${UMASK_SET:-022}
+WEBUI_PORT=${WEBUI_PORT:-8080}
 
 umask "$UMASK_SET"
 
 exec \
-	s6-setuidgid abc /usr/bin/qbittorrent-nox
+	s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}"
