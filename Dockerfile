@@ -53,7 +53,20 @@ RUN \
 	--enable-encryption \
 	--prefix=/usr \
 	--with-libgeoip=system && \
- make && \
+# attempt to set number of cores available for make to use
+ set -ex && \
+ CPU_CORES=$( < /proc/cpuinfo grep -c processor ) || echo "failed cpu look up" && \
+ if echo $CPU_CORES | grep -E  -q '^[0-9]+$'; then \
+	: ;\
+ if [ "$CPU_CORES" -gt 7 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 3 )); \
+ elif [ "$CPU_CORES" -gt 5 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 2 )); \
+ elif [ "$CPU_CORES" -gt 3 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 1 )); fi \
+ else CPU_CORES="1"; fi && \
+
+ make -j $CPU_CORES && \
  make install && \
  strip --strip-unneeded \
 	/usr/lib/libtorrent-rasterbar.so* \
@@ -74,7 +87,8 @@ RUN \
  ./configure \
 	--disable-gui \
 	--prefix=/usr && \
- make && \
+ make -j $CPU_CORES && \
+ set +ex && \
  make install && \
 
 # cleanup

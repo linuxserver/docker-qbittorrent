@@ -100,5 +100,6 @@ To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
 
 ## Versions
 
++ **27.11.17:** Use cpu core counting routine to speed up build time.
 + **16.09.17:** Bump to 3.3.16, Add WEBUI_PORT variable and notes to README to allow changing port of webui.
 + **01.08.17:** Initial Release.
