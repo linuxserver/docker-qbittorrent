@@ -7,8 +7,8 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package versions
-ARG QBITTORRENT_VER="3.3.16"
-ARG RASTERBAR_VER="RC_1_0"
+ARG QBITTORRENT_VER="4.0.1"
+ARG RASTERBAR_VER="1.1.5"
 
 # environment settings
 ENV HOME="/config" \
@@ -46,14 +46,27 @@ RUN \
 # compile libtorrent rasterbar
  git clone https://github.com/arvidn/libtorrent.git /tmp/libtorrent && \
  cd /tmp/libtorrent && \
- git checkout ${RASTERBAR_VER} && \
+ RASTERBAR_REALVER=${RASTERBAR_VER//./_} && \
+ git checkout "libtorrent-${RASTERBAR_REALVER}" && \
  ./autotool.sh && \
  ./configure \
 	--disable-debug \
 	--enable-encryption \
-	--prefix=/usr \
-	--with-libgeoip=system && \
- make && \
+	--prefix=/usr && \
+# attempt to set number of cores available for make to use
+ set -ex && \
+ CPU_CORES=$( < /proc/cpuinfo grep -c processor ) || echo "failed cpu look up" && \
+ if echo $CPU_CORES | grep -E  -q '^[0-9]+$'; then \
+	: ;\
+ if [ "$CPU_CORES" -gt 7 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 3 )); \
+ elif [ "$CPU_CORES" -gt 5 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 2 )); \
+ elif [ "$CPU_CORES" -gt 3 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 1 )); fi \
+ else CPU_CORES="1"; fi && \
+
+ make -j $CPU_CORES && \
  make install && \
  strip --strip-unneeded \
 	/usr/lib/libtorrent-rasterbar.so* \
@@ -74,7 +87,8 @@ RUN \
  ./configure \
 	--disable-gui \
 	--prefix=/usr && \
- make && \
+ make -j $CPU_CORES && \
+ set +ex && \
  make install && \
 
 # cleanup
