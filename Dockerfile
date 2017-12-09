@@ -1,10 +1,10 @@
-FROM lsiobase/alpine:3.6
-MAINTAINER sparklyballs
+FROM lsiobase/alpine:3.7
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="sparklyballs"
 
 # package versions
 ARG QBITTORRENT_VER="4.0.2"
@@ -18,8 +18,8 @@ XDG_DATA_HOME="/config"
 # copy patches
 COPY patches/ /tmp/patches
 
-# install build packages
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	autoconf \
 	automake \
@@ -33,8 +33,7 @@ RUN \
 	libtool \
 	make \
 	qt5-qttools-dev && \
-
-# install runtime packages
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	boost-system \
 	boost-thread \
@@ -42,8 +41,7 @@ RUN \
 	geoip \
 	qt5-qtbase \
 	unrar && \
-
-# compile libtorrent rasterbar
+ echo "**** compile libtorrent rasterbar ****" && \
  git clone https://github.com/arvidn/libtorrent.git /tmp/libtorrent && \
  cd /tmp/libtorrent && \
  RASTERBAR_REALVER=${RASTERBAR_VER//./_} && \
@@ -53,7 +51,7 @@ RUN \
 	--disable-debug \
 	--enable-encryption \
 	--prefix=/usr && \
-# attempt to set number of cores available for make to use
+ echo "**** attempt to set number of cores available for make to use ****" && \
  set -ex && \
  CPU_CORES=$( < /proc/cpuinfo grep -c processor ) || echo "failed cpu look up" && \
  if echo $CPU_CORES | grep -E  -q '^[0-9]+$'; then \
@@ -65,14 +63,12 @@ RUN \
  elif [ "$CPU_CORES" -gt 3 ]; then \
 	CPU_CORES=$(( CPU_CORES  - 1 )); fi \
  else CPU_CORES="1"; fi && \
-
  make -j $CPU_CORES && \
  make install && \
  strip --strip-unneeded \
 	/usr/lib/libtorrent-rasterbar.so* \
 	/usr/lib/libtorrent-rasterbar.a* && \
-
-# compile qbittorrent
+ echo "**** compile qbittorrent ****" && \
  mkdir -p \
 	/tmp/qbittorrent-src && \
  curl -o \
@@ -90,8 +86,7 @@ RUN \
  make -j $CPU_CORES && \
  set +ex && \
  make install && \
-
-# cleanup
+ echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
