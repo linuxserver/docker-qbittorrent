@@ -100,6 +100,7 @@ To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
 
 ## Versions
 
++ **19.12.17:** Update to v4.0.3.
 + **09.12.17:** Rebase to alpine 3.7.
 + **01.12.17:** Update to v4.0.2.
 + **27.11.17:** Update to v4 and use cpu_core routine to speed up builds.
