@@ -7,8 +7,8 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="sparklyballs"
 
 # package versions
-ARG QBITTORRENT_VER="4.0.3"
-ARG RASTERBAR_VER="1.1.5"
+ARG QBITTORRENT_VER="4.0.4"
+ARG RASTERBAR_VER="1.1.6"
 
 # environment settings
 ENV HOME="/config" \
