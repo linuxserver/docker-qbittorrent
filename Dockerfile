@@ -8,7 +8,7 @@ LABEL maintainer="sparklyballs"
 
 # package versions
 ARG QBITTORRENT_VER="4.0.4"
-ARG RASTERBAR_VER="1.1.6"
+ARG RASTERBAR_VER="1.1.7"
 
 # environment settings
 ENV HOME="/config" \
