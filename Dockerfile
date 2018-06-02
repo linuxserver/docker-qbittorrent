@@ -15,9 +15,6 @@ ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
 XDG_DATA_HOME="/config"
 
-# copy patches
-COPY patches/ /tmp/patches
-
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
@@ -65,8 +62,6 @@ RUN \
  tar xf \
  /tmp/bittorrent.tar.gz -C \
 	/tmp/qbittorrent-src --strip-components=1 && \
- cd /tmp/qbittorrent-src/src/app && \
- patch -i /tmp/patches/main.patch && \
  cd /tmp/qbittorrent-src && \
  ./configure \
 	--disable-gui \
