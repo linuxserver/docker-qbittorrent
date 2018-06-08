@@ -7,16 +7,13 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="sparklyballs"
 
 # package versions
-ARG QBITTORRENT_VER="4.0.4"
+ARG QBITTORRENT_VER="4.1.1"
 ARG RASTERBAR_VER="1.1.7"
 
 # environment settings
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
 XDG_DATA_HOME="/config"
-
-# copy patches
-COPY patches/ /tmp/patches
 
 RUN \
  echo "**** install build packages ****" && \
@@ -65,8 +62,6 @@ RUN \
  tar xf \
  /tmp/bittorrent.tar.gz -C \
 	/tmp/qbittorrent-src --strip-components=1 && \
- cd /tmp/qbittorrent-src/src/app && \
- patch -i /tmp/patches/main.patch && \
  cd /tmp/qbittorrent-src && \
  ./configure \
 	--disable-gui \
