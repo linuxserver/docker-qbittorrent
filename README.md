@@ -71,6 +71,7 @@ If you have no webui , check the file /config/qBittorrent/qBittorrent.conf
 edit or add the following lines
 
 `WebUI\Address=*
+
 WebUI\ServerDomains=*`
 
 ### User / Group Identifiers
