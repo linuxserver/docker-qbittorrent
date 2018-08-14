@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.7
+FROM lsiobase/alpine:3.8
 
 # set version label
 ARG BUILD_DATE
@@ -7,8 +7,8 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="sparklyballs"
 
 # package versions
-ARG QBITTORRENT_VER="4.1.1"
-ARG RASTERBAR_VER="1.1.7"
+ARG QBITTORRENT_VER="4.1.2"
+ARG RASTERBAR_VER="1.1.9"
 
 # environment settings
 ENV HOME="/config" \

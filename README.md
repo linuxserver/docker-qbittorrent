@@ -66,6 +66,13 @@ For example,  to set the port to 8090 you need to set `-p 8090:8090` and `-e WEB
 
 This should alleviate the "white screen" issue.
 
+If you have no webui , check the file /config/qBittorrent/qBittorrent.conf
+
+edit or add the following lines
+
+`WebUI\Address=*
+WebUI\ServerDomains=*`
+
 ### User / Group Identifiers
 
 Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" ™.
@@ -100,6 +107,7 @@ To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
 
 ## Versions
 
++ **14.08.18:** Rebase to alpine 3.8, bump libtorrent to 1.1.9 and qbitorrent to 4.1.2.
 + **08.06.18:** Bump qbitorrent to 4.1.1.
 + **26.04.18:** Bump libtorrent to 1.1.7.
 + **02.03.18:** Bump qbitorrent to 4.0.4 and libtorrent to 1.1.6.
