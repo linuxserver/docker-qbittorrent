@@ -32,7 +32,7 @@ RUN \
 	--disable-debug \
 	--enable-encryption \
 	--prefix=/usr && \
- make && \
+ make -j4 && \
  make DESTDIR=/tmp/rasterbar-build install && \
  strip --strip-unneeded \
 	/tmp/rasterbar-build/usr/lib/libtorrent-rasterbar.so* \
@@ -54,7 +54,7 @@ RUN \
  ./configure \
 	--disable-gui \
 	--prefix=/usr && \
- make && \
+ make -j4 && \
  make INSTALL_ROOT=/tmp/qbittorrent-build install
 
 ############## runtime stage ##############
