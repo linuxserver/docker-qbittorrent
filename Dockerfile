@@ -3,7 +3,7 @@ FROM lsiobase/alpine:3.8 as buildstage
 
 # package versions
 ARG QBITTORRENT_VER="4.1.3"
-ARG RASTERBAR_VER="1.1.9"
+ARG RASTERBAR_VER="1.1.10"
 
 RUN \
  echo "**** install build packages ****" && \
