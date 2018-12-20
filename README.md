@@ -39,7 +39,7 @@ docker create \
 
 ## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
@@ -47,12 +47,12 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 
 * `-p 6881` - the port(s)
 * `-p 6881/udp` - the port(s)
-* `-p 8080` - webui port 
+* `-p 8080` - webui port
 * `-v /config` - where qbittorrent should store its config files
 * `-v /downloads` - path to downloads
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
-* `-e UMASK_SET` for umask setting of qbittorrent, *optional* , default if left unset is 022. 
+* `-e UMASK_SET` for umask setting of qbittorrent, *optional* , default if left unset is 022.
 * `-e WEBUI_PORT` for changing the port of the webui, see below for explanation
 * `-e TZ` for timezone information, eg Europe/London
 
@@ -100,7 +100,7 @@ Shell access whilst the container is running: `docker exec -it qbittorrent /bin/
 
 To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
 
-* container version number 
+* container version number
 
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' qbittorrent`
 
@@ -109,7 +109,7 @@ To monitor the logs of the container in realtime: `docker logs -f qbittorrent`
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/qbittorrent`
 
 ## Versions
-
++ **20.12.18:** Rebase to Ubuntu, add multi arch and pipeline logic
 + **25.09.18:** Use buildstage type build, bump qbitorrent to 4.1.3.
 + **14.08.18:** Rebase to alpine 3.8, bump libtorrent to 1.1.9 and qbitorrent to 4.1.2.
 + **08.06.18:** Bump qbitorrent to 4.1.1.
