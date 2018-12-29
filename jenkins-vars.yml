@@ -3,7 +3,7 @@
 # jenkins variables
 project_name: docker-qbittorrent
 external_type: na
-custom_version_command: "curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c |grep -A 6 -m 1 'Package: qbittorrent' | awk -F ': ' '/Version/{print $2;exit}'"
+custom_version_command: "curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c |grep -A 7 -m 1 'Package: qbittorrent-nox' | awk -F ': ' '/Version/{print $2;exit}'"
 release_type: stable
 release_tag: latest
 ls_branch: master
