@@ -79,14 +79,10 @@ pipeline {
         script{
           env.PACKAGE_TAG = sh(
             script: '''#!/bin/bash
-                       http_code=$(curl --write-out %{http_code} -s -o /dev/null \
-                                   https://raw.githubusercontent.com/${LS_USER}/${LS_REPO}/master/package_versions.txt)
-                       if [[ "${http_code}" -ne 200 ]] ; then
-                         echo none
+                       if [ -e package_versions.txt ] ; then
+                         cat package_versions.txt | md5sum | cut -c1-8
                        else
-                         curl -s \
-                           https://raw.githubusercontent.com/${LS_USER}/${LS_REPO}/master/package_versions.txt \
-                         | md5sum | cut -c1-8
+                         echo none
                        fi''',
             returnStdout: true).trim()
         }
@@ -111,7 +107,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE_CLEAN = sh(
-            script: '''echo ${EXT_RELEASE} | sed 's/[~,%@+;:]//g' ''',
+            script: '''echo ${EXT_RELEASE} | sed 's/[~,%@+;:/]//g' ''',
             returnStdout: true).trim()
         }
       }
@@ -332,20 +328,25 @@ pipeline {
                   chmod 777 /tmp/package_versions.txt'
               elif [ "${DIST_IMAGE}" == "ubuntu" ]; then
                 docker run --rm --entrypoint '/bin/sh' -v ${TEMPDIR}:/tmp ${LOCAL_CONTAINER} -c '\
-                  apt -qq list --installed | awk "{print \$1,\$2}" > /tmp/package_versions.txt && \
+                  apt list -qq --installed > /tmp/package_versions.txt && \
                   chmod 777 /tmp/package_versions.txt'
               fi
-              if [ "$(md5sum ${TEMPDIR}/package_versions.txt | cut -c1-8 )" != "${PACKAGE_TAG}" ]; then
+              NEW_PACKAGE_TAG=$(md5sum ${TEMPDIR}/package_versions.txt | cut -c1-8 )
+              echo "Package tag sha from current packages in buit container is ${NEW_PACKAGE_TAG} comparing to old ${PACKAGE_TAG} from github"
+              if [ "${NEW_PACKAGE_TAG}" != "${PACKAGE_TAG}" ]; then
                 git clone https://github.com/${LS_USER}/${LS_REPO}.git ${TEMPDIR}/${LS_REPO}
                 git --git-dir ${TEMPDIR}/${LS_REPO}/.git checkout -f master
                 cp ${TEMPDIR}/package_versions.txt ${TEMPDIR}/${LS_REPO}/
                 cd ${TEMPDIR}/${LS_REPO}/
-                git --git-dir ${TEMPDIR}/${LS_REPO}/.git add package_versions.txt
-                git --git-dir ${TEMPDIR}/${LS_REPO}/.git commit -m 'Bot Updating Package Versions'
-                git --git-dir ${TEMPDIR}/${LS_REPO}/.git push https://LinuxServer-CI:${GITHUB_TOKEN}@github.com/${LS_USER}/${LS_REPO}.git --all
+                wait
+                git add package_versions.txt
+                git commit -m 'Bot Updating Package Versions'
+                git push https://LinuxServer-CI:${GITHUB_TOKEN}@github.com/${LS_USER}/${LS_REPO}.git --all
                 echo "true" > /tmp/packages-${COMMIT_SHA}-${BUILD_NUMBER}
+                echo "Package tag updated, stopping build process"
               else
                 echo "false" > /tmp/packages-${COMMIT_SHA}-${BUILD_NUMBER}
+                echo "Package tag is same as previous continue with build process"
               fi
               rm -Rf ${TEMPDIR}'''
         script{
@@ -400,6 +401,9 @@ pipeline {
           string(credentialsId: 'spaces-key', variable: 'DO_KEY'),
           string(credentialsId: 'spaces-secret', variable: 'DO_SECRET')
         ]) {
+          script{
+            env.CI_URL = 'https://lsio-ci.ams3.digitaloceanspaces.com/' + env.IMAGE + '/' + env.META_TAG + '/index.html'
+          }
           sh '''#! /bin/bash
                 set -e
                 docker pull lsiodev/ci:latest
@@ -428,9 +432,6 @@ pipeline {
                 -e DO_BUCKET="lsio-ci" \
                 -t lsiodev/ci:latest \
                 python /ci/ci.py'''
-          script{
-            env.CI_URL = 'https://lsio-ci.ams3.digitaloceanspaces.com/' + env.IMAGE + '/' + env.META_TAG + '/index.html'
-          }
         }
       }
     }
