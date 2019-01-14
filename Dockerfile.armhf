@@ -1,4 +1,7 @@
-FROM lsiobase/ubuntu:bionic
+FROM lsiobase/ubuntu.armhf:bionic
+
+# Add qemu to build on x86_64 systems
+COPY qemu-arm-static /usr/bin
 
 # set version label
 ARG BUILD_DATE
