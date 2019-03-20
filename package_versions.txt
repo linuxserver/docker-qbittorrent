@@ -18,7 +18,7 @@ dirmngr/now 2.2.4-1ubuntu1.2
 dpkg/now 1.19.0.5ubuntu2.1
 e2fsprogs/now 1.44.1-1ubuntu1.1
 fdisk/now 2.31.1-0.4ubuntu3.3
-file/now 1:5.32-2ubuntu0.1
+file/now 1:5.32-2ubuntu0.2
 findutils/now 4.6.0+git+20170828-2
 gcc-8-base/now 8.2.0-1ubuntu2~18.04
 geoip-bin/now 1.6.12-1
@@ -90,8 +90,8 @@ libldap-2.4-2/now 2.4.45+dfsg-1ubuntu1.1
 libldap-common/now 2.4.45+dfsg-1ubuntu1.1
 liblz4-1/now 0.0~r131-2ubuntu3
 liblzma5/now 5.2.2-1.3
-libmagic-mgc/now 1:5.32-2ubuntu0.1
-libmagic1/now 1:5.32-2ubuntu0.1
+libmagic-mgc/now 1:5.32-2ubuntu0.2
+libmagic1/now 1:5.32-2ubuntu0.2
 libmount1/now 2.31.1-0.4ubuntu3.3
 libncurses5/now 6.1-1ubuntu1.18.04
 libncursesw5/now 6.1-1ubuntu1.18.04
@@ -109,10 +109,10 @@ libpsl5/now 0.19.1-5build1
 libpython-stdlib/now 2.7.15~rc1-1
 libpython2.7-minimal/now 2.7.15~rc1-1ubuntu0.1
 libpython2.7-stdlib/now 2.7.15~rc1-1ubuntu0.1
-libqt5core5a/now 5.9.5+dfsg-0ubuntu1
-libqt5dbus5/now 5.9.5+dfsg-0ubuntu1
-libqt5network5/now 5.9.5+dfsg-0ubuntu1
-libqt5xml5/now 5.9.5+dfsg-0ubuntu1
+libqt5core5a/now 5.9.5+dfsg-0ubuntu2
+libqt5dbus5/now 5.9.5+dfsg-0ubuntu2
+libqt5network5/now 5.9.5+dfsg-0ubuntu2
+libqt5xml5/now 5.9.5+dfsg-0ubuntu2
 libreadline7/now 7.0-3
 libroken18-heimdal/now 7.5.0+dfsg-1
 librtmp1/now 2.4+20151223.gitfa8646d.1-1
