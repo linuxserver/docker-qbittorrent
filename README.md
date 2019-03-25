@@ -59,6 +59,7 @@ docker create \
   -p 6881:6881/udp \
   -p 8080:8080 \
   -v </path/to/appdata/config>:/config \
+  -v </path/to/downloads>:/downloads \
   --restart unless-stopped \
   linuxserver/qbittorrent
 ```
@@ -83,6 +84,7 @@ services:
       - WEBUI_PORT=8080
     volumes:
       - </path/to/appdata/config>:/config
+      - </path/to/downloads>:/downloads
     ports:
       - 6881:6881
       - 6881:6881/udp
@@ -105,6 +107,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e UMASK_SET=022` | for umask setting of qbittorrent, optional , default if left unset is 022 |
 | `-e WEBUI_PORT=8080` | for changing the port of the webui, see below for explanation |
 | `-v /config` | Contains all relevant configuration files. |
+| `-v /downloads` | Location of downloads on disk. |
 
 ## User / Group Identifiers
 
