@@ -19,6 +19,7 @@ param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "</path/to/appdata/config>", desc: "Contains all relevant configuration files." }
+  - { vol_path: "/downloads", vol_host_path: "</path/to/downloads>", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "6881", internal_port: "6881", port_desc: "tcp connection port" }
