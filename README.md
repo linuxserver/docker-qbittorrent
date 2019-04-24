@@ -147,6 +147,8 @@ edit or add the following lines
 WebUI\Address=*
 
 WebUI\ServerDomains=*
+
+WebUI\HostHeaderValidation=false
 ```
 
 
