@@ -66,8 +66,8 @@ libffi63.2.1-8
 libgcc11:8.2.0-1ubuntu2~18.04
 libgcrypt201.8.1-4ubuntu1.1
 libgeoip11.6.12-1
-libglib2.0-02.56.3-0ubuntu0.18.04.1
-libglib2.0-data2.56.3-0ubuntu0.18.04.1
+libglib2.0-02.56.4-0ubuntu0.18.04.2
+libglib2.0-data2.56.4-0ubuntu0.18.04.2
 libgmp102:6.1.2+dfsg-2
 libgnutls303.5.18-1ubuntu1
 libgpg-error01.27-6
@@ -129,11 +129,11 @@ libsqlite3-03.22.0-1
 libss21.44.1-1ubuntu1.1
 libssl1.11.1.0g-2ubuntu4.3
 libstdc++68.2.0-1ubuntu2~18.04
-libsystemd0237-3ubuntu10.19
+libsystemd0237-3ubuntu10.20
 libtasn1-64.13-2
 libtinfo56.1-1ubuntu1.18.04
 libtorrent-rasterbar91.1.12+git20190415.533364a991+patched-configure-1ppa1~18.04
-libudev1237-3ubuntu10.19
+libudev1237-3ubuntu10.20
 libunistring20.9.9-0ubuntu2
 libuuid12.31.1-0.4ubuntu3.3
 libwind0-heimdal7.5.0+dfsg-1
@@ -167,7 +167,7 @@ sensible-utils0.0.12
 shared-mime-info1.9-2
 sysvinit-utils2.88dsf-59.10ubuntu1
 tar1.29b-2ubuntu0.1
-tzdata2018i-0ubuntu0.18.04
+tzdata2019a-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.0
 unrar1:5.5.8-1
 unzip6.0-21ubuntu1
