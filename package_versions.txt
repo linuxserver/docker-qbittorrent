@@ -3,15 +3,15 @@ apt1.6.10
 apt-utils1.6.10
 base-files10.1ubuntu2.4
 base-passwd3.5.44
-bash4.4.18-2ubuntu1
+bash4.4.18-2ubuntu1.1
 bsdutils1:2.31.1-0.4ubuntu3.3
 bzip21.0.6-8.1
 ca-certificates20180409
 coreutils8.28-1ubuntu1
-curl7.58.0-2ubuntu3.6
+curl7.58.0-2ubuntu3.7
 dash0.5.8-2.10
 dbus1.12.2-1ubuntu1
-debconf1.5.66
+debconf1.5.66ubuntu1
 debianutils4.8.4
 diffutils1:3.6-1
 dirmngr2.2.4-1ubuntu1.2
@@ -54,7 +54,7 @@ libc62.27-3ubuntu1
 libcap-ng00.7.7-3.1
 libc-bin2.27-3ubuntu1
 libcom-err21.44.1-1ubuntu1.1
-libcurl47.58.0-2ubuntu3.6
+libcurl47.58.0-2ubuntu3.7
 libdb5.35.3.28-13.1ubuntu1
 libdbus-1-31.12.2-1ubuntu1
 libdebconfclient00.213ubuntu1
@@ -159,7 +159,7 @@ python2.7.15~rc1-1
 python2.72.7.15~rc1-1ubuntu0.1
 python2.7-minimal2.7.15~rc1-1ubuntu0.1
 python-minimal2.7.15~rc1-1
-qbittorrent-nox4.1.5.99~201905062119-6701-ea7e47d~ubuntu18.04.1
+qbittorrent-nox4.1.6.99~201905231817-6702-9ba7470~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
