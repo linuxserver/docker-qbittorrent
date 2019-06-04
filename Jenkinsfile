@@ -465,6 +465,7 @@ pipeline {
                   docker tag lsiodev/buildcache:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} ${IMAGE}:arm64v8-${META_TAG}
                 fi
                 docker run --rm \
+                --shm-size=1gb \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 -e IMAGE=\"${IMAGE}\" \
                 -e DELAY_START=\"${CI_DELAY}\" \
