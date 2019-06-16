@@ -1,6 +1,6 @@
 adduser3.116ubuntu1
-apt1.6.10
-apt-utils1.6.10
+apt1.6.11
+apt-utils1.6.11
 base-files10.1ubuntu2.4
 base-passwd3.5.44
 bash4.4.18-2ubuntu1.1
@@ -40,8 +40,8 @@ init-system-helpers1.51
 krb5-locales1.16-2ubuntu0.1
 libacl12.2.52-3build1
 libapparmor12.12-4ubuntu5.1
-libapt-inst2.01.6.10
-libapt-pkg5.01.6.10
+libapt-inst2.01.6.11
+libapt-pkg5.01.6.11
 libasn1-8-heimdal7.5.0+dfsg-1
 libassuan02.5.1-2
 libattr11:2.4.47-2build1
@@ -127,7 +127,7 @@ libsepol12.7-1
 libsmartcols12.31.1-0.4ubuntu3.3
 libsqlite3-03.22.0-1
 libss21.44.1-1ubuntu1.1
-libssl1.11.1.0g-2ubuntu4.3
+libssl1.11.1.1-1ubuntu2.1~18.04.1
 libstdc++68.3.0-6ubuntu1~18.04
 libsystemd0237-3ubuntu10.21
 libtasn1-64.13-2
@@ -147,7 +147,7 @@ mime-support3.60ubuntu1
 mount2.31.1-0.4ubuntu3.3
 ncurses-base6.1-1ubuntu1.18.04
 ncurses-bin6.1-1ubuntu1.18.04
-openssl1.1.0g-2ubuntu4.3
+openssl1.1.1-1ubuntu2.1~18.04.1
 p7zip16.02+dfsg-6
 p7zip-full16.02+dfsg-6
 passwd1:4.5-1ubuntu2
@@ -159,7 +159,7 @@ python2.7.15~rc1-1
 python2.72.7.15-4ubuntu4~18.04
 python2.7-minimal2.7.15-4ubuntu4~18.04
 python-minimal2.7.15~rc1-1
-qbittorrent-nox4.1.6.99~201906041834-6705-ad7b8a9~ubuntu18.04.1
+qbittorrent-nox4.1.6.99~201906162003-6706-e8be3bf~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
