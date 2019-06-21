@@ -20,7 +20,7 @@ e2fsprogs1.44.1-1ubuntu1.1
 fdisk2.31.1-0.4ubuntu3.3
 file1:5.32-2ubuntu0.2
 findutils4.6.0+git+20170828-2
-gcc-8-base8.3.0-6ubuntu1~18.04
+gcc-8-base8.3.0-6ubuntu1~18.04.1
 geoip-bin1.6.12-1
 geoip-database20180315-1
 gnupg2.2.4-1ubuntu1.2
@@ -63,7 +63,7 @@ libexpat12.2.5-3
 libext2fs21.44.1-1ubuntu1.1
 libfdisk12.31.1-0.4ubuntu3.3
 libffi63.2.1-8
-libgcc11:8.3.0-6ubuntu1~18.04
+libgcc11:8.3.0-6ubuntu1~18.04.1
 libgcrypt201.8.1-4ubuntu1.1
 libgeoip11.6.12-1
 libglib2.0-02.56.4-0ubuntu0.18.04.3
@@ -127,13 +127,13 @@ libsepol12.7-1
 libsmartcols12.31.1-0.4ubuntu3.3
 libsqlite3-03.22.0-1
 libss21.44.1-1ubuntu1.1
-libssl1.11.1.1-1ubuntu2.1~18.04.1
-libstdc++68.3.0-6ubuntu1~18.04
-libsystemd0237-3ubuntu10.21
+libssl1.11.1.1-1ubuntu2.1~18.04.2
+libstdc++68.3.0-6ubuntu1~18.04.1
+libsystemd0237-3ubuntu10.22
 libtasn1-64.13-2
 libtinfo56.1-1ubuntu1.18.04
 libtorrent-rasterbar91.1.13+git20190505.6f1250c653+patched-configure-1ppa1~18.04
-libudev1237-3ubuntu10.21
+libudev1237-3ubuntu10.22
 libunistring20.9.9-0ubuntu2
 libuuid12.31.1-0.4ubuntu3.3
 libwind0-heimdal7.5.0+dfsg-1
@@ -147,7 +147,7 @@ mime-support3.60ubuntu1
 mount2.31.1-0.4ubuntu3.3
 ncurses-base6.1-1ubuntu1.18.04
 ncurses-bin6.1-1ubuntu1.18.04
-openssl1.1.1-1ubuntu2.1~18.04.1
+openssl1.1.1-1ubuntu2.1~18.04.2
 p7zip16.02+dfsg-6
 p7zip-full16.02+dfsg-6
 passwd1:4.5-1ubuntu2
@@ -159,7 +159,7 @@ python2.7.15~rc1-1
 python2.72.7.15-4ubuntu4~18.04
 python2.7-minimal2.7.15-4ubuntu4~18.04
 python-minimal2.7.15~rc1-1
-qbittorrent-nox4.1.6.99~201906162003-6706-e8be3bf~ubuntu18.04.1
+qbittorrent-nox4.1.6.99~201906210502-6707-2f15ea9~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
