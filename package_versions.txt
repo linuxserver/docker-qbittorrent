@@ -5,7 +5,7 @@ base-files10.1ubuntu2.4
 base-passwd3.5.44
 bash4.4.18-2ubuntu1.1
 bsdutils1:2.31.1-0.4ubuntu3.3
-bzip21.0.6-8.1
+bzip21.0.6-8.1ubuntu0.1
 ca-certificates20180409
 coreutils8.28-1ubuntu1
 curl7.58.0-2ubuntu3.7
@@ -49,7 +49,7 @@ libaudit11:2.8.2-1ubuntu1
 libaudit-common1:2.8.2-1ubuntu1
 libblkid12.31.1-0.4ubuntu3.3
 libboost-system1.65.11.65.1+dfsg-0ubuntu5
-libbz2-1.01.0.6-8.1
+libbz2-1.01.0.6-8.1ubuntu0.1
 libc62.27-3ubuntu1
 libcap-ng00.7.7-3.1
 libc-bin2.27-3ubuntu1
@@ -66,8 +66,8 @@ libffi63.2.1-8
 libgcc11:8.3.0-6ubuntu1~18.04.1
 libgcrypt201.8.1-4ubuntu1.1
 libgeoip11.6.12-1
-libglib2.0-02.56.4-0ubuntu0.18.04.3
-libglib2.0-data2.56.4-0ubuntu0.18.04.3
+libglib2.0-02.56.4-0ubuntu0.18.04.4
+libglib2.0-data2.56.4-0ubuntu0.18.04.4
 libgmp102:6.1.2+dfsg-2
 libgnutls303.5.18-1ubuntu1.1
 libgpg-error01.27-6
@@ -159,7 +159,7 @@ python2.7.15~rc1-1
 python2.72.7.15-4ubuntu4~18.04
 python2.7-minimal2.7.15-4ubuntu4~18.04
 python-minimal2.7.15~rc1-1
-qbittorrent-nox4.1.6.99~201906250602-6709-a8bfec0~ubuntu18.04.1
+qbittorrent-nox4.1.6.99~201907060905-6710-e954835~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
