@@ -63,6 +63,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "02.08.19:", desc: "Add qbitorrent-cli for processing scripts." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
   - { date: "14.01.19:", desc: "Rebase to Ubuntu, add multi arch and pipeline logic." }
   - { date: "25.09.18:", desc: "Use buildstage type build, bump qbitorrent to 4.1.3." }
