@@ -133,7 +133,7 @@ libstdc++68.3.0-6ubuntu1~18.04.1
 libsystemd0237-3ubuntu10.24
 libtasn1-64.13-2
 libtinfo56.1-1ubuntu1.18.04
-libtorrent-rasterbar91.1.13+git20190505.6f1250c653+patched-configure-1ppa1~18.04
+libtorrent-rasterbar91.1.13+git20190804.84f10d05ca+patched-configure-1ppa1~18.04
 libudev1237-3ubuntu10.24
 libunistring20.9.9-0ubuntu2
 libuuid12.31.1-0.4ubuntu3.3
@@ -161,7 +161,7 @@ python2.72.7.15-4ubuntu4~18.04
 python2.7-minimal2.7.15-4ubuntu4~18.04
 python-minimal2.7.15~rc1-1
 qbittorrent-cli1.4.19211-2
-qbittorrent-nox4.1.6.99~201907311051-6714-9c2a114~ubuntu18.04.1
+qbittorrent-nox4.1.7.99~201908041448-6717-05a82af~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
