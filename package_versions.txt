@@ -160,7 +160,7 @@ python2.7.15~rc1-1
 python2.72.7.15-4ubuntu4~18.04
 python2.7-minimal2.7.15-4ubuntu4~18.04
 python-minimal2.7.15~rc1-1
-qbittorrent-cli1.4.19211-2
+qbittorrent-cli1.5.19237-1
 qbittorrent-nox4.1.7.99~201908140017-6718-e98f44a~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
