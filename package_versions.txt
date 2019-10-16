@@ -106,8 +106,8 @@ libpam-runtime1.1.8-3.6ubuntu2.18.04.1
 libpcre32:8.39-9
 libprocps62:3.3.12-3ubuntu1.2
 libpsl50.19.1-5build1
-libpython2.7-minimal2.7.15-4ubuntu4~18.04.1
-libpython2.7-stdlib2.7.15-4ubuntu4~18.04.1
+libpython2.7-minimal2.7.15-4ubuntu4~18.04.2
+libpython2.7-stdlib2.7.15-4ubuntu4~18.04.2
 libpython-stdlib2.7.15~rc1-1
 libqt5core5a5.9.5+dfsg-0ubuntu2.3
 libqt5dbus55.9.5+dfsg-0ubuntu2.3
@@ -157,8 +157,8 @@ pinentry-curses1.1.0-1
 procps2:3.3.12-3ubuntu1.2
 publicsuffix20180223.1310-1
 python2.7.15~rc1-1
-python2.72.7.15-4ubuntu4~18.04.1
-python2.7-minimal2.7.15-4ubuntu4~18.04.1
+python2.72.7.15-4ubuntu4~18.04.2
+python2.7-minimal2.7.15-4ubuntu4~18.04.2
 python-minimal2.7.15~rc1-1
 qbittorrent-cli1.5.19237-1
 qbittorrent-nox4.1.8.99~201910050735-6728-850cde1~ubuntu18.04.1
@@ -169,7 +169,7 @@ sensible-utils0.0.12
 shared-mime-info1.9-2
 sysvinit-utils2.88dsf-59.10ubuntu1
 tar1.29b-2ubuntu0.1
-tzdata2019b-0ubuntu0.18.04
+tzdata2019c-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.0
 unrar1:5.5.8-1
 unzip6.0-21ubuntu1
