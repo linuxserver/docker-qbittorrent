@@ -13,6 +13,12 @@ available_architectures:
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
   - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
+# development version
+development_versions: true
+development_versions_items:
+  - { tag: "latest", desc: "Stable qbittorrent releases" }
+  - { tag: "unstable", desc: "Unstable qbittorrent releases" }
+
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
@@ -63,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "31.10.19:", desc: "Adding unstable tag." }
   - { date: "02.08.19:", desc: "Add qbitorrent-cli for processing scripts." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
   - { date: "14.01.19:", desc: "Rebase to Ubuntu, add multi arch and pipeline logic." }
