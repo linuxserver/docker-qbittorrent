@@ -5,7 +5,7 @@ ARG BUILD_DATE
 ARG VERSION
 ARG QBITTORRENT_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs, thelamer"
+LABEL maintainer="thelamer"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
@@ -22,12 +22,12 @@ RUN \
 	python && \
  curl -s https://bintray.com/user/downloadSubjectPublicKey?username=fedarovich | apt-key add - && \
  apt-key adv --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys 7CA69FC4 && \
- echo "deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
- echo "deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
+ echo "deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-unstable/ubuntu bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
+ echo "deb-src http://ppa.launchpad.net/qbittorrent-team/qbittorrent-unstable/ubuntu bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
  echo "deb https://dl.bintray.com/fedarovich/qbittorrent-cli-debian bionic main" >> /etc/apt/sources.list.d/qbitorrent.list && \
  echo "**** install packages ****" && \
  if [ -z ${QBITTORRENT_VERSION+x} ]; then \
-	QBITTORRENT_VERSION=$(curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c \
+	QBITTORRENT_VERSION=$(curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-unstable/ubuntu/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c \
 	|grep -A 7 -m 1 "Package: qbittorrent-nox" | awk -F ": " '/Version/{print $2;exit}');\
  fi && \
  apt-get update && \
