@@ -51,3 +51,6 @@ COPY root/ /
 # ports and volumes
 EXPOSE 6881 6881/udp 8080
 VOLUME /config /downloads
+
+HEALTHCHECK --interval=10s --timeout=10s --start-period=20s \
+  CMD curl --fail http://127.0.0.1:8080/api/v2/app/version || exit 1
