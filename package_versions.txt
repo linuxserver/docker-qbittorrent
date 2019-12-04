@@ -109,10 +109,10 @@ libpsl50.19.1-5build1
 libpython2.7-minimal2.7.15-4ubuntu4~18.04.2
 libpython2.7-stdlib2.7.15-4ubuntu4~18.04.2
 libpython-stdlib2.7.15~rc1-1
-libqt5core5a5.9.5+dfsg-0ubuntu2.3
-libqt5dbus55.9.5+dfsg-0ubuntu2.3
-libqt5network55.9.5+dfsg-0ubuntu2.3
-libqt5xml55.9.5+dfsg-0ubuntu2.3
+libqt5core5a5.9.5+dfsg-0ubuntu2.4
+libqt5dbus55.9.5+dfsg-0ubuntu2.4
+libqt5network55.9.5+dfsg-0ubuntu2.4
+libqt5xml55.9.5+dfsg-0ubuntu2.4
 libreadline77.0-3
 libroken18-heimdal7.5.0+dfsg-1
 librtmp12.4+20151223.gitfa8646d.1-1
