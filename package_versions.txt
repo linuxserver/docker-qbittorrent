@@ -106,8 +106,8 @@ libpam-runtime1.1.8-3.6ubuntu2.18.04.1
 libpcre32:8.39-9
 libprocps62:3.3.12-3ubuntu1.2
 libpsl50.19.1-5build1
-libpython2.7-minimal2.7.15-4ubuntu4~18.04.2
-libpython2.7-stdlib2.7.15-4ubuntu4~18.04.2
+libpython2.7-minimal2.7.17-1~18.04
+libpython2.7-stdlib2.7.17-1~18.04
 libpython-stdlib2.7.15~rc1-1
 libqt5core5a5.9.5+dfsg-0ubuntu2.4
 libqt5dbus55.9.5+dfsg-0ubuntu2.4
@@ -133,7 +133,7 @@ libstdc++68.3.0-6ubuntu1~18.04.1
 libsystemd0237-3ubuntu10.33
 libtasn1-64.13-2
 libtinfo56.1-1ubuntu1.18.04
-libtorrent-rasterbar101.2.2+git20191202.7b0bb2fb0b-1ppa1~18.04
+libtorrent-rasterbar101.2.3+git20191216.68196dceae-1ppa1~18.04
 libudev1237-3ubuntu10.33
 libunistring20.9.9-0ubuntu2
 libuuid12.31.1-0.4ubuntu3.4
@@ -157,11 +157,11 @@ pinentry-curses1.1.0-1
 procps2:3.3.12-3ubuntu1.2
 publicsuffix20180223.1310-1
 python2.7.15~rc1-1
-python2.72.7.15-4ubuntu4~18.04.2
-python2.7-minimal2.7.15-4ubuntu4~18.04.2
+python2.72.7.17-1~18.04
+python2.7-minimal2.7.17-1~18.04
 python-minimal2.7.15~rc1-1
-qbittorrent-cli1.5.19347-1
-qbittorrent-nox4.3.0~201912131003-6807-d09c5e5~ubuntu18.04.1
+qbittorrent-cli1.5.19350-1
+qbittorrent-nox4.3.0~201912170417-6808-5b7df3a~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
