@@ -69,7 +69,7 @@ libgeoip11.6.12-1
 libglib2.0-02.56.4-0ubuntu0.18.04.4
 libglib2.0-data2.56.4-0ubuntu0.18.04.4
 libgmp102:6.1.2+dfsg-2
-libgnutls303.5.18-1ubuntu1.1
+libgnutls303.5.18-1ubuntu1.2
 libgpg-error01.27-6
 libgssapi3-heimdal7.5.0+dfsg-1
 libgssapi-krb5-21.16-2ubuntu0.1
