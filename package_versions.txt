@@ -64,7 +64,7 @@ libext2fs21.44.1-1ubuntu1.2
 libfdisk12.31.1-0.4ubuntu3.4
 libffi63.2.1-8
 libgcc11:8.3.0-6ubuntu1~18.04.1
-libgcrypt201.8.1-4ubuntu1.1
+libgcrypt201.8.1-4ubuntu1.2
 libgeoip11.6.12-1
 libglib2.0-02.56.4-0ubuntu0.18.04.4
 libglib2.0-data2.56.4-0ubuntu0.18.04.4
@@ -161,7 +161,7 @@ python2.72.7.17-1~18.04
 python2.7-minimal2.7.17-1~18.04
 python-minimal2.7.15~rc1-1
 qbittorrent-cli1.5.19350-1
-qbittorrent-nox4.3.0~202001220502-6843-c3ce1aa~ubuntu18.04.1
+qbittorrent-nox4.3.0~202001241706-6844-07c22f8~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
