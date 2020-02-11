@@ -109,10 +109,10 @@ libpsl50.19.1-5build1
 libpython2.7-minimal2.7.17-1~18.04
 libpython2.7-stdlib2.7.17-1~18.04
 libpython-stdlib2.7.15~rc1-1
-libqt5core5a5.9.5+dfsg-0ubuntu2.4
-libqt5dbus55.9.5+dfsg-0ubuntu2.4
-libqt5network55.9.5+dfsg-0ubuntu2.4
-libqt5xml55.9.5+dfsg-0ubuntu2.4
+libqt5core5a5.9.5+dfsg-0ubuntu2.5
+libqt5dbus55.9.5+dfsg-0ubuntu2.5
+libqt5network55.9.5+dfsg-0ubuntu2.5
+libqt5xml55.9.5+dfsg-0ubuntu2.5
 libreadline77.0-3
 libroken18-heimdal7.5.0+dfsg-1
 librtmp12.4+20151223.gitfa8646d.1-1
@@ -138,7 +138,7 @@ libudev1237-3ubuntu10.33
 libunistring20.9.9-0ubuntu2
 libuuid12.31.1-0.4ubuntu3.5
 libwind0-heimdal7.5.0+dfsg-1
-libxml22.9.4+dfsg1-6.1ubuntu1.2
+libxml22.9.4+dfsg1-6.1ubuntu1.3
 libzstd11.3.3+dfsg-2ubuntu1.1
 locales2.27-3ubuntu1
 login1:4.5-1ubuntu2
@@ -161,7 +161,7 @@ python2.72.7.17-1~18.04
 python2.7-minimal2.7.17-1~18.04
 python-minimal2.7.15~rc1-1
 qbittorrent-cli1.5.19350-1
-qbittorrent-nox4.3.0~202002081056-6849-8b330e3~ubuntu18.04.1
+qbittorrent-nox4.3.0~202002110902-6850-8b42bf5~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
