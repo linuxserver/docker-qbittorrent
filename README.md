@@ -249,6 +249,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **03.04.20:** - Fix adding search engine plugin
 * **02.08.19:** - Add qbitorrent-cli for processing scripts.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
 * **14.01.19:** - Rebase to Ubuntu, add multi arch and pipeline logic.
