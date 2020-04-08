@@ -20,7 +20,7 @@ e2fsprogs1.44.1-1ubuntu1.3
 fdisk2.31.1-0.4ubuntu3.6
 file1:5.32-2ubuntu0.3
 findutils4.6.0+git+20170828-2
-gcc-8-base8.3.0-26ubuntu1~18.04
+gcc-8-base8.4.0-1ubuntu1~18.04
 geoip-bin1.6.12-1
 geoip-database20180315-1
 gnupg2.2.4-1ubuntu1.2
@@ -63,7 +63,7 @@ libexpat12.2.5-3ubuntu0.2
 libext2fs21.44.1-1ubuntu1.3
 libfdisk12.31.1-0.4ubuntu3.6
 libffi63.2.1-8
-libgcc11:8.3.0-26ubuntu1~18.04
+libgcc11:8.4.0-1ubuntu1~18.04
 libgcrypt201.8.1-4ubuntu1.2
 libgeoip11.6.12-1
 libglib2.0-02.56.4-0ubuntu0.18.04.6
@@ -129,7 +129,7 @@ libsqlite3-03.22.0-1ubuntu0.3
 libss21.44.1-1ubuntu1.3
 libssl1.0.01.0.2n-1ubuntu5.3
 libssl1.11.1.1-1ubuntu2.1~18.04.5
-libstdc++68.3.0-26ubuntu1~18.04
+libstdc++68.4.0-1ubuntu1~18.04
 libsystemd0237-3ubuntu10.39
 libtasn1-64.13-2
 libtinfo56.1-1ubuntu1.18.04
@@ -161,7 +161,7 @@ python2.72.7.17-1~18.04
 python2.7-minimal2.7.17-1~18.04
 python-minimal2.7.15~rc1-1
 qbittorrent-cli1.5.19350-1
-qbittorrent-nox4.3.0~202004070723-6925-f58f425~ubuntu18.04.1
+qbittorrent-nox4.3.0~202004080719-6927-eb02951~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
