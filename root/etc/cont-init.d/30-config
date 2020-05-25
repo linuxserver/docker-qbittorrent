@@ -9,7 +9,7 @@ mkdir -p \
 [[ ! -e /config/qBittorrent/qBittorrent.conf ]] && \
 	cp /defaults/qBittorrent.conf /config/qBittorrent/qBittorrent.conf
 
-# chown download directory if currently set to root
+# chown download directory if currently not set to abc
 if [[ "$(stat -c '%U' /downloads)" != "abc" ]]; then
 	chown -R abc:abc /downloads
 fi
