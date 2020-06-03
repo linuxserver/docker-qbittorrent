@@ -6,7 +6,7 @@ base-passwd3.5.44
 bash4.4.18-2ubuntu1.2
 bsdutils1:2.31.1-0.4ubuntu3.6
 bzip21.0.6-8.1ubuntu0.2
-ca-certificates20180409
+ca-certificates20190110~18.04.1
 coreutils8.28-1ubuntu1
 curl7.58.0-2ubuntu3.8
 dash0.5.8-2.10
@@ -161,7 +161,7 @@ python2.72.7.17-1~18.04ubuntu1
 python2.7-minimal2.7.17-1~18.04ubuntu1
 python-minimal2.7.15~rc1-1
 qbittorrent-cli1.5.19350-1
-qbittorrent-nox4.3.0~202006022048-7004-820ffcd~ubuntu18.04.1
+qbittorrent-nox4.3.0~202006032052-7005-4a98341~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
