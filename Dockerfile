@@ -19,7 +19,6 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	gnupg \
-	python \
 	python3 && \
  curl -s https://bintray.com/user/downloadSubjectPublicKey?username=fedarovich | apt-key add - && \
  apt-key adv --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys 7CA69FC4 && \
