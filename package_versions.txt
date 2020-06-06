@@ -6,7 +6,7 @@ base-passwd3.5.44
 bash4.4.18-2ubuntu1.2
 bsdutils1:2.31.1-0.4ubuntu3.6
 bzip21.0.6-8.1ubuntu0.2
-ca-certificates20180409
+ca-certificates20190110~18.04.1
 coreutils8.28-1ubuntu1
 curl7.58.0-2ubuntu3.8
 dash0.5.8-2.10
@@ -107,12 +107,9 @@ libpam-runtime1.1.8-3.6ubuntu2.18.04.1
 libpcre32:8.39-9
 libprocps62:3.3.12-3ubuntu1.2
 libpsl50.19.1-5build1
-libpython2.7-minimal2.7.17-1~18.04ubuntu1
-libpython2.7-stdlib2.7.17-1~18.04ubuntu1
 libpython3.6-minimal3.6.9-1~18.04ubuntu1
 libpython3.6-stdlib3.6.9-1~18.04ubuntu1
 libpython3-stdlib3.6.7-1~18.04
-libpython-stdlib2.7.15~rc1-1
 libqt5core5a5.9.5+dfsg-0ubuntu2.5
 libqt5dbus55.9.5+dfsg-0ubuntu2.5
 libqt5network55.9.5+dfsg-0ubuntu2.5
@@ -160,14 +157,10 @@ perl-base5.26.1-6ubuntu0.3
 pinentry-curses1.1.0-1
 procps2:3.3.12-3ubuntu1.2
 publicsuffix20180223.1310-1
-python2.7.15~rc1-1
-python2.72.7.17-1~18.04ubuntu1
-python2.7-minimal2.7.17-1~18.04ubuntu1
 python33.6.7-1~18.04
 python3.63.6.9-1~18.04ubuntu1
 python3.6-minimal3.6.9-1~18.04ubuntu1
 python3-minimal3.6.7-1~18.04
-python-minimal2.7.15~rc1-1
 qbittorrent-cli1.5.19350-1
 qbittorrent-nox1:4.2.5.99~202004250119-7015-2c65b79~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
