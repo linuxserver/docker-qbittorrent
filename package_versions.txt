@@ -10,7 +10,7 @@ ca-certificates20190110~18.04.1
 coreutils8.28-1ubuntu1
 curl7.58.0-2ubuntu3.8
 dash0.5.8-2.10
-dbus1.12.2-1ubuntu1.1
+dbus1.12.2-1ubuntu1.2
 debconf1.5.66ubuntu1
 debianutils4.8.4
 diffutils1:3.6-1
@@ -56,7 +56,7 @@ libc-bin2.27-3ubuntu1
 libcom-err21.44.1-1ubuntu1.3
 libcurl47.58.0-2ubuntu3.8
 libdb5.35.3.28-13.1ubuntu1.1
-libdbus-1-31.12.2-1ubuntu1.1
+libdbus-1-31.12.2-1ubuntu1.2
 libdebconfclient00.213ubuntu1
 libdouble-conversion12.0.1-4ubuntu1
 libexpat12.2.5-3ubuntu0.2
@@ -161,7 +161,7 @@ python2.72.7.17-1~18.04ubuntu1
 python2.7-minimal2.7.17-1~18.04ubuntu1
 python-minimal2.7.15~rc1-1
 qbittorrent-cli1.5.19350-1
-qbittorrent-nox4.3.0~202006140902-7012-9dfeeb9~ubuntu18.04.1
+qbittorrent-nox4.3.0~202006200318-7013-602e6b5~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
