@@ -258,6 +258,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **05.07.20:** - Shift to Python3
 * **31.10.19:** - Adding unstable tag.
 * **02.08.19:** - Add qbitorrent-cli for processing scripts.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
