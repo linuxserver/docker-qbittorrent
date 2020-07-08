@@ -141,7 +141,7 @@ libuuid12.31.1-0.4ubuntu3.6
 libwind0-heimdal7.5.0+dfsg-1
 libxml22.9.4+dfsg1-6.1ubuntu1.3
 libzstd11.3.3+dfsg-2ubuntu1.1
-locales2.27-3ubuntu1
+locales2.27-3ubuntu1.2
 login1:4.5-1ubuntu2
 lsb-base9.20170808ubuntu1
 mawk1.3.3-17ubuntu3
@@ -162,7 +162,7 @@ python3.63.6.9-1~18.04ubuntu1
 python3.6-minimal3.6.9-1~18.04ubuntu1
 python3-minimal3.6.7-1~18.04
 qbittorrent-cli1.5.19350-1
-qbittorrent-nox4.3.0~202007050948-7019-83f1028~ubuntu18.04.1
+qbittorrent-nox4.3.0~202007081334-7020-fd74e83~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
