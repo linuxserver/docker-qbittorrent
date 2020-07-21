@@ -162,7 +162,7 @@ python3.63.6.9-1~18.04ubuntu1
 python3.6-minimal3.6.9-1~18.04ubuntu1
 python3-minimal3.6.7-1~18.04
 qbittorrent-cli1.5.19350-1
-qbittorrent-nox4.3.0~202007201034-7023-9cf2321~ubuntu18.04.1
+qbittorrent-nox4.3.0~202007211033-7024-23eb117~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
