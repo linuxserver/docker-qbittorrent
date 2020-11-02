@@ -6,7 +6,7 @@ base-passwd3.5.44
 bash4.4.18-2ubuntu1.2
 bsdutils1:2.31.1-0.4ubuntu3.7
 bzip21.0.6-8.1ubuntu0.2
-ca-certificates20190110~18.04.1
+ca-certificates20201027ubuntu0.18.04.1
 coreutils8.28-1ubuntu1
 curl7.58.0-2ubuntu3.10
 dash0.5.8-2.10
@@ -170,7 +170,7 @@ sensible-utils0.0.12
 shared-mime-info1.9-2
 sysvinit-utils2.88dsf-59.10ubuntu1
 tar1.29b-2ubuntu0.1
-tzdata2020a-0ubuntu0.18.04
+tzdata2020d-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.0
 unrar1:5.5.8-1
 unzip6.0-21ubuntu1
