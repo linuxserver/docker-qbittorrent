@@ -1,9 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-# make our folders
-mkdir -p \
-	/config/qBittorrent \
-	/config/data
+# make our folder
+mkdir -p /config/qBittorrent
 
 # copy config
 [[ ! -e /config/qBittorrent/qBittorrent.conf ]] && \
