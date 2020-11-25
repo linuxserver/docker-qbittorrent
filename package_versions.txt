@@ -134,7 +134,7 @@ libstdc++68.4.0-1ubuntu1~18.04
 libsystemd0237-3ubuntu10.42
 libtasn1-64.13-2
 libtinfo56.1-1ubuntu1.18.04
-libtorrent-rasterbar101.2.10+git20201018.3d48e7d056-1ppa1~18.04
+libtorrent-rasterbar101.2.11+git20201124.afa406f890-1ppa1~18.04
 libudev1237-3ubuntu10.42
 libunistring20.9.9-0ubuntu2
 libuuid12.31.1-0.4ubuntu3.7
