@@ -128,7 +128,7 @@ libsepol12.7-1
 libsmartcols12.31.1-0.4ubuntu3.7
 libsqlite3-03.22.0-1ubuntu0.4
 libss21.44.1-1ubuntu1.3
-libssl1.0.01.0.2n-1ubuntu5.4
+libssl1.0.01.0.2n-1ubuntu5.5
 libssl1.11.1.1-1ubuntu2.1~18.04.6
 libstdc++68.4.0-1ubuntu1~18.04
 libsystemd0237-3ubuntu10.42
@@ -162,7 +162,7 @@ python3.63.6.9-1~18.04ubuntu1.3
 python3.6-minimal3.6.9-1~18.04ubuntu1.3
 python3-minimal3.6.7-1~18.04
 qbittorrent-cli1.6.20334-1
-qbittorrent-nox4.4.0~202012070818-7138-5c1c561d7~ubuntu18.04.1
+qbittorrent-nox4.4.0~202012081504-7139-d484c0e7c~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
