@@ -141,7 +141,7 @@ libuuid12.31.1-0.4ubuntu3.7
 libwind0-heimdal7.5.0+dfsg-1
 libxml22.9.4+dfsg1-6.1ubuntu1.3
 libzstd11.3.3+dfsg-2ubuntu1.1
-locales2.27-3ubuntu1.3
+locales2.27-3ubuntu1.4
 login1:4.5-1ubuntu2
 lsb-base9.20170808ubuntu1
 mawk1.3.3-17ubuntu3
@@ -162,7 +162,7 @@ python3.63.6.9-1~18.04ubuntu1.3
 python3.6-minimal3.6.9-1~18.04ubuntu1.3
 python3-minimal3.6.7-1~18.04
 qbittorrent-cli1.6.20334-1
-qbittorrent-nox4.4.0~202012151918-7146-7c48ba2f1~ubuntu18.04.1
+qbittorrent-nox4.4.0~202012190934-7148-fa6524d37~ubuntu18.04.1
 qttranslations5-l10n5.9.5-0ubuntu1
 readline-common7.0-3
 sed4.4-2
@@ -173,7 +173,7 @@ tar1.29b-2ubuntu0.1
 tzdata2020d-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.0
 unrar1:5.5.8-1
-unzip6.0-21ubuntu1
+unzip6.0-21ubuntu1.1
 util-linux2.31.1-0.4ubuntu3.7
 xdg-user-dirs0.17-1ubuntu1
 xz-utils5.2.2-1.3
