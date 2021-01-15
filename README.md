@@ -109,8 +109,8 @@ docker run -d \
   -p 6881:6881 \
   -p 6881:6881/udp \
   -p 8080:8080 \
-  -v </path/to/appdata/config>:/config \
-  -v </path/to/downloads>:/downloads \
+  -v /path/to/appdata/config:/config \
+  -v /path/to/downloads:/downloads \
   --restart unless-stopped \
   ghcr.io/linuxserver/qbittorrent
 ```
