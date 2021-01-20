@@ -262,6 +262,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.01.21:"** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
 * **05.07.20:** - Shift to Python3
 * **31.10.19:** - Adding unstable tag.
 * **02.08.19:** - Add qbitorrent-cli for processing scripts.
