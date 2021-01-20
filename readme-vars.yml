@@ -34,7 +34,6 @@ param_ports:
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London"}
-  - { env_var: "UMASK_SET", env_value: "022", desc: "for umask setting of qbittorrent, optional , default if left unset is 022"}
   - { env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the webui, see below for explanation"}
 
 # optional parameters
@@ -69,7 +68,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: 20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
+  - { date: "20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
   - { date: "05.07.20:", desc: "Shift to Python3" }
   - { date: "31.10.19:", desc: "Adding unstable tag." }
   - { date: "02.08.19:", desc: "Add qbitorrent-cli for processing scripts." }

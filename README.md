@@ -84,7 +84,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - UMASK_SET=022
       - WEBUI_PORT=8080
     volumes:
       - </path/to/appdata/config>:/config
@@ -104,7 +103,6 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
-  -e UMASK_SET=022 \
   -e WEBUI_PORT=8080 \
   -p 6881:6881 \
   -p 6881:6881/udp \
@@ -128,7 +126,6 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
-| `-e UMASK_SET=022` | for umask setting of qbittorrent, optional , default if left unset is 022 |
 | `-e WEBUI_PORT=8080` | for changing the port of the webui, see below for explanation |
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
@@ -262,7 +259,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **20.01.21:"** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
+* **20.01.21:** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
 * **05.07.20:** - Shift to Python3
 * **31.10.19:** - Adding unstable tag.
 * **02.08.19:** - Add qbitorrent-cli for processing scripts.
