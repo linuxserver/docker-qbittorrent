@@ -170,7 +170,7 @@ sensible-utils0.0.12
 shared-mime-info1.9-2
 sysvinit-utils2.88dsf-59.10ubuntu1
 tar1.29b-2ubuntu0.2
-tzdata2020f-0ubuntu0.18.04
+tzdata2021a-0ubuntu0.18.04
 ubuntu-keyring2018.09.18.1~18.04.0
 unrar1:5.5.8-1
 unzip6.0-21ubuntu1.1
