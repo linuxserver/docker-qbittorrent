@@ -9,7 +9,10 @@ mkdir -p /config/qBittorrent
 
 # v4.3.3 BT_backup migration
 [[ -d /config/data/qBittorrent/BT_backup/ ]] && \
-	cp -a /config/data/qBittorrent/BT_backup/.  /config/qBittorrent/BT_backup/
+	mv /config/qBittorrent/BT_backup/ /config/qBittorrent/BT_backup.bak/ && \
+	mkdir /config/qBittorrent/BT_backup/ && \
+	cp -a /config/data/qBittorrent/BT_backup/.  /config/qBittorrent/BT_backup/ && \
+	mv /config/data/qBittorrent/BT_backup/ /config/data/qBittorrent/BT_backup.old/
 
 # chown download directory if currently not set to abc
 if [[ "$(stat -c '%U' /downloads)" != "abc" ]]; then
