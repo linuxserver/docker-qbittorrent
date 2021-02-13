@@ -24,8 +24,8 @@ common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "</path/to/appdata/config>", desc: "Contains all relevant configuration files." }
-  - { vol_path: "/downloads", vol_host_path: "</path/to/downloads>", desc: "Location of downloads on disk." }
+  - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Contains all relevant configuration files." }
+  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "6881", internal_port: "6881", port_desc: "tcp connection port" }
@@ -68,7 +68,8 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: 20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
+  - { date: "10.02.21:", desc: "Rebase to focal." }
+  - { date: "20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
   - { date: "12.11.20:", desc: "Stop creating /config/data directory on startup" }
   - { date: "03.04.20:", desc: "Fix adding search engine plugin" }
   - { date: "02.08.19:", desc: "Add qbitorrent-cli for processing scripts." }

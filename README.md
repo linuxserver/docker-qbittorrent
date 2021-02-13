@@ -86,8 +86,8 @@ services:
       - TZ=Europe/London
       - WEBUI_PORT=8080
     volumes:
-      - </path/to/appdata/config>:/config
-      - </path/to/downloads>:/downloads
+      - /path/to/appdata/config:/config
+      - /path/to/downloads:/downloads
     ports:
       - 6881:6881
       - 6881:6881/udp
@@ -107,8 +107,8 @@ docker run -d \
   -p 6881:6881 \
   -p 6881:6881/udp \
   -p 8080:8080 \
-  -v </path/to/appdata/config>:/config \
-  -v </path/to/downloads>:/downloads \
+  -v /path/to/appdata/config:/config \
+  -v /path/to/downloads:/downloads \
   --restart unless-stopped \
   ghcr.io/linuxserver/qbittorrent
 ```
@@ -259,7 +259,8 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **20.01.21:"** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
+* **10.02.21:** - Rebase to focal.
+* **20.01.21:** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
 * **12.11.20:** - Stop creating /config/data directory on startup
 * **03.04.20:** - Fix adding search engine plugin
 * **02.08.19:** - Add qbitorrent-cli for processing scripts.
