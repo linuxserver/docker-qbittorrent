@@ -76,7 +76,7 @@ jobs:
             if curl -fL "${URL_AMD64}" >/dev/null && curl -fL "${URL_ARMHF}" >/dev/null && curl -fL "${URL_ARM64}" >/dev/null; then
               echo "**** All artifacts seem to be published, triggering build ****"
               response=$(curl -iX POST \
-                https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/master/buildWithParameters?PACKAGE_CHECK=false \
+                https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/unstable/buildWithParameters?PACKAGE_CHECK=false \
                 --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} | grep -i location | sed "s|^[L|l]ocation: \(.*\)|\1|")
               echo "**** Jenkins job queue url: ${response%$'\r'} ****"
               echo "**** Sleeping 10 seconds until job starts ****"
@@ -97,7 +97,7 @@ jobs:
                 "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
             else
               echo "**** Not all artifacts are published yet, skipping trigger ****"
-              FAILURE_REASON="New version ${EXT_RELEASE} for qbittorrent tag latest is detected, however not all artifacts are uploaded to launchpad yet. Will try again in 1 hr."
+              FAILURE_REASON="New version ${EXT_RELEASE} for qbittorrent tag unstable is detected, however not all artifacts are uploaded to launchpad yet. Will try again in 1 hr."
               curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
                 "description": "**Trigger Failed** \n**Reason:** '"${FAILURE_REASON}"' \n"}],
                 "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
