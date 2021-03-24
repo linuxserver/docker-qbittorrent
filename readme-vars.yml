@@ -68,6 +68,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "24.03.21:", desc: "Rebase to focal." }
   - { date: "20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
   - { date: "05.07.20:", desc: "Shift to Python3" }
   - { date: "31.10.19:", desc: "Adding unstable tag." }
