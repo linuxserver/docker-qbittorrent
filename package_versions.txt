@@ -8,7 +8,7 @@ bsdutils1:2.34-0.1ubuntu9.1
 bzip21.0.8-2
 ca-certificates20210119~20.04.1
 coreutils8.30-3ubuntu2
-curl7.68.0-1ubuntu2.4
+curl7.68.0-1ubuntu2.5
 dash0.5.10.2-6
 dbus1.12.16-2ubuntu2.1
 debconf1.5.73
@@ -54,7 +54,7 @@ libcap-ng00.7.9-2.1build1
 libc-bin2.31-0ubuntu9.2
 libcom-err21.45.5-2ubuntu1
 libcrypt11:4.4.10-10ubuntu4
-libcurl47.68.0-1ubuntu2.4
+libcurl47.68.0-1ubuntu2.5
 libdb5.35.3.28+dfsg1-0.6ubuntu2
 libdbus-1-31.12.16-2ubuntu2.1
 libdebconfclient00.251ubuntu1
@@ -173,7 +173,7 @@ python3.83.8.5-1~20.04.2
 python3.8-minimal3.8.5-1~20.04.2
 python3-minimal3.8.2-0ubuntu2
 qbittorrent-cli1.6.20334-1
-qbittorrent-nox1:4.3.4.99~202104031018-7348-2b6baa609~ubuntu20.04.1
+qbittorrent-nox1:4.3.4.99~202104090418-7349-789803700~ubuntu20.04.1
 qttranslations5-l10n5.12.8-0ubuntu1
 readline-common8.0-4
 sed4.7-1
@@ -182,7 +182,7 @@ shared-mime-info1.15-1
 sysvinit-utils2.96-2.1ubuntu1
 tar1.30+dfsg-7ubuntu0.20.04.1
 tzdata2021a-0ubuntu0.20.04
-ubuntu-keyring2020.02.11.2
+ubuntu-keyring2020.02.11.4
 unrar1:5.6.6-2build1
 unzip6.0-25ubuntu1
 util-linux2.34-0.1ubuntu9.1
