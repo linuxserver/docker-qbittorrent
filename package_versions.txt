@@ -1,6 +1,6 @@
 adduser3.118ubuntu2
-apt2.0.4
-apt-utils2.0.4
+apt2.0.5
+apt-utils2.0.5
 base-files11ubuntu5.3
 base-passwd3.5.47
 bash5.0-6ubuntu1.1
@@ -40,7 +40,7 @@ init-system-helpers1.57
 krb5-locales1.17-6ubuntu4.1
 libacl12.2.53-6
 libapparmor12.13.3-7ubuntu5.1
-libapt-pkg6.02.0.4
+libapt-pkg6.02.0.5
 libasn1-8-heimdal7.7.0+dfsg-1ubuntu1
 libassuan02.5.3-7ubuntu2
 libattr11:2.4.48-5
@@ -138,11 +138,11 @@ libss21.45.5-2ubuntu1
 libssh-40.9.3-2ubuntu2.1
 libssl1.11.1.1f-1ubuntu2.3
 libstdc++610.2.0-5ubuntu1~20.04
-libsystemd0245.4-4ubuntu3.5
+libsystemd0245.4-4ubuntu3.6
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
 libtorrent-rasterbar101.2.13+git20210323.34a979720b-1ppa1~20.04
-libudev1245.4-4ubuntu3.5
+libudev1245.4-4ubuntu3.6
 libunistring20.9.10-2
 libuuid12.34-0.1ubuntu9.1
 libwind0-heimdal7.7.0+dfsg-1ubuntu1
@@ -173,7 +173,7 @@ python3.83.8.5-1~20.04.2
 python3.8-minimal3.8.5-1~20.04.2
 python3-minimal3.8.2-0ubuntu2
 qbittorrent-cli1.6.20334-1
-qbittorrent-nox1:4.3.4.99~202104090418-7349-789803700~ubuntu20.04.1
+qbittorrent-nox1:4.3.4.99~202104180633-7350-2c8f322af~ubuntu20.04.1
 qttranslations5-l10n5.12.8-0ubuntu1
 readline-common8.0-4
 sed4.7-1
