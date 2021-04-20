@@ -78,7 +78,7 @@ libgssapi-krb5-21.17-6ubuntu4.1
 libhcrypto4-heimdal7.7.0+dfsg-1ubuntu1
 libheimbase1-heimdal7.7.0+dfsg-1ubuntu1
 libheimntlm0-heimdal7.7.0+dfsg-1ubuntu1
-libhogweed53.5.1+really3.5.1-2
+libhogweed53.5.1+really3.5.1-2ubuntu0.1
 libhx509-5-heimdal7.7.0+dfsg-1ubuntu1
 libicu6666.1-2ubuntu2
 libidn2-02.2.0-2
@@ -99,7 +99,7 @@ libmpdec22.4.2-3
 libncurses66.2-0ubuntu2
 libncursesw66.2-0ubuntu2
 libnetaddr-ip-perl4.079+dfsg-1build4
-libnettle73.5.1+really3.5.1-2
+libnettle73.5.1+really3.5.1-2ubuntu0.1
 libnghttp2-141.40.0-1build1
 libnpth01.6-1
 libp11-kit00.23.20-1ubuntu0.1
@@ -111,7 +111,7 @@ libpcre2-16-010.34-7
 libpcre2-8-010.34-7
 libpcre32:8.39-12build1
 libperl5.305.30.0-9ubuntu0.2
-libprocps82:3.3.16-1ubuntu2
+libprocps82:3.3.16-1ubuntu2.1
 libpsl50.21.0-1ubuntu1
 libpython3.8-minimal3.8.5-1~20.04.2
 libpython3.8-stdlib3.8.5-1~20.04.2
@@ -126,7 +126,7 @@ librtmp12.4+20151223.gitfa8646d.1-2build1
 libsasl2-22.1.27+dfsg-2
 libsasl2-modules2.1.27+dfsg-2
 libsasl2-modules-db2.1.27+dfsg-2
-libseccomp22.4.3-1ubuntu3.20.04.3
+libseccomp22.5.1-1ubuntu1~20.04.1
 libselinux13.0-1build2
 libsemanage13.0-1build2
 libsemanage-common3.0-1build2
@@ -166,14 +166,14 @@ perl5.30.0-9ubuntu0.2
 perl-base5.30.0-9ubuntu0.2
 perl-modules-5.305.30.0-9ubuntu0.2
 pinentry-curses1.1.0-3build1
-procps2:3.3.16-1ubuntu2
+procps2:3.3.16-1ubuntu2.1
 publicsuffix20200303.0012-1
 python33.8.2-0ubuntu2
 python3.83.8.5-1~20.04.2
 python3.8-minimal3.8.5-1~20.04.2
 python3-minimal3.8.2-0ubuntu2
 qbittorrent-cli1.6.20334-1
-qbittorrent-nox4.4.0~202104190703-7279-a4ce5d168~ubuntu20.04.1
+qbittorrent-nox4.4.0~202104200719-7280-942fad1d6~ubuntu20.04.1
 qttranslations5-l10n5.12.8-0ubuntu1
 readline-common8.0-4
 sed4.7-1
