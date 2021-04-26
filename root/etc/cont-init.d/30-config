@@ -15,8 +15,10 @@ mkdir -p /config/qBittorrent
 	mv /config/data/qBittorrent/BT_backup/ /config/data/qBittorrent/BT_backup.old/
 
 # chown download directory if currently not set to abc
-if [[ "$(stat -c '%U' /downloads)" != "abc" ]]; then
-	chown -R abc:abc /downloads
+if [[ -d /downloads ]]; then
+  if [[ "$(stat -c '%U' /downloads)" != "abc" ]]; then
+    chown -R abc:abc /downloads
+  fi
 fi
 
 # permissions
