@@ -10,8 +10,10 @@ mkdir -p \
 	cp /defaults/qBittorrent.conf /config/qBittorrent/qBittorrent.conf
 
 # chown download directory if currently set to root
-if [[ "$(stat -c '%U' /downloads)" != "abc" ]]; then
-	chown -R abc:abc /downloads
+if [[ -d /downloads ]]; then
+  if [[ "$(stat -c '%U' /downloads)" != "abc" ]]; then
+    chown -R abc:abc /downloads
+  fi
 fi
 
 # permissions
