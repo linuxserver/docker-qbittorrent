@@ -119,6 +119,8 @@ libpython3-stdlib3.8.2-0ubuntu2
 libqt5core5a5.12.8+dfsg-0ubuntu1
 libqt5dbus55.12.8+dfsg-0ubuntu1
 libqt5network55.12.8+dfsg-0ubuntu1
+libqt5sql55.12.8+dfsg-0ubuntu1
+libqt5sql5-sqlite5.12.8+dfsg-0ubuntu1
 libqt5xml55.12.8+dfsg-0ubuntu1
 libreadline88.0-4
 libroken18-heimdal7.7.0+dfsg-1ubuntu1
@@ -141,7 +143,7 @@ libstdc++610.2.0-5ubuntu1~20.04
 libsystemd0245.4-4ubuntu3.6
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
-libtorrent-rasterbar101.2.13+git20210323.34a979720b-1ppa1~20.04
+libtorrent-rasterbar101.2.13+git20210501.22af326f6c-1ppa1~20.04
 libudev1245.4-4ubuntu3.6
 libunistring20.9.10-2
 libuuid12.34-0.1ubuntu9.1
@@ -173,7 +175,7 @@ python3.83.8.5-1~20.04.2
 python3.8-minimal3.8.5-1~20.04.2
 python3-minimal3.8.2-0ubuntu2
 qbittorrent-cli1.7.21116-1
-qbittorrent-nox4.4.0~202104280821-7287-223d15802~ubuntu20.04.1
+qbittorrent-nox4.4.0~202105011937-7288-6b123921a~ubuntu20.04.1
 qttranslations5-l10n5.12.8-0ubuntu1
 readline-common8.0-4
 sed4.7-1
