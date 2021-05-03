@@ -175,7 +175,7 @@ python3.83.8.5-1~20.04.2
 python3.8-minimal3.8.5-1~20.04.2
 python3-minimal3.8.2-0ubuntu2
 qbittorrent-cli1.7.21116-1
-qbittorrent-nox4.4.0~202105021937-7289-c9a552c89~ubuntu20.04.1
+qbittorrent-nox4.4.0~202105031937-7290-94195d533~ubuntu20.04.1
 qttranslations5-l10n5.12.8-0ubuntu1
 readline-common8.0-4
 sed4.7-1
