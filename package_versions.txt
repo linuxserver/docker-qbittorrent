@@ -148,7 +148,7 @@ libuuid12.34-0.1ubuntu9.1
 libwind0-heimdal7.7.0+dfsg-1ubuntu1
 libxml22.9.10+dfsg-5
 libzstd11.4.4+dfsg-3ubuntu0.1
-locales2.31-0ubuntu9.3
+locales2.31-0ubuntu9.2
 login1:4.8.1-1ubuntu5.20.04
 logsave1.45.5-2ubuntu1
 lsb-base11.1.0ubuntu2
