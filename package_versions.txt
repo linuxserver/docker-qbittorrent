@@ -143,7 +143,7 @@ libstdc++610.2.0-5ubuntu1~20.04
 libsystemd0245.4-4ubuntu3.6
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
-libtorrent-rasterbar101.2.13+git20210501.22af326f6c-1ppa1~20.04
+libtorrent-rasterbar101.2.14+git20210623.c996ed7ef7-1ppa1~20.04
 libudev1245.4-4ubuntu3.6
 libunistring20.9.10-2
 libuuid12.34-0.1ubuntu9.1
