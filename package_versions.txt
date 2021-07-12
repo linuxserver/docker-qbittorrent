@@ -1,6 +1,6 @@
 adduser3.118ubuntu2
-apt2.0.5
-apt-utils2.0.5
+apt2.0.6
+apt-utils2.0.6
 base-files11ubuntu5.3
 base-passwd3.5.47
 bash5.0-6ubuntu1.1
@@ -40,7 +40,7 @@ init-system-helpers1.57
 krb5-locales1.17-6ubuntu4.1
 libacl12.2.53-6
 libapparmor12.13.3-7ubuntu5.1
-libapt-pkg6.02.0.5
+libapt-pkg6.02.0.6
 libasn1-8-heimdal7.7.0+dfsg-1ubuntu1
 libassuan02.5.3-7ubuntu2
 libattr11:2.4.48-5
