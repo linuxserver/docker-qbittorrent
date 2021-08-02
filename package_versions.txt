@@ -8,7 +8,7 @@ bsdutils1:2.34-0.1ubuntu9.1
 bzip21.0.8-2
 ca-certificates20210119~20.04.1
 coreutils8.30-3ubuntu2
-curl7.68.0-1ubuntu2.5
+curl7.68.0-1ubuntu2.6
 dash0.5.10.2-6
 dbus1.12.16-2ubuntu2.1
 debconf1.5.73
@@ -54,7 +54,7 @@ libcap-ng00.7.9-2.1build1
 libc-bin2.31-0ubuntu9.2
 libcom-err21.45.5-2ubuntu1
 libcrypt11:4.4.10-10ubuntu4
-libcurl47.68.0-1ubuntu2.5
+libcurl47.68.0-1ubuntu2.6
 libdb5.35.3.28+dfsg1-0.6ubuntu2
 libdbus-1-31.12.16-2ubuntu2.1
 libdebconfclient00.251ubuntu1
@@ -140,11 +140,11 @@ libss21.45.5-2ubuntu1
 libssh-40.9.3-2ubuntu2.1
 libssl1.11.1.1f-1ubuntu2.4
 libstdc++610.3.0-1ubuntu1~20.04
-libsystemd0245.4-4ubuntu3.7
+libsystemd0245.4-4ubuntu3.10
 libtasn1-64.16.0-2
 libtinfo66.2-0ubuntu2
 libtorrent-rasterbar101.2.14+git20210623.c996ed7ef7-1ppa1~20.04
-libudev1245.4-4ubuntu3.7
+libudev1245.4-4ubuntu3.10
 libunistring20.9.10-2
 libuuid12.34-0.1ubuntu9.1
 libwind0-heimdal7.7.0+dfsg-1ubuntu1
