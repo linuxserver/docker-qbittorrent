@@ -6,7 +6,7 @@ base-passwd3.5.47
 bash5.0-6ubuntu1.1
 bsdutils1:2.34-0.1ubuntu9.1
 bzip21.0.8-2
-ca-certificates20210119~20.04.1
+ca-certificates20210119~20.04.2
 coreutils8.30-3ubuntu2
 curl7.68.0-1ubuntu2.7
 dash0.5.10.2-6
@@ -111,7 +111,7 @@ libpcre2-16-010.34-7
 libpcre2-8-010.34-7
 libpcre32:8.39-12build1
 libperl5.305.30.0-9ubuntu0.2
-libprocps82:3.3.16-1ubuntu2.2
+libprocps82:3.3.16-1ubuntu2.3
 libpsl50.21.0-1ubuntu1
 libpython3.8-minimal3.8.10-0ubuntu1~20.04
 libpython3.8-stdlib3.8.10-0ubuntu1~20.04
@@ -168,7 +168,7 @@ perl5.30.0-9ubuntu0.2
 perl-base5.30.0-9ubuntu0.2
 perl-modules-5.305.30.0-9ubuntu0.2
 pinentry-curses1.1.0-3build1
-procps2:3.3.16-1ubuntu2.2
+procps2:3.3.16-1ubuntu2.3
 publicsuffix20200303.0012-1
 python33.8.2-0ubuntu2
 python3.83.8.10-0ubuntu1~20.04
