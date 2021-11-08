@@ -181,7 +181,7 @@ sensible-utils0.0.12+nmu1
 shared-mime-info1.15-1
 sysvinit-utils2.96-2.1ubuntu1
 tar1.30+dfsg-7ubuntu0.20.04.1
-tzdata2021a-2ubuntu0.20.04
+tzdata2021e-0ubuntu0.20.04
 ubuntu-keyring2020.02.11.4
 unrar1:5.6.6-2build1
 unzip6.0-25ubuntu1
