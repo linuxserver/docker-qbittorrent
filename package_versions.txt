@@ -80,7 +80,7 @@ libheimbase1-heimdal7.7.0+dfsg-1ubuntu1
 libheimntlm0-heimdal7.7.0+dfsg-1ubuntu1
 libhogweed53.5.1+really3.5.1-2ubuntu0.2
 libhx509-5-heimdal7.7.0+dfsg-1ubuntu1
-libicu6666.1-2ubuntu2
+libicu6666.1-2ubuntu2.1
 libidn2-02.2.0-2
 libk5crypto31.17-6ubuntu4.1
 libkeyutils11.6-6ubuntu1
