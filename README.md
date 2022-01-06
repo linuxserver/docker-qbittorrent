@@ -65,7 +65,6 @@ This image provides various versions that are available via tags. `latest` tag u
 | Tag | Description |
 | :----: | --- |
 | latest | Stable qbittorrent releases |
-| unstable | Unstable qbittorrent releases |
 
 ## Application Setup
 
@@ -265,6 +264,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **06.01.22:** - Deprecate unstable branch.
 * **10.02.21:** - Rebase to focal.
 * **20.01.21:** - Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information.
 * **12.11.20:** - Stop creating /config/data directory on startup
