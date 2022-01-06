@@ -13,7 +13,7 @@ echo '
 ******************************************************
 ******************************************************
 
-We recommend our stable qbittorrent image instead:
+We recommend our stable qbittorrent branch instead:
 https://github.com/linuxserver/docker-qbittorrent
 
 
