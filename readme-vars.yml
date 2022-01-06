@@ -17,7 +17,6 @@ available_architectures:
 development_versions: true
 development_versions_items:
   - { tag: "latest", desc: "Stable qbittorrent releases" }
-  - { tag: "unstable", desc: "Unstable qbittorrent releases" }
 
 # container parameters
 common_param_env_vars_enabled: true
@@ -70,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "06.01.22:", desc: "Deprecate unstable branch." }
   - { date: "10.02.21:", desc: "Rebase to focal." }
   - { date: "20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
   - { date: "12.11.20:", desc: "Stop creating /config/data directory on startup" }
