@@ -1,0 +1,21 @@
+#! /usr/bin/with-contenv bash
+
+echo '
+******************************************************
+******************************************************
+*                                                    *
+*                                                    *
+*             This image is deprecated.              *
+*      We will not offer support for this image      *
+*             and it will not be updated.            *
+*                                                    *
+*                                                    *
+******************************************************
+******************************************************
+
+We recommend our stable qbittorrent branch instead:
+https://github.com/linuxserver/docker-qbittorrent
+
+
+******************************************************
+******************************************************'
