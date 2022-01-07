@@ -98,7 +98,8 @@ RUN \
     unzip \
     bash \
     curl \
-    icu \
+    icu-libs \
+    libexecinfo \
     openssl \
     python3 \
     qt5-qtbase \
