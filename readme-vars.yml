@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "07.01.22:", desc: "Rebase to Alpine, build from source." }
   - { date: "06.01.22:", desc: "Deprecate unstable branch." }
   - { date: "10.02.21:", desc: "Rebase to focal." }
   - { date: "20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }

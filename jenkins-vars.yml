@@ -3,11 +3,10 @@
 # jenkins variables
 project_name: docker-qbittorrent
 external_type: na
-custom_version_command: "curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu/dists/focal/main/binary-amd64/Packages.gz | gunzip -c |grep -A 7 -m 1 'Package: qbittorrent-nox' | awk -F ': ' '/Version/{print $2;exit}'"
+custom_version_command: "echo release-$(curl -s 'https://raw.githubusercontent.com/qbittorrent/qBittorrent/HEAD/Changelog' | grep -Po '^\\\\w{3} \\\\w{3} \\\\d{2} \\\\d{4} - .* - \\\\K(v\\\\d+\\\\.\\\\d+\\\\.\\\\d+\\\\.?\\\\d?)$' | head -1 | cut -c2-)"
 release_type: stable
 release_tag: latest
 ls_branch: master
-custom_external_trigger: true
 repo_vars:
   - CONTAINER_NAME = 'qbittorrent'
   - BUILD_VERSION_ARG = 'QBITTORRENT_VERSION'
@@ -16,7 +15,7 @@ repo_vars:
   - DOCKERHUB_IMAGE = 'linuxserver/qbittorrent'
   - DEV_DOCKERHUB_IMAGE = 'lsiodev/qbittorrent'
   - PR_DOCKERHUB_IMAGE = 'lspipepr/qbittorrent'
-  - DIST_IMAGE = 'ubuntu'
+  - DIST_IMAGE = 'alpine'
   - MULTIARCH='true'
   - CI='true'
   - CI_WEB='true'

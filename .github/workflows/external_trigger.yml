@@ -18,7 +18,7 @@ jobs:
           fi
           echo "**** External trigger running off of master branch. To disable this trigger, set a Github secret named \"PAUSE_EXTERNAL_TRIGGER_QBITTORRENT_MASTER\". ****"
           echo "**** Retrieving external version ****"
-          EXT_RELEASE=$(curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu/dists/focal/main/binary-amd64/Packages.gz | gunzip -c |grep -A 7 -m 1 'Package: qbittorrent-nox' | awk -F ': ' '/Version/{print $2;exit}')
+          EXT_RELEASE=$(echo release-$(curl -s 'https://raw.githubusercontent.com/qbittorrent/qBittorrent/HEAD/Changelog' | grep -Po '^\w{3} \w{3} \d{2} \d{4} - .* - \K(v\d+\.\d+\.\d+\.?\d?)$' | head -1 | cut -c2-))
           if [ -z "${EXT_RELEASE}" ] || [ "${EXT_RELEASE}" == "null" ]; then
             echo "**** Can't retrieve external version, exiting ****"
             FAILURE_REASON="Can't retrieve external version for qbittorrent branch master"
@@ -28,7 +28,7 @@ jobs:
               "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
             exit 1
           fi
-          EXT_RELEASE_CLEAN=$(echo ${EXT_RELEASE} | sed 's/[~,%@+;:/]//g')
+          EXT_RELEASE=$(echo ${EXT_RELEASE} | sed 's/[~,%@+;:/]//g')
           echo "**** External version: ${EXT_RELEASE} ****"
           echo "**** Retrieving last pushed version ****"
           image="linuxserver/qbittorrent"
@@ -61,45 +61,32 @@ jobs:
             exit 1
           fi
           echo "**** Last pushed version: ${IMAGE_VERSION} ****"
-          if [ "${EXT_RELEASE_CLEAN}" == "${IMAGE_VERSION}" ]; then
+          if [ "${EXT_RELEASE}" == "${IMAGE_VERSION}" ]; then
             echo "**** Version ${EXT_RELEASE} already pushed, exiting ****"
             exit 0
           elif [ $(curl -s https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/master/lastBuild/api/json | jq -r '.building') == "true" ]; then
             echo "**** New version ${EXT_RELEASE} found; but there already seems to be an active build on Jenkins; exiting ****"
             exit 0
           else
-            echo "**** New version ${EXT_RELEASE_CLEAN} found; old version was ${IMAGE_VERSION}. Checking artifacts. . . ****"
-            EXT_RELEASE_STRIPPED=$(echo ${EXT_RELEASE} | sed 's|^1:||')
-            URL_AMD64="https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable/+files/qbittorrent-nox_${EXT_RELEASE_STRIPPED}_amd64.deb"
-            URL_ARMHF="https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable/+files/qbittorrent-nox_${EXT_RELEASE_STRIPPED}_armhf.deb"
-            URL_ARM64="https://launchpad.net/~qbittorrent-team/+archive/ubuntu/qbittorrent-stable/+files/qbittorrent-nox_${EXT_RELEASE_STRIPPED}_arm64.deb"
-            if curl -fL "${URL_AMD64}" >/dev/null && curl -fL "${URL_ARMHF}" >/dev/null && curl -fL "${URL_ARM64}" >/dev/null; then
-              echo "**** All artifacts seem to be published, triggering build ****"
-              response=$(curl -iX POST \
-                https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/master/buildWithParameters?PACKAGE_CHECK=false \
-                --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} | grep -i location | sed "s|^[L|l]ocation: \(.*\)|\1|")
-              echo "**** Jenkins job queue url: ${response%$'\r'} ****"
-              echo "**** Sleeping 10 seconds until job starts ****"
-              sleep 10
-              buildurl=$(curl -s "${response%$'\r'}api/json" | jq -r '.executable.url')
-              buildurl="${buildurl%$'\r'}"
-              echo "**** Jenkins job build url: ${buildurl} ****"
-              echo "**** Attempting to change the Jenkins job description ****"
-              curl -iX POST \
-                "${buildurl}submitDescription" \
-                --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} \
-                --data-urlencode "description=GHA external trigger https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-                --data-urlencode "Submit=Submit"
-              echo "**** Notifying Discord ****"
-              TRIGGER_REASON="A version change was detected for qbittorrent tag latest. Old version:${IMAGE_VERSION} New version:${EXT_RELEASE}"
-              curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
-                "description": "**Build Triggered** \n**Reason:** '"${TRIGGER_REASON}"' \n**Build URL:** '"${buildurl}display/redirect"' \n"}],
-                "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
-            else
-              echo "**** Not all artifacts are published yet, skipping trigger ****"
-              FAILURE_REASON="New version ${EXT_RELEASE} for qbittorrent tag latest is detected, however not all artifacts are uploaded to launchpad yet. Will try again in 1 hr."
-              curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
-                "description": "**Trigger Failed** \n**Reason:** '"${FAILURE_REASON}"' \n"}],
-                "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
-            fi
+            echo "**** New version ${EXT_RELEASE} found; old version was ${IMAGE_VERSION}. Triggering new build ****"
+            response=$(curl -iX POST \
+              https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/master/buildWithParameters?PACKAGE_CHECK=false \
+              --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} | grep -i location | sed "s|^[L|l]ocation: \(.*\)|\1|")
+            echo "**** Jenkins job queue url: ${response%$'\r'} ****"
+            echo "**** Sleeping 10 seconds until job starts ****"
+            sleep 10
+            buildurl=$(curl -s "${response%$'\r'}api/json" | jq -r '.executable.url')
+            buildurl="${buildurl%$'\r'}"
+            echo "**** Jenkins job build url: ${buildurl} ****"
+            echo "**** Attempting to change the Jenkins job description ****"
+            curl -iX POST \
+              "${buildurl}submitDescription" \
+              --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} \
+              --data-urlencode "description=GHA external trigger https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+              --data-urlencode "Submit=Submit"
+            echo "**** Notifying Discord ****"
+            TRIGGER_REASON="A version change was detected for qbittorrent tag latest. Old version:${IMAGE_VERSION} New version:${EXT_RELEASE}"
+            curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
+              "description": "**Build Triggered** \n**Reason:** '"${TRIGGER_REASON}"' \n**Build URL:** '"${buildurl}display/redirect"' \n"}],
+              "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
           fi
