@@ -10,7 +10,7 @@ XDG_DATA_HOME="/config"
 
 RUN \
   echo "**** install packages ****" && \
-  apk add -U --update --no-cache \
+  apk add -U --update --no-cache --virtual=build-dependencies \
     autoconf \
     automake \
     boost-dev \
