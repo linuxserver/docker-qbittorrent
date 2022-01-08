@@ -28,9 +28,9 @@ RUN \
     icu-dev \
     libexecinfo-dev \
     openssl-dev \
-    qt5-qtbase-dev \
-    qt5-qttools-dev \
-    qt5-qtsvg-dev \
+    qt6-qtbase-dev \
+    qt6-qttools-dev \
+    qt6-qtsvg-dev \
     zlib-dev && \
   mkdir -p /build && \
   echo "**** build ninja ****" && \  
@@ -62,7 +62,8 @@ RUN \
     -D CMAKE_CXX_STANDARD=17 \
     -D CMAKE_CXX_STANDARD_LIBRARIES="/usr/lib/libexecinfo.so" \
     -D CMAKE_INSTALL_PREFIX="/build/usr" \
-    -D GUI=OFF && \
+    -D GUI=OFF \
+    -D QT6=ON && \
   cmake --build build && \
   cmake --install build && \
   echo "**** cleanup ****" && \
@@ -102,7 +103,7 @@ RUN \
     libexecinfo \
     openssl \
     python3 \
-    qt5-qtbase \
+    qt6-qtbase \
     zlib && \
   apk add -U --upgrade --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.14/main/ unrar && \
   echo "***** install qbitorrent-cli ****" && \
