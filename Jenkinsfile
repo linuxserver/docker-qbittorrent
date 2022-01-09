@@ -24,7 +24,7 @@ pipeline {
     DOCKERHUB_IMAGE = 'linuxserver/qbittorrent'
     DEV_DOCKERHUB_IMAGE = 'lsiodev/qbittorrent'
     PR_DOCKERHUB_IMAGE = 'lspipepr/qbittorrent'
-    DIST_IMAGE = 'ubuntu'
+    DIST_IMAGE = 'alpine'
     MULTIARCH='true'
     CI='true'
     CI_WEB='true'
@@ -56,7 +56,7 @@ pipeline {
           env.CODE_URL = 'https://github.com/' + env.LS_USER + '/' + env.LS_REPO + '/commit/' + env.GIT_COMMIT
           env.DOCKERHUB_LINK = 'https://hub.docker.com/r/' + env.DOCKERHUB_IMAGE + '/tags/'
           env.PULL_REQUEST = env.CHANGE_ID
-          env.TEMPLATED_FILES = 'Jenkinsfile README.md LICENSE .editorconfig ./.github/CONTRIBUTING.md ./.github/FUNDING.yml ./.github/ISSUE_TEMPLATE/config.yml ./.github/ISSUE_TEMPLATE/issue.bug.md ./.github/ISSUE_TEMPLATE/issue.feature.md ./.github/PULL_REQUEST_TEMPLATE.md ./.github/workflows/external_trigger_scheduler.yml ./.github/workflows/greetings.yml ./.github/workflows/package_trigger_scheduler.yml ./.github/workflows/stale.yml ./.github/workflows/package_trigger.yml'
+          env.TEMPLATED_FILES = 'Jenkinsfile README.md LICENSE .editorconfig ./.github/CONTRIBUTING.md ./.github/FUNDING.yml ./.github/ISSUE_TEMPLATE/config.yml ./.github/ISSUE_TEMPLATE/issue.bug.md ./.github/ISSUE_TEMPLATE/issue.feature.md ./.github/PULL_REQUEST_TEMPLATE.md ./.github/workflows/external_trigger_scheduler.yml ./.github/workflows/greetings.yml ./.github/workflows/package_trigger_scheduler.yml ./.github/workflows/stale.yml ./.github/workflows/external_trigger.yml ./.github/workflows/package_trigger.yml'
         }
         script{
           env.LS_RELEASE_NUMBER = sh(
@@ -104,7 +104,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -sX GET http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu/dists/focal/main/binary-amd64/Packages.gz | gunzip -c |grep -A 7 -m 1 'Package: qbittorrent-nox' | awk -F ': ' '/Version/{print $2;exit}' ''',
+            script: ''' echo release-$(curl -s 'https://raw.githubusercontent.com/qbittorrent/qBittorrent/HEAD/Changelog' | grep -Po '^\\w{3} \\w{3} \\d{2} \\d{4} - .* - \\K(v\\d+\\.\\d+\\.\\d+\\.?\\d?)$' | head -1 | cut -c2-) ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }
