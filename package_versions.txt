@@ -10,7 +10,7 @@ coreutils-9.0-r2
 curl-7.80.0-r0
 dbus-libs-1.12.20-r4
 double-conversion-3.1.5-r0
-expat-2.4.1-r0
+expat-2.4.3-r0
 gdbm-1.22-r0
 geoip-1.6.12-r2
 glib-2.70.1-r0
