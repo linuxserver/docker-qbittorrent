@@ -3,7 +3,7 @@
 # jenkins variables
 project_name: docker-qbittorrent
 external_type: na
-custom_version_command: "curl -sX GET 'https://api.github.com/repos/qbittorrent/qBittorrent/tags' | jq -r '.[].name | grep -Po -m 1 '^release-(\\\\d+(\\\\.)?)+$')'"
+custom_version_command: "curl -sX GET 'https://api.github.com/repos/qbittorrent/qBittorrent/tags' | jq -r '.[].name' | grep -Po -m 1 '^release-(\\\\d+(\\\\.)?)+$'"
 release_type: stable
 release_tag: latest
 ls_branch: master
