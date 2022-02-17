@@ -104,7 +104,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' echo release-$(curl -s 'https://raw.githubusercontent.com/qbittorrent/qBittorrent/HEAD/Changelog' | grep -Po '^\\w{3} \\w{3} \\d{2} \\d{4} - .* - \\K(v\\d+\\.\\d+\\.\\d+\\.?\\d?)$' | head -1 | cut -c2-) ''',
+            script: ''' curl -sX GET 'https://api.github.com/repos/qbittorrent/qBittorrent/tags' | jq -r 'first(.[] | select(.name|test("^release-(\\d+(\\.)?)+$")) | .name)' ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }
