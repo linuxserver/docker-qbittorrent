@@ -18,7 +18,7 @@ icu-libs-69.1-r1
 libacl-2.2.53-r0
 libattr-2.5.1-r1
 libb2-0.98.1-r1
-libblkid-2.37.3-r0
+libblkid-2.37.4-r0
 libbsd-0.11.3-r1
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
@@ -31,14 +31,14 @@ libgomp-10.3.1_git20211027-r0
 libice-1.0.10-r0
 libintl-0.21-r0
 libmd-1.0.3-r0
-libmount-2.37.3-r0
+libmount-2.37.4-r0
 libpcre2-16-10.39-r0
 libproc-3.3.17-r0
 libretls-3.3.4-r2
 libsm-1.2.3-r0
 libssl1.1-1.1.1l-r8
 libstdc++-10.3.1_git20211027-r0
-libuuid-2.37.3-r0
+libuuid-2.37.4-r0
 libx11-1.7.2-r0
 libxau-1.0.9-r0
 libxcb-1.14-r2
