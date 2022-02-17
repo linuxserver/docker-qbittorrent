@@ -53,7 +53,7 @@ RUN \
   cmake --install build && \
   echo "**** build qbittorrent ****" && \
   if [ -z ${QBITTORRENT_VERSION+x} ]; then \
-    QBITTORRENT_VERSION="release-"$(curl -s "https://raw.githubusercontent.com/qbittorrent/qBittorrent/HEAD/Changelog" | grep -Po '^\w{3} \w{3} \d{2} \d{4} - .* - \K(v\d+\.\d+\.\d+\.?\d?)$' | head -1 | cut -c2-); \
+    QBITTORRENT_VERSION=$(curl -sX GET "https://api.github.com/repos/qbittorrent/qBittorrent/tags" | jq -r .[0].name | grep -Po '^release-(\d+(\.)?)+$'); \
   fi && \
   git clone --shallow-submodules --recurse-submodules https://github.com/qbittorrent/qBittorrent.git ~/qbittorrent && cd ~/qbittorrent && \
   git checkout "$(git tag -l --sort=-v:refname "${QBITTORRENT_VERSION}" | head -n 1)" && \
