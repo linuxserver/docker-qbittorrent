@@ -19,6 +19,7 @@ RUN \
     curl \
     git \
     grep \
+    jq \
     libtool \
     linux-headers \
     perl \
