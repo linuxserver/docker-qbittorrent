@@ -2,8 +2,7 @@
 
 # jenkins variables
 project_name: docker-qbittorrent
-external_type: na
-custom_version_command: "curl -sX GET 'https://api.github.com/repos/qbittorrent/qBittorrent/tags' | jq -r '.[].name' | grep -Po -m 1 '^release-(\\\\d+(\\\\.)?)+$'"
+external_type: alpine_repo
 release_type: stable
 release_tag: latest
 ls_branch: master
@@ -16,6 +15,9 @@ repo_vars:
   - DEV_DOCKERHUB_IMAGE = 'lsiodev/qbittorrent'
   - PR_DOCKERHUB_IMAGE = 'lspipepr/qbittorrent'
   - DIST_IMAGE = 'alpine'
+  - DIST_TAG = 'edge'
+  - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/edge/community/'
+  - DIST_REPO_PACKAGES = 'qbittorrent-nox'
   - MULTIARCH='true'
   - CI='true'
   - CI_WEB='true'

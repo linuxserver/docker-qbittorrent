@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "23.02.22:", desc: "Rebase to Alpine Edge, install from Alpine repos." }
   - { date: "19.02.22:", desc: "Add jq to build-stage" }
   - { date: "07.01.22:", desc: "Rebase to Alpine, build from source." }
   - { date: "06.01.22:", desc: "Deprecate unstable branch." }
