@@ -264,6 +264,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **01.03.22:** - Add python for search plugin support.
 * **23.02.22:** - Rebase to Alpine Edge, install from Alpine repos.
 * **19.02.22:** - Add jq to build-stage
 * **07.01.22:** - Rebase to Alpine, build from source.
