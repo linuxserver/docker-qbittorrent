@@ -17,7 +17,8 @@ XDG_DATA_HOME="/config"
 RUN \
   apk add -U --update --no-cache \
     bash \
-    curl && \
+    curl \
+    python3 && \
   if [ -z ${QBITTORRENT_VERSION+x} ]; then \
     QBITTORRENT_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
     && awk '/^P:qbittorrent-nox$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
