@@ -51,10 +51,13 @@ RUN \
   apk add -U --upgrade --no-cache \
     qbittorrent-nox==${QBITTORRENT_VERSION} && \
   echo "***** install qbitorrent-cli ****" && \
+  mkdir /qbt && \
   curl -L \
-    -o /usr/bin/qbt \
-    "https://github.com/linuxserver/docker-qbittorrent/releases/download/qbt-${QBT_VERSION}/qbt-arm" && \
-  chmod +x /usr/bin/qbt && \
+    -o /tmp/qbt.tar.gz \
+    "https://github.com/linuxserver/docker-qbittorrent/releases/download/qbt-${QBT_VERSION}/qbt-arm.tar.gz" && \
+  tar xf \
+    /tmp/qbt.tar.gz -C \
+    /qbt && \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
