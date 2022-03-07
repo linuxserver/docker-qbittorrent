@@ -9,7 +9,7 @@ ca-certificates-bundle-20211220-r0
 coreutils-9.0-r3
 curl-7.81.0-r1
 dbus-libs-1.12.22-r0
-expat-2.4.6-r0
+expat-2.4.7-r0
 gdbm-1.23-r0
 glib-2.70.4-r0
 icu-libs-70.1-r0
@@ -19,7 +19,7 @@ libblkid-2.37.4-r1
 libbsd-0.11.5-r0
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
-libcrypto1.1-1.1.1m-r2
+libcrypto1.1-1.1.1m-r3
 libcurl-7.81.0-r1
 libexecinfo-1.1-r1
 libffi-3.4.2-r1
@@ -32,7 +32,7 @@ libpcre2-16-10.39-r0
 libproc-3.3.17-r1
 libretls-3.4.2-r0
 libsm-1.2.3-r0
-libssl1.1-1.1.1m-r2
+libssl1.1-1.1.1m-r3
 libstdc++-11.2.1_git20220219-r1
 libtorrent-rasterbar-2.0.5-r2
 libuuid-2.37.4-r1
@@ -50,7 +50,7 @@ musl-utils-1.2.2-r7
 ncurses-libs-6.3_p20220219-r0
 ncurses-terminfo-base-6.3_p20220219-r0
 nghttp2-libs-1.47.0-r0
-openssl-1.1.1m-r2
+openssl-1.1.1m-r3
 p7zip-17.04-r2
 pcre-8.45-r2
 procps-3.3.17-r1
