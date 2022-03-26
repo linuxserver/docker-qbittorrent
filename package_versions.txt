@@ -61,7 +61,7 @@ p7zip-17.04-r2
 pcre-8.45-r2
 procps-3.3.17-r1
 python3-3.10.2-r0
-qbittorrent-nox-4.4.2-r0
+qbittorrent-nox-4.4.2-r1
 qt6-qtbase-6.2.3-r1
 readline-8.1.2-r0
 scanelf-1.3.3-r0
