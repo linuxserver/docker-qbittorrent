@@ -27,9 +27,9 @@ param_volumes:
   - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
+  - { external_port: "8080", internal_port: "8080", port_desc: "WebUI" }
   - { external_port: "6881", internal_port: "6881", port_desc: "tcp connection port" }
   - { external_port: "6881", internal_port: "6881/udp", port_desc: "udp connection port" }
-  - { external_port: "8080", internal_port: "8080", port_desc: "http gui" }
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London"}
