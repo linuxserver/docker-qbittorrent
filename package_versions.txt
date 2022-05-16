@@ -15,7 +15,8 @@ expat-2.4.8-r0
 file-5.41-r0
 gdbm-1.23-r0
 glib-2.72.1-r0
-icu-libs-71.1-r0
+icu-data-en-71.1-r2
+icu-libs-71.1-r2
 libacl-2.3.1-r0
 libattr-2.5.1-r1
 libb2-0.98.1-r2
