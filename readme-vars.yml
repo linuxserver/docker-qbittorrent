@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "25.05.22:", desc: "Fetch qbitorrent-cli from upstream repo." }
   - { date: "02.03.22:", desc: "Add unrar, 7zip, and qbitorrent-cli." }
   - { date: "01.03.22:", desc: "Add python for search plugin support." }
   - { date: "23.02.22:", desc: "Rebase to Alpine Edge, install from Alpine repos." }
