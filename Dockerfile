@@ -9,7 +9,6 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thespad"
 
 # environment settings
-ARG QBT_VERSION=1.7
 ARG UNRAR_VERSION=6.1.4
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
@@ -50,9 +49,11 @@ RUN \
     qbittorrent-nox==${QBITTORRENT_VERSION} && \
   echo "***** install qbitorrent-cli ****" && \
   mkdir /qbt && \
-  curl -L \
-    -o /tmp/qbt.tar.gz \
-    "https://github.com/linuxserver/docker-qbittorrent/releases/download/qbt-${QBT_VERSION}/qbt.tar.gz" && \
+  QBT_VERSION=$(curl -sL "https://api.github.com/repos/fedarovich/qbittorrent-cli/releases" \
+      | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+  curl -o \
+    /tmp/qbt.tar.gz -L \
+    "https://github.com/fedarovich/qbittorrent-cli/releases/download/${QBT_VERSION}/qbt-linux-alpine-x64-${QBT_VERSION:1}.tar.gz" && \
   tar xf \
     /tmp/qbt.tar.gz -C \
     /qbt && \
