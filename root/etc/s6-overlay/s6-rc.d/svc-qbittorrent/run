@@ -2,5 +2,5 @@
 
 WEBUI_PORT=${WEBUI_PORT:-8080}
 
-exec \
+s6-notifyoncheck -w 500 -c "true &>/dev/null </dev/tcp/127.0.0.1/${WEBUI_PORT}" exec \
     s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}"
