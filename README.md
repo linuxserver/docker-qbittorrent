@@ -72,7 +72,6 @@ The webui is at `<your-ip>:8080` and the default username/password is `admin/adm
 
 Change username/password via the webui in the webui section of settings.  
 
-
 ### WEBUI_PORT variable
 
 Due to issues with CSRF and port mapping, should you require to alter the port for the webui you need to change both sides of the -p 8080 switch AND set the WEBUI_PORT variable to the new port.  
@@ -85,7 +84,7 @@ If you have no webui , check the file /config/qBittorrent/qBittorrent.conf
 
 edit or add the following lines  
 
-```
+```text
 WebUI\Address=*
 
 WebUI\ServerDomains=*

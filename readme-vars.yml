@@ -46,7 +46,6 @@ app_setup_block: |
   
   Change username/password via the webui in the webui section of settings.  
 
-
   ### WEBUI_PORT variable
   
   Due to issues with CSRF and port mapping, should you require to alter the port for the webui you need to change both sides of the -p 8080 switch AND set the WEBUI_PORT variable to the new port.  
@@ -59,7 +58,7 @@ app_setup_block: |
   
   edit or add the following lines  
 
-  ```
+  ```text
   WebUI\Address=*
   
   WebUI\ServerDomains=*
