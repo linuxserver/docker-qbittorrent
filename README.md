@@ -263,7 +263,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **06.06.22:** - Rebase to Alpine 3.16.
+* **06.06.22:** - Rebase to Alpine 3.16 from edge.
 * **25.05.22:** - Fetch qbitorrent-cli from upstream repo.
 * **02.03.22:** - Add unrar, 7zip, and qbitorrent-cli.
 * **01.03.22:** - Add python for search plugin support.
