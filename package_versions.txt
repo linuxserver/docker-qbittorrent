@@ -8,7 +8,7 @@ busybox-1.35.0-r14
 ca-certificates-20211220-r0
 ca-certificates-bundle-20211220-r0
 coreutils-9.1-r0
-curl-7.83.1-r1
+curl-7.83.1-r2
 dbus-libs-1.14.0-r1
 double-conversion-3.1.5-r0
 expat-2.4.8-r0
@@ -24,8 +24,8 @@ libb2-0.98.1-r2
 libblkid-2.38-r1
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
-libcrypto1.1-1.1.1p-r0
-libcurl-7.83.1-r1
+libcrypto1.1-1.1.1q-r0
+libcurl-7.83.1-r2
 libffi-3.4.2-r1
 libgcc-11.2.1_git20220219-r2
 libgomp-11.2.1_git20220219-r2
@@ -36,7 +36,7 @@ libmount-2.38-r1
 libpcre2-16-10.40-r0
 libproc-3.3.17-r1
 libsm-1.2.3-r0
-libssl1.1-1.1.1p-r0
+libssl1.1-1.1.1q-r0
 libstdc++-11.2.1_git20220219-r2
 libtorrent-rasterbar-2.0.6-r1
 libuuid-2.38-r1
@@ -54,7 +54,7 @@ musl-utils-1.2.3-r0
 ncurses-libs-6.3_p20220521-r0
 ncurses-terminfo-base-6.3_p20220521-r0
 nghttp2-libs-1.47.0-r0
-openssl-1.1.1p-r0
+openssl-1.1.1q-r0
 p7zip-17.04-r2
 pcre-8.45-r2
 procps-3.3.17-r1
