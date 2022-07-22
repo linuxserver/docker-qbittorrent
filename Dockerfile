@@ -1,4 +1,4 @@
-FROM lspipepr/alpine:3.16-258f0799-pkg-258f0799-pr-103
+FROM lspipepr/alpine:3.16-e5c78ca9-pkg-e5c78ca9-pr-103
 
 # set version label
 ARG BUILD_DATE
