@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "12.08.22:", desc: "Bump unrar to 6.1.7." }
   - { date: "16.06.22:", desc: "Rebase to Alpine 3.16 from edge." }
   - { date: "25.05.22:", desc: "Fetch qbitorrent-cli from upstream repo." }
   - { date: "02.03.22:", desc: "Add unrar, 7zip, and qbitorrent-cli." }
