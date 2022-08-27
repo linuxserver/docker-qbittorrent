@@ -1,5 +1,4 @@
-FROM lspipepr/alpine:edge-edc7fa5c-pkg-edc7fa5c-pr-120
-#FROM ghcr.io/linuxserver/baseimage-alpine:arm64v8-edge
+FROM ghcr.io/linuxserver/baseimage-alpine:arm64v8-edge
 
 # set version label
 ARG BUILD_DATE
