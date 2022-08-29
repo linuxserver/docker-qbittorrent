@@ -25,7 +25,7 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/qbittorrent'
     PR_DOCKERHUB_IMAGE = 'lspipepr/qbittorrent'
     DIST_IMAGE = 'alpine'
-    DIST_TAG = '3.16'
+    DIST_TAG = 'edge'
     DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/edge/community/'
     DIST_REPO_PACKAGES = 'qbittorrent-nox'
     MULTIARCH='true'
