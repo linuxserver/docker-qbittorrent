@@ -9,7 +9,7 @@ busybox-binsh-1.35.0-r23
 ca-certificates-20220614-r2
 ca-certificates-bundle-20220614-r2
 coreutils-9.1-r0
-curl-7.84.0-r2
+curl-7.85.0-r0
 dbus-libs-1.14.0-r2
 double-conversion-3.1.5-r0
 gdbm-1.23-r0
@@ -23,7 +23,7 @@ libblkid-2.38.1-r0
 libbz2-1.0.8-r2
 libc-utils-0.7.2-r3
 libcrypto3-3.0.5-r2
-libcurl-7.84.0-r2
+libcurl-7.85.0-r0
 libexpat-2.4.8-r1
 libffi-3.4.2-r1
 libgcc-12.1.1_git20220630-r1
