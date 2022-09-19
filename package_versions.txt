@@ -13,7 +13,7 @@ curl-7.85.0-r0
 dbus-libs-1.14.0-r2
 double-conversion-3.1.5-r0
 gdbm-1.23-r0
-glib-2.72.3-r0
+glib-2.74.0-r0
 icu-data-en-71.1-r4
 icu-libs-71.1-r4
 libacl-2.3.1-r1
@@ -44,9 +44,9 @@ ncurses-terminfo-base-6.3_p20220903-r0
 nghttp2-libs-1.49.0-r0
 openssl-3.0.5-r2
 p7zip-17.04-r3
-pcre-8.45-r2
+pcre2-10.40-r0
 procps-3.3.17-r1
-python3-3.10.6-r1
+python3-3.10.7-r0
 qbittorrent-nox-4.4.5-r0
 qt6-qtbase-6.3.2-r0
 readline-8.1.2-r0
@@ -57,7 +57,7 @@ sqlite-libs-3.39.3-r0
 ssl_client-1.35.0-r25
 tzdata-2022c-r0
 utmps-libs-0.1.2.0-r1
-xz-5.2.6-r0
-xz-libs-5.2.6-r0
+xz-5.2.6-r1
+xz-libs-5.2.6-r1
 zlib-1.2.12-r3
-zstd-libs-1.5.2-r7
+zstd-libs-1.5.2-r9
