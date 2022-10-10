@@ -23,9 +23,6 @@ RUN \
     gcc && \
   echo "**** install packages ****" && \
   apk add -U --update --no-cache \
-    bash \
-    curl \
-    gcompat \
     icu-libs \
     libc6-compat \
     libstdc++ \
