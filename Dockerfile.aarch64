@@ -23,8 +23,6 @@ RUN \
     gcc && \
   echo "**** install packages ****" && \
   apk add -U --update --no-cache \
-    bash \
-    curl \
     icu-libs \
     libstdc++ \
     openssl \
