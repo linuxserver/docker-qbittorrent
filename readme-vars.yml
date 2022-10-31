@@ -17,6 +17,7 @@ available_architectures:
 development_versions: true
 development_versions_items:
   - { tag: "latest", desc: "Stable qbittorrent releases" }
+  - { tag: "libtorrentv1", desc: "Static qbittorrent builds using libtorrent v1" }  
 
 # container parameters
 common_param_env_vars_enabled: true
@@ -68,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "30.10.22:", desc: "Add libtorrent v1 branch." }
   - { date: "31.08.22:", desc: "Rebase to Alpine Edge again to follow latest releases." }
   - { date: "12.08.22:", desc: "Bump unrar to 6.1.7." }
   - { date: "16.06.22:", desc: "Rebase to Alpine 3.16 from edge." }

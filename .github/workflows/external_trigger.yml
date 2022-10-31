@@ -4,25 +4,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  external-trigger-master:
+  external-trigger-libtorrentv1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.3
 
       - name: External Trigger
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/libtorrentv1'
         run: |
-          if [ -n "${{ secrets.PAUSE_EXTERNAL_TRIGGER_QBITTORRENT_MASTER }}" ]; then
-            echo "**** Github secret PAUSE_EXTERNAL_TRIGGER_QBITTORRENT_MASTER is set; skipping trigger. ****"
+          if [ -n "${{ secrets.PAUSE_EXTERNAL_TRIGGER_QBITTORRENT_LIBTORRENTV1 }}" ]; then
+            echo "**** Github secret PAUSE_EXTERNAL_TRIGGER_QBITTORRENT_LIBTORRENTV1 is set; skipping trigger. ****"
             exit 0
           fi
-          echo "**** External trigger running off of master branch. To disable this trigger, set a Github secret named \"PAUSE_EXTERNAL_TRIGGER_QBITTORRENT_MASTER\". ****"
+          echo "**** External trigger running off of libtorrentv1 branch. To disable this trigger, set a Github secret named \"PAUSE_EXTERNAL_TRIGGER_QBITTORRENT_LIBTORRENTV1\". ****"
           echo "**** Retrieving external version ****"
-          EXT_RELEASE=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
-            && awk '/^P:'"qbittorrent-nox"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')
+          EXT_RELEASE=$(curl -u ${{ secrets.CR_USER }}:${{ secrets.CR_PAT }} -sL 'https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases' | jq -r 'first(.[] | select(.prerelease == true) | .tag_name)')
           if [ -z "${EXT_RELEASE}" ] || [ "${EXT_RELEASE}" == "null" ]; then
             echo "**** Can't retrieve external version, exiting ****"
-            FAILURE_REASON="Can't retrieve external version for qbittorrent branch master"
+            FAILURE_REASON="Can't retrieve external version for qbittorrent branch libtorrentv1"
             GHA_TRIGGER_URL="https://github.com/linuxserver/docker-qbittorrent/actions/runs/${{ github.run_id }}"
             curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 16711680,
               "description": "**Trigger Failed** \n**Reason:** '"${FAILURE_REASON}"' \n**Trigger URL:** '"${GHA_TRIGGER_URL}"' \n"}],
@@ -33,7 +32,7 @@ jobs:
           echo "**** External version: ${EXT_RELEASE} ****"
           echo "**** Retrieving last pushed version ****"
           image="linuxserver/qbittorrent"
-          tag="latest"
+          tag="libtorrentv1"
           token=$(curl -sX GET \
             "https://ghcr.io/token?scope=repository%3Alinuxserver%2Fqbittorrent%3Apull" \
             | jq -r '.token')
@@ -55,7 +54,7 @@ jobs:
           IMAGE_VERSION=$(echo ${IMAGE_RELEASE} | awk -F'-ls' '{print $1}')
           if [ -z "${IMAGE_VERSION}" ]; then
             echo "**** Can't retrieve last pushed version, exiting ****"
-            FAILURE_REASON="Can't retrieve last pushed version for qbittorrent tag latest"
+            FAILURE_REASON="Can't retrieve last pushed version for qbittorrent tag libtorrentv1"
             curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 16711680,
               "description": "**Trigger Failed** \n**Reason:** '"${FAILURE_REASON}"' \n"}],
               "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
@@ -65,13 +64,13 @@ jobs:
           if [ "${EXT_RELEASE}" == "${IMAGE_VERSION}" ]; then
             echo "**** Version ${EXT_RELEASE} already pushed, exiting ****"
             exit 0
-          elif [ $(curl -s https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/master/lastBuild/api/json | jq -r '.building') == "true" ]; then
+          elif [ $(curl -s https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/libtorrentv1/lastBuild/api/json | jq -r '.building') == "true" ]; then
             echo "**** New version ${EXT_RELEASE} found; but there already seems to be an active build on Jenkins; exiting ****"
             exit 0
           else
             echo "**** New version ${EXT_RELEASE} found; old version was ${IMAGE_VERSION}. Triggering new build ****"
             response=$(curl -iX POST \
-              https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/master/buildWithParameters?PACKAGE_CHECK=false \
+              https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/libtorrentv1/buildWithParameters?PACKAGE_CHECK=false \
               --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} | grep -i location | sed "s|^[L|l]ocation: \(.*\)|\1|")
             echo "**** Jenkins job queue url: ${response%$'\r'} ****"
             echo "**** Sleeping 10 seconds until job starts ****"
@@ -86,7 +85,7 @@ jobs:
               --data-urlencode "description=GHA external trigger https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
               --data-urlencode "Submit=Submit"
             echo "**** Notifying Discord ****"
-            TRIGGER_REASON="A version change was detected for qbittorrent tag latest. Old version:${IMAGE_VERSION} New version:${EXT_RELEASE}"
+            TRIGGER_REASON="A version change was detected for qbittorrent tag libtorrentv1. Old version:${IMAGE_VERSION} New version:${EXT_RELEASE}"
             curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
               "description": "**Build Triggered** \n**Reason:** '"${TRIGGER_REASON}"' \n**Build URL:** '"${buildurl}display/redirect"' \n"}],
               "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
