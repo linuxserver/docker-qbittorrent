@@ -26,6 +26,7 @@ RUN \
     icu-libs \
     libstdc++ \
     openssl \
+    openssl1.1-compat \
     p7zip \
     python3 && \
   echo "**** install unrar from source ****" && \
