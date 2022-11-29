@@ -23,7 +23,7 @@ RUN \
     gcc && \
   echo "**** install packages ****" && \
   apk add -U --update --no-cache \
-    icu \
+    icu-libs \
     p7zip \
     python3 && \
   echo "**** install unrar from source ****" && \
