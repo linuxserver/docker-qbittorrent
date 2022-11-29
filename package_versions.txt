@@ -12,6 +12,8 @@ curl-7.83.1-r4
 expat-2.5.0-r0
 gdbm-1.23-r0
 gmp-6.2.1-r2
+icu-data-en-71.1-r2
+icu-libs-71.1-r2
 jq-1.6-r1
 libacl-2.3.1-r0
 libattr-2.5.1-r1
