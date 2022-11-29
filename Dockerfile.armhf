@@ -24,9 +24,9 @@ RUN \
   echo "**** install packages ****" && \
   apk add -U --update --no-cache \
     icu-libs \
-    libc6-compat \
     libstdc++ \
     openssl \
+    openssl1.1-compat \
     p7zip \
     python3 && \
   echo "**** install unrar from source ****" && \

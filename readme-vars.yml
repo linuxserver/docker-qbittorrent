@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "29.11.22:", desc: "Add openssl1.1-compat for qbittorrent-cli." }
   - { date: "31.10.22:", desc: "Add libtorrentv1 branch." }
   - { date: "31.08.22:", desc: "Rebase to Alpine Edge again to follow latest releases." }
   - { date: "12.08.22:", desc: "Bump unrar to 6.1.7." }
