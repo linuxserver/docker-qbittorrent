@@ -264,6 +264,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **15.01.23:** - Rebase to Alpine 3.17, add openssl1.1-compat.
 * **29.11.22:** - Add icu-libs to support qbittorrent-cli.
 * **30.10.22:** - Add libtorrent v1 branch.
 * **31.08.22:** - Rebase to Alpine Edge again to follow latest releases.
