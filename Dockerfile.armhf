@@ -1,4 +1,6 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.16
+# syntax=docker/dockerfile:1
+
+FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.17
 
 # set version label
 ARG BUILD_DATE
@@ -18,12 +20,11 @@ XDG_DATA_HOME="/config"
 RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache --upgrade --virtual=build-dependencies \
-    make \
-    g++ \
-    gcc && \
+    build-base && \
   echo "**** install packages ****" && \
   apk add -U --update --no-cache \
     icu-libs \
+    openssl1.1-compat \
     p7zip \
     python3 && \
   echo "**** install unrar from source ****" && \
