@@ -37,6 +37,9 @@ param_env_vars:
   - { env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the webui, see below for explanation"}
 
 # optional parameters
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "TORRENTING_PORT", env_value: "6881", desc: "for changing the torrenting port"}
 optional_block_1: false
 optional_block_1_items: ""
 
@@ -69,6 +72,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "17.02.23:", desc: "Add TORRENTING_PORT variable." }
   - { date: "29.11.22:", desc: "Add openssl1.1-compat for qbittorrent-cli." }
   - { date: "31.10.22:", desc: "Add libtorrentv1 branch." }
   - { date: "31.08.22:", desc: "Rebase to Alpine Edge again to follow latest releases." }

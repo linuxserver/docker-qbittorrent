@@ -110,6 +110,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881 #optional
     volumes:
       - /path/to/appdata/config:/config
       - /path/to/downloads:/downloads
@@ -129,6 +130,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
   -e WEBUI_PORT=8080 \
+  -e TORRENTING_PORT=6881 `#optional` \
   -p 8080:8080 \
   -p 6881:6881 \
   -p 6881:6881/udp \
@@ -152,6 +154,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-e WEBUI_PORT=8080` | for changing the port of the webui, see below for explanation |
+| `-e TORRENTING_PORT=6881` | for changing the torrenting port |
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
 
@@ -264,6 +267,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **17.02.23:** - Add TORRENTING_PORT variable.
 * **29.11.22:** - Add openssl1.1-compat for qbittorrent-cli.
 * **31.10.22:** - Add libtorrentv1 branch.
 * **31.08.22:** - Rebase to Alpine Edge again to follow latest releases.
