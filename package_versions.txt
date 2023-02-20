@@ -1,7 +1,7 @@
 alpine-baselayout-3.4.0-r0
 alpine-baselayout-data-3.4.0-r0
 alpine-keys-2.4-r1
-alpine-release-3.17.1-r0
+alpine-release-3.17.2-r0
 apk-tools-2.12.10-r1
 bash-5.2.15-r0
 brotli-libs-1.0.9-r9
@@ -20,7 +20,7 @@ libattr-2.5.1-r2
 libbz2-1.0.8-r4
 libc-utils-0.7.2-r3
 libcrypto1.1-1.1.1t-r0
-libcrypto3-3.0.7-r2
+libcrypto3-3.0.8-r0
 libcurl-7.87.0-r1
 libexpat-2.5.0-r0
 libffi-3.4.4-r0
@@ -28,7 +28,7 @@ libgcc-12.2.1_git20220924-r4
 libintl-0.21.1-r1
 libproc-3.3.17-r2
 libssl1.1-1.1.1t-r0
-libssl3-3.0.7-r2
+libssl3-3.0.8-r0
 libstdc++-12.2.1_git20220924-r4
 linux-pam-1.5.2-r1
 mpdecimal-2.5.1-r1
