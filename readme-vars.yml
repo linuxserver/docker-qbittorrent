@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "25.02.23:", desc: "Add qt6-qtbase-sqlite to support SQLite database for resume files."}
   - { date: "15.01.23:", desc: "Rebase to Alpine 3.17, add openssl1.1-compat." }
   - { date: "29.11.22:", desc: "Add icu-libs to support qbittorrent-cli." }
   - { date: "30.10.22:", desc: "Add libtorrent v1 branch." }
