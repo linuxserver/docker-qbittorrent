@@ -26,7 +26,8 @@ RUN \
     icu-libs \
     openssl1.1-compat \
     p7zip \
-    python3 && \
+    python3 \
+    qt6-qtbase-sqlite && \
   echo "**** install unrar from source ****" && \
   mkdir /tmp/unrar && \
   curl -o \
