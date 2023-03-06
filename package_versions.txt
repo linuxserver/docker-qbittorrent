@@ -123,6 +123,7 @@ libmount                                                                       2
 libncursesw                                                                    6.4_p20230225-r0       apk     
 libpanelw                                                                      6.4_p20230225-r0       apk     
 libpcre2-16                                                                    10.42-r0               apk     
+libproc2                                                                       4.0.3-r0               apk     
 libssl1.1                                                                      1.1.1t-r0              apk     
 libssl3                                                                        3.0.8-r0               apk     
 libstdc++                                                                      12.2.1_git20220924-r9  apk     
@@ -139,6 +140,7 @@ openssl                                                                        3
 openssl1.1-compat                                                              1.1.1t-r0              apk     
 p7zip                                                                          17.05-r1               apk     
 pcre2                                                                          10.42-r0               apk     
+procps-ng                                                                      4.0.3-r0               apk     
 python                                                                         3.11.2                 binary  
 python3                                                                        3.11.2-r0              apk     
 qbittorrent-nox                                                                4.5.2-r0               apk     
@@ -189,7 +191,7 @@ runtime.unix.System.Runtime.Extensions                                         4
 scanelf                                                                        1.3.7-r0               apk     
 shadow                                                                         4.13-r2                apk     
 skalibs                                                                        2.13.1.0-r0            apk     
-sqlite-libs                                                                    3.41.0-r0              apk     
+sqlite-libs                                                                    3.41.0-r1              apk     
 ssl_client                                                                     1.36.0-r4              apk     
 tzdata                                                                         2022g-r0               apk     
 utmps-libs                                                                     0.1.2.1-r0             apk     
