@@ -86,7 +86,7 @@ System.Xml.XmlDocument                                                         4
 alpine-baselayout                                                              3.4.0-r0               apk     
 alpine-baselayout-data                                                         3.4.0-r0               apk     
 alpine-keys                                                                    2.4-r1                 apk     
-alpine-release                                                                 3.17.2-r0              apk     
+alpine-release                                                                 3.17.3-r0              apk     
 apk-tools                                                                      2.12.10-r1             apk     
 bash                                                                           5.2.15-r0              apk     
 brotli-libs                                                                    1.0.9-r9               apk     
@@ -112,7 +112,7 @@ libbsd                                                                         0
 libbz2                                                                         1.0.8-r4               apk     
 libc-utils                                                                     0.7.2-r3               apk     
 libcrypto1.1                                                                   1.1.1t-r2              apk     
-libcrypto3                                                                     3.0.8-r1               apk     
+libcrypto3                                                                     3.0.8-r3               apk     
 libcurl                                                                        7.88.1-r1              apk     
 libexpat                                                                       2.5.0-r0               apk     
 libffi                                                                         3.4.4-r0               apk     
@@ -124,7 +124,7 @@ libmount                                                                       2
 libpcre2-16                                                                    10.42-r0               apk     
 libproc                                                                        3.3.17-r2              apk     
 libssl1.1                                                                      1.1.1t-r2              apk     
-libssl3                                                                        3.0.8-r1               apk     
+libssl3                                                                        3.0.8-r3               apk     
 libstdc++                                                                      12.2.1_git20220924-r4  apk     
 linux-pam                                                                      1.5.2-r1               apk     
 mpdecimal                                                                      2.5.1-r1               apk     
@@ -139,8 +139,8 @@ openssl1.1-compat                                                              1
 p7zip                                                                          17.04-r3               apk     
 pcre2                                                                          10.42-r0               apk     
 procps                                                                         3.3.17-r2              apk     
-python                                                                         3.10.10                binary  
-python3                                                                        3.10.10-r0             apk     
+python                                                                         3.10.11                binary  
+python3                                                                        3.10.11-r0             apk     
 qt6-qtbase                                                                     6.4.2-r0               apk     
 qt6-qtbase-sqlite                                                              6.4.2-r0               apk     
 readline                                                                       8.2.0-r0               apk     
@@ -190,7 +190,7 @@ shadow                                                                         4
 skalibs                                                                        2.12.0.1-r0            apk     
 sqlite-libs                                                                    3.40.1-r0              apk     
 ssl_client                                                                     1.35.0-r29             apk     
-tzdata                                                                         2023b-r1               apk     
+tzdata                                                                         2023c-r0               apk     
 utmps-libs                                                                     0.1.2.0-r1             apk     
 xz                                                                             5.2.9-r0               apk     
 xz-libs                                                                        5.2.9-r0               apk     
