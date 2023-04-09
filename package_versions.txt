@@ -87,11 +87,11 @@ alpine-baselayout                                                              3
 alpine-baselayout-data                                                         3.4.0-r0               apk     
 alpine-keys                                                                    2.4-r1                 apk     
 apk-tools                                                                      2.12.11-r0             apk     
-bash                                                                           5.2.15-r0              apk     
+bash                                                                           5.2.15-r1              apk     
 brotli-libs                                                                    1.0.9-r11              apk     
 busybox                                                                        1.36.0                 binary  
-busybox                                                                        1.36.0-r5              apk     
-busybox-binsh                                                                  1.36.0-r5              apk     
+busybox                                                                        1.36.0-r6              apk     
+busybox-binsh                                                                  1.36.0-r6              apk     
 ca-certificates                                                                20230106-r0            apk     
 ca-certificates-bundle                                                         20230106-r0            apk     
 coreutils                                                                      9.2-r2                 apk     
@@ -194,7 +194,7 @@ scanelf                                                                        1
 shadow                                                                         4.13-r2                apk     
 skalibs                                                                        2.13.1.1-r0            apk     
 sqlite-libs                                                                    3.41.2-r1              apk     
-ssl_client                                                                     1.36.0-r5              apk     
+ssl_client                                                                     1.36.0-r6              apk     
 tzdata                                                                         2023c-r0               apk     
 utmps-libs                                                                     0.1.2.1-r0             apk     
 xz-libs                                                                        5.4.2-r0               apk     
