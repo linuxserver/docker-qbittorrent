@@ -112,7 +112,7 @@ libbsd                                                                         0
 libbz2                                                                         1.0.8-r4               apk     
 libc-utils                                                                     0.7.2-r3               apk     
 libcrypto1.1                                                                   1.1.1t-r2              apk     
-libcrypto3                                                                     3.0.8-r3               apk     
+libcrypto3                                                                     3.0.8-r4               apk     
 libcurl                                                                        8.0.1-r0               apk     
 libexpat                                                                       2.5.0-r0               apk     
 libffi                                                                         3.4.4-r0               apk     
@@ -124,7 +124,7 @@ libmount                                                                       2
 libpcre2-16                                                                    10.42-r0               apk     
 libproc                                                                        3.3.17-r2              apk     
 libssl1.1                                                                      1.1.1t-r2              apk     
-libssl3                                                                        3.0.8-r3               apk     
+libssl3                                                                        3.0.8-r4               apk     
 libstdc++                                                                      12.2.1_git20220924-r4  apk     
 linux-pam                                                                      1.5.2-r1               apk     
 mpdecimal                                                                      2.5.1-r1               apk     
