@@ -93,8 +93,8 @@ brotli-libs                                                                    1
 busybox                                                                        1.35.0                 binary  
 busybox                                                                        1.35.0-r29             apk     
 busybox-binsh                                                                  1.35.0-r29             apk     
-ca-certificates                                                                20220614-r4            apk     
-ca-certificates-bundle                                                         20220614-r4            apk     
+ca-certificates                                                                20230506-r0            apk     
+ca-certificates-bundle                                                         20230506-r0            apk     
 coreutils                                                                      9.1-r0                 apk     
 curl                                                                           8.0.1-r0               apk     
 dbus-libs                                                                      1.14.4-r0              apk     
