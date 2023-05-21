@@ -96,7 +96,7 @@ busybox-binsh                                                                  1
 ca-certificates                                                                20230506-r0            apk     
 ca-certificates-bundle                                                         20230506-r0            apk     
 coreutils                                                                      9.1-r0                 apk     
-curl                                                                           8.0.1-r0               apk     
+curl                                                                           8.1.0-r1               apk     
 dbus-libs                                                                      1.14.4-r0              apk     
 double-conversion                                                              3.2.1-r0               apk     
 gdbm                                                                           1.23-r0                apk     
@@ -113,7 +113,7 @@ libbz2                                                                         1
 libc-utils                                                                     0.7.2-r3               apk     
 libcrypto1.1                                                                   1.1.1t-r2              apk     
 libcrypto3                                                                     3.0.8-r4               apk     
-libcurl                                                                        8.0.1-r0               apk     
+libcurl                                                                        8.1.0-r1               apk     
 libexpat                                                                       2.5.0-r0               apk     
 libffi                                                                         3.4.4-r0               apk     
 libgcc                                                                         12.2.1_git20220924-r4  apk     
@@ -128,8 +128,8 @@ libssl3                                                                        3
 libstdc++                                                                      12.2.1_git20220924-r4  apk     
 linux-pam                                                                      1.5.2-r1               apk     
 mpdecimal                                                                      2.5.1-r1               apk     
-musl                                                                           1.2.3-r4               apk     
-musl-utils                                                                     1.2.3-r4               apk     
+musl                                                                           1.2.3-r5               apk     
+musl-utils                                                                     1.2.3-r5               apk     
 ncurses-libs                                                                   6.3_p20221119-r0       apk     
 ncurses-terminfo-base                                                          6.3_p20221119-r0       apk     
 netcat-openbsd                                                                 1.130-r4               apk     
