@@ -19,10 +19,10 @@ XDG_DATA_HOME="/config"
 # install runtime packages and qbitorrent-cli
 RUN \
   echo "**** install build packages ****" && \
-  apk add --no-cache --upgrade --virtual=build-dependencies \
+  apk add --no-cache --virtual=build-dependencies \
     build-base && \
   echo "**** install packages ****" && \
-  apk add -U --update --no-cache \
+  apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     icu-libs \
     libstdc++ \
     openssl \
