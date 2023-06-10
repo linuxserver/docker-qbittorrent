@@ -69,6 +69,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "10.06.23:", desc: "Bump unrar to 6.2.8." }
   - { date: "23.02.23:", desc: "Add qt6-qtbase-sqlite to support SQLite database for resume files."}
   - { date: "29.11.22:", desc: "Add openssl1.1-compat for qbittorrent-cli." }
   - { date: "31.10.22:", desc: "Add libtorrentv1 branch." }
