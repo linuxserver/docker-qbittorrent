@@ -11,7 +11,6 @@ project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_
 available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
 # development version
 development_versions: true
@@ -69,6 +68,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "17.06.23:", desc: "Deprecate armhf as per [https://www.linuxserver.io/armhf](https://www.linuxserver.io/armhf)." }
   - { date: "10.06.23:", desc: "Bump unrar to 6.2.8." }
   - { date: "23.02.23:", desc: "Add qt6-qtbase-sqlite to support SQLite database for resume files."}
   - { date: "29.11.22:", desc: "Add openssl1.1-compat for qbittorrent-cli." }

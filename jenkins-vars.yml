@@ -6,6 +6,7 @@ external_type: alpine_repo
 release_type: stable
 release_tag: latest
 ls_branch: master
+build_armhf: false
 repo_vars:
   - CONTAINER_NAME = 'qbittorrent'
   - BUILD_VERSION_ARG = 'QBITTORRENT_VERSION'
