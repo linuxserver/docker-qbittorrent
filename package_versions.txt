@@ -86,7 +86,7 @@ System.Xml.XmlDocument                                                         4
 alpine-baselayout                                                              3.4.0-r0               apk     
 alpine-baselayout-data                                                         3.4.0-r0               apk     
 alpine-keys                                                                    2.4-r1                 apk     
-alpine-release                                                                 3.17.3-r0              apk     
+alpine-release                                                                 3.17.4-r0              apk     
 apk-tools                                                                      2.12.10-r1             apk     
 bash                                                                           5.2.15-r0              apk     
 brotli-libs                                                                    1.0.9-r9               apk     
