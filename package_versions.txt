@@ -152,7 +152,7 @@ python                                                                         3
 python3                                                                        3.11.4-r0              apk     
 python3-pyc                                                                    3.11.4-r0              apk     
 python3-pycache-pyc0                                                           3.11.4-r0              apk     
-qbittorrent-nox                                                                4.5.3-r0               apk     
+qbittorrent-nox                                                                4.5.4-r0               apk     
 qt6-qtbase                                                                     6.5.1-r1               apk     
 qt6-qtbase-sqlite                                                              6.5.1-r1               apk     
 readline                                                                       8.2.1-r2               apk     
