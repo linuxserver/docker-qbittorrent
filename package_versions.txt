@@ -102,8 +102,8 @@ dbus-libs                                                                      1
 double-conversion                                                              3.2.1-r1                apk     
 gdbm                                                                           1.23-r1                 apk     
 glib                                                                           2.76.3-r0               apk     
-icu-data-en                                                                    73.2-r0                 apk     
-icu-libs                                                                       73.2-r0                 apk     
+icu-data-en                                                                    73.2-r1                 apk     
+icu-libs                                                                       73.2-r1                 apk     
 jq                                                                             1.6-r3                  apk     
 libacl                                                                         2.3.1-r3                apk     
 libattr                                                                        2.5.1-r4                apk     
