@@ -102,8 +102,8 @@ dbus-libs                                                                      1
 double-conversion                                                              3.2.1-r1                apk     
 gdbm                                                                           1.23-r1                 apk     
 glib                                                                           2.76.4-r0               apk     
-icu-data-en                                                                    73.2-r1                 apk     
-icu-libs                                                                       73.2-r1                 apk     
+icu-data-en                                                                    73.2-r2                 apk     
+icu-libs                                                                       73.2-r2                 apk     
 jq                                                                             1.6-r3                  apk     
 libacl                                                                         2.3.1-r3                apk     
 libattr                                                                        2.5.1-r4                apk     
@@ -113,7 +113,7 @@ libbsd                                                                         0
 libbz2                                                                         1.0.8-r5                apk     
 libc-utils                                                                     0.7.2-r5                apk     
 libcrypto1.1                                                                   1.1.1u-r0               apk     
-libcrypto3                                                                     3.1.1-r1                apk     
+libcrypto3                                                                     3.1.1-r2                apk     
 libcurl                                                                        8.1.2-r0                apk     
 libexpat                                                                       2.5.0-r1                apk     
 libffi                                                                         3.4.4-r2                apk     
@@ -128,7 +128,7 @@ libpanelw                                                                      6
 libpcre2-16                                                                    10.42-r1                apk     
 libproc2                                                                       4.0.3-r1                apk     
 libssl1.1                                                                      1.1.1u-r0               apk     
-libssl3                                                                        3.1.1-r1                apk     
+libssl3                                                                        3.1.1-r2                apk     
 libstdc++                                                                      12.2.1_git20220924-r10  apk     
 libunistring                                                                   1.1-r1                  apk     
 linux-pam                                                                      1.5.2-r10               apk     
