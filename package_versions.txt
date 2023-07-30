@@ -92,12 +92,12 @@ apk-tools                                                                      2
 bash                                                                           5.2.15-r5               apk     
 brotli-libs                                                                    1.0.9-r14               apk     
 busybox                                                                        1.36.1                  binary  
-busybox                                                                        1.36.1-r1               apk     
-busybox-binsh                                                                  1.36.1-r1               apk     
+busybox                                                                        1.36.1-r2               apk     
+busybox-binsh                                                                  1.36.1-r2               apk     
 ca-certificates                                                                20230506-r0             apk     
 ca-certificates-bundle                                                         20230506-r0             apk     
 coreutils                                                                      9.3-r1                  apk     
-curl                                                                           8.2.0-r1                apk     
+curl                                                                           8.2.1-r0                apk     
 dbus-libs                                                                      1.14.8-r0               apk     
 double-conversion                                                              3.2.1-r1                apk     
 gdbm                                                                           1.23-r1                 apk     
@@ -114,7 +114,7 @@ libbz2                                                                         1
 libc-utils                                                                     0.7.2-r5                apk     
 libcrypto1.1                                                                   1.1.1u-r1               apk     
 libcrypto3                                                                     3.1.1-r3                apk     
-libcurl                                                                        8.2.0-r1                apk     
+libcurl                                                                        8.2.1-r0                apk     
 libexpat                                                                       2.5.0-r1                apk     
 libffi                                                                         3.4.4-r2                apk     
 libgcc                                                                         12.2.1_git20220924-r10  apk     
@@ -133,8 +133,8 @@ libstdc++                                                                      1
 libunistring                                                                   1.1-r1                  apk     
 linux-pam                                                                      1.5.2-r10               apk     
 mpdecimal                                                                      2.5.1-r2                apk     
-musl                                                                           1.2.4-r0                apk     
-musl-utils                                                                     1.2.4-r0                apk     
+musl                                                                           1.2.4-r1                apk     
+musl-utils                                                                     1.2.4-r1                apk     
 ncurses-terminfo-base                                                          6.4_p20230506-r0        apk     
 netcat-openbsd                                                                 1.219-r1                apk     
 nghttp2-libs                                                                   1.55.1-r0               apk     
@@ -195,7 +195,7 @@ scanelf                                                                        1
 shadow                                                                         4.13-r4                 apk     
 skalibs                                                                        2.13.1.1-r1             apk     
 sqlite-libs                                                                    3.41.2-r2               apk     
-ssl_client                                                                     1.36.1-r1               apk     
+ssl_client                                                                     1.36.1-r2               apk     
 tzdata                                                                         2023c-r1                apk     
 utmps-libs                                                                     0.1.2.1-r1              apk     
 xz-libs                                                                        5.4.3-r0                apk     
