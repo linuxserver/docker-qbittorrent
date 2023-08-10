@@ -68,6 +68,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - {date: "10.08.23:", desc: "Bump unrar to 6.2.10."}
   - { date: "17.06.23:", desc: "Rebase to Alpine 3.18, deprecate armhf as per [https://www.linuxserver.io/armhf](https://www.linuxserver.io/armhf)." }
   - { date: "10.06.23:", desc: "Bump unrar to 6.2.8." }
   - { date: "25.02.23:", desc: "Add qt6-qtbase-sqlite to support SQLite database for resume files."}
