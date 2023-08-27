@@ -234,9 +234,9 @@ openssl1.1-compat                                  1.1.1u-r1               apk
 pcre2                                              10.42-r1                apk     
 procps-ng                                          4.0.3-r1                apk     
 pyc                                                0.1-r0                  apk     
-python3                                            3.11.4-r0               apk     
-python3-pyc                                        3.11.4-r0               apk     
-python3-pycache-pyc0                               3.11.4-r0               apk     
+python3                                            3.11.5-r0               apk     
+python3-pyc                                        3.11.5-r0               apk     
+python3-pycache-pyc0                               3.11.5-r0               apk     
 qbt                                                1.7.23016.1             dotnet  
 qt6-qtbase                                         6.5.2-r0                apk     
 qt6-qtbase-sqlite                                  6.5.2-r0                apk     
