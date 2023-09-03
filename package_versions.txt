@@ -185,10 +185,10 @@ busybox-binsh                                      1.36.1-r6              apk
 c-ares                                             1.19.1-r1              apk     
 ca-certificates                                    20230506-r0            apk     
 ca-certificates-bundle                             20230506-r0            apk     
-coreutils                                          9.3-r7                 apk     
-coreutils-env                                      9.3-r7                 apk     
-coreutils-fmt                                      9.3-r7                 apk     
-coreutils-sha512sum                                9.3-r7                 apk     
+coreutils                                          9.4-r0                 apk     
+coreutils-env                                      9.4-r0                 apk     
+coreutils-fmt                                      9.4-r0                 apk     
+coreutils-sha512sum                                9.4-r0                 apk     
 curl                                               8.2.1-r0               apk     
 dbus-libs                                          1.14.8-r0              apk     
 double-conversion                                  3.3.0-r0               apk     
@@ -219,7 +219,7 @@ libmount                                           2.39.2-r0              apk
 libncursesw                                        6.4_p20230722-r0       apk     
 libpanelw                                          6.4_p20230722-r0       apk     
 libpcre2-16                                        10.42-r1               apk     
-libproc2                                           4.0.3-r2               apk     
+libproc2                                           4.0.4-r0               apk     
 libproxy                                           0.5.3-r0               apk     
 libssl1.1                                          1.1.1u-r1              apk     
 libssl3                                            3.1.2-r0               apk     
@@ -239,7 +239,7 @@ oniguruma                                          6.9.8-r1               apk
 openssl                                            3.1.2-r0               apk     
 openssl1.1-compat                                  1.1.1u-r1              apk     
 pcre2                                              10.42-r1               apk     
-procps-ng                                          4.0.3-r2               apk     
+procps-ng                                          4.0.4-r0               apk     
 pyc                                                0.1-r0                 apk     
 python3                                            3.11.5-r0              apk     
 python3-pyc                                        3.11.5-r0              apk     
