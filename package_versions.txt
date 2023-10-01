@@ -174,11 +174,11 @@ System.Xml.XPath.XDocument                         4.700.22.56512         dotnet
 System.Xml.XmlDocument                             4.700.22.56512         dotnet  
 System.Xml.XmlSerializer                           4.700.22.56512         dotnet  
 WindowsBase                                        4.700.22.56512         dotnet  
-alpine-baselayout                                  3.4.3-r1               apk     
-alpine-baselayout-data                             3.4.3-r1               apk     
+alpine-baselayout                                  3.4.3-r2               apk     
+alpine-baselayout-data                             3.4.3-r2               apk     
 alpine-keys                                        2.4-r1                 apk     
 apk-tools                                          2.14.0-r5              apk     
-bash                                               5.2.15-r5              apk     
+bash                                               5.2.15-r6              apk     
 brotli-libs                                        1.0.9-r15              apk     
 busybox                                            1.36.1-r8              apk     
 busybox-binsh                                      1.36.1-r8              apk     
@@ -189,7 +189,7 @@ coreutils                                          9.4-r0                 apk
 coreutils-env                                      9.4-r0                 apk     
 coreutils-fmt                                      9.4-r0                 apk     
 coreutils-sha512sum                                9.4-r0                 apk     
-curl                                               8.3.0-r0               apk     
+curl                                               8.3.0-r1               apk     
 dbus-libs                                          1.14.10-r0             apk     
 double-conversion                                  3.3.0-r0               apk     
 duktape                                            2.7.0-r1               apk     
@@ -207,7 +207,7 @@ libbz2                                             1.0.8-r6               apk
 libc-utils                                         0.7.2-r5               apk     
 libcrypto1.1                                       1.1.1w-r0              apk     
 libcrypto3                                         3.1.3-r0               apk     
-libcurl                                            8.3.0-r0               apk     
+libcurl                                            8.3.0-r1               apk     
 libexpat                                           2.5.0-r2               apk     
 libffi                                             3.4.4-r3               apk     
 libgcc                                             13.1.1_git20230722-r2  apk     
@@ -216,8 +216,8 @@ libidn2                                            2.3.4-r4               apk
 libintl                                            0.22.2-r0              apk     
 libmd                                              1.1.0-r0               apk     
 libmount                                           2.39.2-r0              apk     
-libncursesw                                        6.4_p20230722-r0       apk     
-libpanelw                                          6.4_p20230722-r0       apk     
+libncursesw                                        6.4_p20230918-r0       apk     
+libpanelw                                          6.4_p20230918-r0       apk     
 libpcre2-16                                        10.42-r1               apk     
 libproc2                                           4.0.4-r0               apk     
 libproxy                                           0.5.3-r0               apk     
@@ -231,7 +231,7 @@ mpdecimal                                          2.5.1-r2               apk
 mscorlib                                           4.700.22.56512         dotnet  
 musl                                               1.2.4_git20230717-r2   apk     
 musl-utils                                         1.2.4_git20230717-r2   apk     
-ncurses-terminfo-base                              6.4_p20230722-r0       apk     
+ncurses-terminfo-base                              6.4_p20230918-r0       apk     
 netcat-openbsd                                     1.225-r0               apk     
 netstandard                                        4.700.22.56512         dotnet  
 nghttp2-libs                                       1.56.0-r0              apk     
