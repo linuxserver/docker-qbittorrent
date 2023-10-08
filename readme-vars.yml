@@ -68,7 +68,8 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - {date: "10.08.23:", desc: "Bump unrar to 6.2.10."}
+  - { date: "07.10.23:", desc: "Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar)."}
+  - { date: "10.08.23:", desc: "Bump unrar to 6.2.10."}
   - { date: "17.06.23:", desc: "Deprecate armhf as per [https://www.linuxserver.io/armhf](https://www.linuxserver.io/armhf)." }
   - { date: "10.06.23:", desc: "Bump unrar to 6.2.8." }
   - { date: "23.02.23:", desc: "Add qt6-qtbase-sqlite to support SQLite database for resume files."}
