@@ -1,5 +1,7 @@
 # syntax=docker/dockerfile:1
 
+FROM ghcr.io/linuxserver/unrar:latest as unrar
+
 FROM ghcr.io/linuxserver/baseimage-alpine:3.18
 
 # set version label
@@ -11,7 +13,6 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thespad"
 
 # environment settings
-ARG UNRAR_VERSION=6.2.10
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
 XDG_DATA_HOME="/config"
@@ -28,17 +29,6 @@ RUN \
     p7zip \
     python3 \
     qt6-qtbase-sqlite && \
-  echo "**** install unrar from source ****" && \
-  mkdir /tmp/unrar && \
-  curl -o \
-    /tmp/unrar.tar.gz -L \
-    "https://www.rarlab.com/rar/unrarsrc-${UNRAR_VERSION}.tar.gz" && \
-  tar xf \
-    /tmp/unrar.tar.gz -C \
-    /tmp/unrar --strip-components=1 && \
-  cd /tmp/unrar && \
-  make && \
-  install -v -m755 unrar /usr/bin && \
   echo "**** install qbittorrent ****" && \  
   if [ -z ${QBITTORRENT_VERSION+x} ]; then \
     QBITTORRENT_VERSION=$(curl -sL "https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases" | \
@@ -67,6 +57,9 @@ RUN \
 
 # add local files
 COPY root/ /
+
+# add unrar
+COPY --from=unrar /usr/bin/unrar-alpine /usr/bin/unrar
 
 # ports and volumes
 EXPOSE 8080 6881 6881/udp
