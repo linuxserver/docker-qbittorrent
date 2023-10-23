@@ -244,7 +244,7 @@ pyc                                                3.11.6-r1              apk
 python3                                            3.11.6-r1              apk     
 python3-pyc                                        3.11.6-r1              apk     
 python3-pycache-pyc0                               3.11.6-r1              apk     
-qbittorrent-nox                                    4.5.5-r0               apk     
+qbittorrent-nox                                    4.6.0-r0               apk     
 qbt                                                1.7.23016.1            dotnet  
 qt6-qtbase                                         6.6.0-r0               apk     
 qt6-qtbase-sqlite                                  6.6.0-r0               apk     
