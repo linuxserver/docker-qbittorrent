@@ -38,9 +38,9 @@ param_env_vars:
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
-  The web UI is at `<your-ip>:8080` and the initial password for the `admin` user will be printed to the container log on startup.
+  The web UI is at `<your-ip>:8080` and a temporary password for the `admin` user will be printed to the container log on startup.
 
-  You can then change username/password in the web UI section of settings. If you do not change the password a new one will be generated every time the container starts.
+  You must then change username/password in the web UI section of settings. If you do not change the password a new one will be generated every time the container starts.
 
   If you are running a very old (3.x) kernel you may run into [this issue](https://github.com/linuxserver/docker-qbittorrent/issues/103) which can be worked around using [this method](https://github.com/linuxserver/docker-qbittorrent/issues/103#issuecomment-831238484)
 
