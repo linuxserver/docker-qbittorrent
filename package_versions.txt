@@ -201,7 +201,7 @@ jq                                                 1.7-r2                 apk
 libacl                                             2.3.1-r4               apk     
 libattr                                            2.5.1-r5               apk     
 libb2                                              0.98.1-r3              apk     
-libblkid                                           2.39.2-r0              apk     
+libblkid                                           2.39.2-r1              apk     
 libbsd                                             0.11.7-r3              apk     
 libbz2                                             1.0.8-r6               apk     
 libc-utils                                         0.7.2-r5               apk     
@@ -215,7 +215,7 @@ libgomp                                            13.2.1_git20231014-r0  apk
 libidn2                                            2.3.4-r4               apk     
 libintl                                            0.22.3-r0              apk     
 libmd                                              1.1.0-r0               apk     
-libmount                                           2.39.2-r0              apk     
+libmount                                           2.39.2-r1              apk     
 libncursesw                                        6.4_p20231007-r0       apk     
 libpanelw                                          6.4_p20231007-r0       apk     
 libpcre2-16                                        10.42-r1               apk     
@@ -252,7 +252,7 @@ readline                                           8.2.1-r2               apk
 scanelf                                            1.3.7-r2               apk     
 shadow                                             4.14.2-r0              apk     
 skalibs                                            2.14.0.1-r0            apk     
-sqlite-libs                                        3.44.0-r0              apk     
+sqlite-libs                                        3.44.2-r0              apk     
 ssl_client                                         1.36.1-r15             apk     
 tzdata                                             2023c-r1               apk     
 utmps-libs                                         0.1.2.2-r0             apk     
