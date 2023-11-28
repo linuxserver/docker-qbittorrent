@@ -68,29 +68,17 @@ This image provides various versions that are available via tags. Please read th
 
 ## Application Setup
 
-The webui is at `<your-ip>:8080` and the default username/password is `admin/adminadmin`.  
+The web UI is at `<your-ip>:8080` and a temporary password for the `admin` user will be printed to the container log on startup.
 
-Change username/password via the webui in the webui section of settings.  
+You must then change username/password in the web UI section of settings. If you do not change the password a new one will be generated every time the container starts.
+
+If you are running a very old (3.x) kernel you may run into [this issue](https://github.com/linuxserver/docker-qbittorrent/issues/103) which can be worked around using [this method](https://github.com/linuxserver/docker-qbittorrent/issues/103#issuecomment-831238484)
 
 ### WEBUI_PORT variable
 
-Due to issues with CSRF and port mapping, should you require to alter the port for the webui you need to change both sides of the -p 8080 switch AND set the WEBUI_PORT variable to the new port.  
+Due to issues with CSRF and port mapping, should you require to alter the port for the web UI you need to change both sides of the -p 8080 switch AND set the WEBUI_PORT variable to the new port.
 
-For example, to set the port to 8090 you need to set -p 8090:8090 and -e WEBUI_PORT=8090  
-
-This should alleviate the "white screen" issue.  
-
-If you have no webui , check the file /config/qBittorrent/qBittorrent.conf  
-
-edit or add the following lines  
-
-```text
-WebUI\Address=*
-
-WebUI\ServerDomains=*
-```
-
-If you are running a very old (3.x) kernel you may run into [this issue](https://github.com/linuxserver/docker-qbittorrent/issues/103) which can be worked around using [this method](https://github.com/linuxserver/docker-qbittorrent/issues/103#issuecomment-831238484)
+For example, to set the port to 8090 you need to set -p 8090:8090 and -e WEBUI_PORT=8090
 
 ## Usage
 
@@ -150,7 +138,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
-| `-e WEBUI_PORT=8080` | for changing the port of the webui, see below for explanation |
+| `-e WEBUI_PORT=8080` | for changing the port of the web UI, see below for explanation |
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
 
