@@ -178,7 +178,7 @@ alpine-baselayout                                  3.4.3-r2               apk
 alpine-baselayout-data                             3.4.3-r2               apk     
 alpine-keys                                        2.4-r1                 apk     
 apk-tools                                          2.14.0-r5              apk     
-bash                                               5.2.15-r6              apk     
+bash                                               5.2.21-r0              apk     
 brotli-libs                                        1.1.0-r1               apk     
 busybox                                            1.36.1-r15             apk     
 busybox-binsh                                      1.36.1-r15             apk     
@@ -216,8 +216,8 @@ libidn2                                            2.3.4-r4               apk
 libintl                                            0.22.3-r0              apk     
 libmd                                              1.1.0-r0               apk     
 libmount                                           2.39.2-r1              apk     
-libncursesw                                        6.4_p20231007-r0       apk     
-libpanelw                                          6.4_p20231007-r0       apk     
+libncursesw                                        6.4_p20231125-r0       apk     
+libpanelw                                          6.4_p20231125-r0       apk     
 libpcre2-16                                        10.42-r2               apk     
 libproc2                                           4.0.4-r0               apk     
 libproxy                                           0.5.3-r0               apk     
@@ -231,7 +231,7 @@ mpdecimal                                          2.5.1-r2               apk
 mscorlib                                           4.700.22.56512         dotnet  
 musl                                               1.2.4_git20230717-r4   apk     
 musl-utils                                         1.2.4_git20230717-r4   apk     
-ncurses-terminfo-base                              6.4_p20231007-r0       apk     
+ncurses-terminfo-base                              6.4_p20231125-r0       apk     
 netcat-openbsd                                     1.226-r0               apk     
 netstandard                                        4.700.22.56512         dotnet  
 nghttp2-libs                                       1.58.0-r0              apk     
