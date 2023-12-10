@@ -186,14 +186,14 @@ busybox-binsh                                      1.36.1-r5               apk
 ca-certificates                                    20230506-r0             apk     
 ca-certificates-bundle                             20230506-r0             apk     
 coreutils                                          9.3-r1                  apk     
-curl                                               8.4.0-r0                apk     
+curl                                               8.5.0-r0                apk     
 dbus-libs                                          1.14.8-r0               apk     
 double-conversion                                  3.2.1-r1                apk     
 gdbm                                               1.23-r1                 apk     
 glib                                               2.76.4-r0               apk     
 icu-data-en                                        73.2-r2                 apk     
 icu-libs                                           73.2-r2                 apk     
-jq                                                 1.6-r3                  apk     
+jq                                                 1.6-r4                  apk     
 libacl                                             2.3.1-r3                apk     
 libattr                                            2.5.1-r4                apk     
 libb2                                              0.98.1-r2               apk     
@@ -203,7 +203,7 @@ libbz2                                             1.0.8-r5                apk
 libc-utils                                         0.7.2-r5                apk     
 libcrypto1.1                                       1.1.1u-r1               apk     
 libcrypto3                                         3.1.4-r1                apk     
-libcurl                                            8.4.0-r0                apk     
+libcurl                                            8.5.0-r0                apk     
 libexpat                                           2.5.0-r1                apk     
 libffi                                             3.4.4-r2                apk     
 libgcc                                             12.2.1_git20220924-r10  apk     
