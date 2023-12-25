@@ -318,6 +318,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **25.12.23:** - Only pull stable releases of qbittorrent-cli.
 * **07.10.23:** - Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar).
 * **10.08.23:** - Bump unrar to 6.2.10.
 * **17.06.23:** - Deprecate armhf as per [https://www.linuxserver.io/armhf](https://www.linuxserver.io/armhf).
