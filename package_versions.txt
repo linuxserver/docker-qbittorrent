@@ -174,8 +174,8 @@ System.Xml.XPath.XDocument                         4.700.22.17909               
 System.Xml.XmlDocument                             4.700.22.17909                                                                           dotnet  
 System.Xml.XmlSerializer                           4.700.22.17909                                                                           dotnet  
 WindowsBase                                        4.700.22.17909                                                                           dotnet  
-alpine-baselayout                                  3.5.0-r0                                                                                 apk     
-alpine-baselayout-data                             3.5.0-r0                                                                                 apk     
+alpine-baselayout                                  3.5.2-r0                                                                                 apk     
+alpine-baselayout-data                             3.5.2-r0                                                                                 apk     
 alpine-keys                                        2.4-r1                                                                                   apk     
 apk-tools                                          2.14.0-r5                                                                                apk     
 bash                                               5.2.21-r0                                                                                apk     
@@ -254,7 +254,7 @@ shadow                                             4.14.2-r0                    
 skalibs                                            2.14.1.0-r0                                                                              apk     
 sqlite-libs                                        3.44.2-r0                                                                                apk     
 ssl_client                                         1.36.1-r18                                                                               apk     
-tzdata                                             2023c-r1                                                                                 apk     
+tzdata                                             2023d-r0                                                                                 apk     
 utmps-libs                                         0.1.2.2-r0                                                                               apk     
 xz-libs                                            5.4.5-r0                                                                                 apk     
 zlib                                               1.3-r2                                                                                   apk     
