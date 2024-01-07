@@ -174,8 +174,8 @@ System.Xml.XPath.XDocument                         4.700.22.17909               
 System.Xml.XmlDocument                             4.700.22.17909                                                                           dotnet  
 System.Xml.XmlSerializer                           4.700.22.17909                                                                           dotnet  
 WindowsBase                                        4.700.22.17909                                                                           dotnet  
-alpine-baselayout                                  3.5.2-r0                                                                                 apk     
-alpine-baselayout-data                             3.5.2-r0                                                                                 apk     
+alpine-baselayout                                  3.5.3-r0                                                                                 apk     
+alpine-baselayout-data                             3.5.3-r0                                                                                 apk     
 alpine-keys                                        2.4-r1                                                                                   apk     
 apk-tools                                          2.14.0-r5                                                                                apk     
 bash                                               5.2.21-r0                                                                                apk     
