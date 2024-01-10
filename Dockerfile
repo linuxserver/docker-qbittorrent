@@ -9,13 +9,19 @@ ARG BUILD_DATE
 ARG VERSION
 ARG QBITTORRENT_VERSION
 ARG QBT_CLI_VERSION
+ARG FILEBOT=false
+ARG FILEBOT_VER=5.1.2
+
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thespad"
 
 # environment settings
 ENV HOME="/config" \
-XDG_CONFIG_HOME="/config" \
-XDG_DATA_HOME="/config"
+    XDG_CONFIG_HOME="/config" \
+    XDG_DATA_HOME="/config" \
+    FILEBOT_RENAME_METHOD=symlink \
+    FILEBOT_LANG=fr \
+    FILEBOT_CONFLICT=skip 
 
 # install runtime packages and qbitorrent-cli
 RUN \
@@ -61,6 +67,26 @@ COPY root/ /
 
 # add unrar
 COPY --from=unrar /usr/bin/unrar-alpine /usr/bin/unrar
+
+# add filebot
+ARG FILEBOT_URL="https://get.filebot.net/filebot/FileBot_${FILEBOT_VER}/FileBot_${FILEBOT_VER}-portable.tar.xz"
+
+RUN if [ "${FILEBOT}" = true ]; then \
+  apk --update --no-cache add \
+    chromaprint \
+    openjdk17-jre-headless \
+  # Install filebot
+  && mkdir /filebot \
+  && cd /filebot \
+  && wget "${FILEBOT_URL}" -O /filebot/filebot.tar.xz \
+  && tar -xJf filebot.tar.xz \
+  && rm -rf filebot.tar.xz \
+  && sed -i 's/-Dapplication.deployment=tar/-Dapplication.deployment=docker/g' /filebot/filebot.sh \
+  && find /filebot/lib -type f -not -name libjnidispatch.so -delete; \
+  fi
+
+# chmod for script execution
+RUN chmod 775 /usr/local/bin/*
 
 # ports and volumes
 EXPOSE 8080 6881 6881/udp
