@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+sleep 10 # wait 10 sec (file removing)
+find /data/media -xtype l -delete >> /tmp/filebot-cleaner.log 2>&1
+find /data/media -type d -empty -delete >> /tmp/filebot-cleaner.log 2>&1

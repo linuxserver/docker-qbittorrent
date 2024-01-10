@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+TORRENT_PATH="${1}"
+TORRENT_NAME="${2}"
+
+/filebot/filebot.sh \
+  --lang "${FILEBOT_LANG}" \
+  -script fn:amc \
+  --output "/data/media" \
+  --action "${FILEBOT_RENAME_METHOD}" \
+  --conflict "${FILEBOT_CONFLICT}" \
+  -non-strict \
+  --log-file /tmp/filebot-amc.log \
+  --def @/filebot/args_amc.txt \
+  --def ut_dir="${TORRENT_PATH}" \
+  --def ut_title="${TORRENT_NAME}" 2>> /tmp/filebot-error.log
