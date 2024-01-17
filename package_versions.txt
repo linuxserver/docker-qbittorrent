@@ -206,7 +206,7 @@ libbsd                                             0.11.8-r0                    
 libbz2                                             1.0.8-r6                                                                                 apk     
 libc-utils                                         0.7.2-r5                                                                                 apk     
 libcrypto1.1                                       1.1.1w-r0                                                                                apk     
-libcrypto3                                         3.1.4-r3                                                                                 apk     
+libcrypto3                                         3.1.4-r4                                                                                 apk     
 libcurl                                            8.5.0-r1                                                                                 apk     
 libexpat                                           2.5.0-r2                                                                                 apk     
 libffi                                             3.4.4-r3                                                                                 apk     
@@ -221,9 +221,9 @@ libpanelw                                          6.4_p20231125-r0             
 libpcre2-16                                        10.42-r2                                                                                 apk     
 libproc2                                           4.0.4-r0                                                                                 apk     
 libproxy                                           0.5.3-r0                                                                                 apk     
-libpsl                                             0.21.2-r1                                                                                apk     
+libpsl                                             0.21.5-r0                                                                                apk     
 libssl1.1                                          1.1.1w-r0                                                                                apk     
-libssl3                                            3.1.4-r3                                                                                 apk     
+libssl3                                            3.1.4-r4                                                                                 apk     
 libstdc++                                          13.2.1_git20231014-r0                                                                    apk     
 libtorrent-rasterbar                               2.0.9-r2                                                                                 apk     
 libunistring                                       1.1-r2                                                                                   apk     
@@ -237,7 +237,7 @@ netcat-openbsd                                     1.226-r0                     
 netstandard                                        4.700.22.56512                                                                           dotnet  
 nghttp2-libs                                       1.58.0-r0                                                                                apk     
 oniguruma                                          6.9.9-r0                                                                                 apk     
-openssl                                            3.1.4-r3                                                                                 apk     
+openssl                                            3.1.4-r4                                                                                 apk     
 openssl1.1-compat                                  1.1.1w-r0                                                                                apk     
 pcre2                                              10.42-r2                                                                                 apk     
 procps-ng                                          4.0.4-r0                                                                                 apk     
@@ -245,7 +245,7 @@ pyc                                                3.11.6-r1                    
 python3                                            3.11.6-r1                                                                                apk     
 python3-pyc                                        3.11.6-r1                                                                                apk     
 python3-pycache-pyc0                               3.11.6-r1                                                                                apk     
-qbittorrent-nox                                    4.6.2-r0                                                                                 apk     
+qbittorrent-nox                                    4.6.3-r0                                                                                 apk     
 qbt                                                1.8.24012.1+00a638ba43f1a80a03cc8be139f586ce9886c908                                     dotnet  
 qt6-qtbase                                         6.6.1-r0                                                                                 apk     
 qt6-qtbase-sqlite                                  6.6.1-r0                                                                                 apk     
@@ -253,7 +253,7 @@ readline                                           8.2.7-r0                     
 scanelf                                            1.3.7-r2                                                                                 apk     
 shadow                                             4.14.2-r0                                                                                apk     
 skalibs                                            2.14.1.0-r0                                                                              apk     
-sqlite-libs                                        3.44.2-r0                                                                                apk     
+sqlite-libs                                        3.45.0-r0                                                                                apk     
 ssl_client                                         1.36.1-r18                                                                               apk     
 tzdata                                             2023d-r0                                                                                 apk     
 utmps-libs                                         0.1.2.2-r0                                                                               apk     
