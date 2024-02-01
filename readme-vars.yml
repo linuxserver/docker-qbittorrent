@@ -23,7 +23,7 @@ common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Contains all relevant configuration files." }
+  - { vol_path: "/config", vol_host_path: "/path/to/qbittorrent/config", desc: "Contains all relevant configuration files." }
   - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
@@ -32,7 +32,6 @@ param_ports:
   - { external_port: "6881", internal_port: "6881/udp", port_desc: "udp connection port" }
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London"}
   - { env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the web UI, see below for explanation"}
 
 # application setup block
@@ -52,6 +51,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "31.01.24:", desc: "Rebase to Alpine 3.19."}
   - { date: "25.12.23:", desc: "Only pull stable releases of qbittorrent-cli."}
   - { date: "07.10.23:", desc: "Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar)."}
   - { date: "10.08.23:", desc: "Bump unrar to 6.2.10."}
