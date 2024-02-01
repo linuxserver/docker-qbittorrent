@@ -98,7 +98,7 @@ services:
       - TZ=Etc/UTC
       - WEBUI_PORT=8080
     volumes:
-      - /path/to/appdata/config:/config
+      - /path/to/qbittorrent/config:/config
       - /path/to/downloads:/downloads
     ports:
       - 8080:8080
@@ -119,7 +119,7 @@ docker run -d \
   -p 8080:8080 \
   -p 6881:6881 \
   -p 6881:6881/udp \
-  -v /path/to/appdata/config:/config \
+  -v /path/to/qbittorrent/config:/config \
   -v /path/to/downloads:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/qbittorrent:libtorrentv1
@@ -302,6 +302,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **31.01.24:** - Rebase to Alpine 3.19.
 * **25.12.23:** - Only pull stable releases of qbittorrent-cli.
 * **07.10.23:** - Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar).
 * **10.08.23:** - Bump unrar to 6.2.10.
