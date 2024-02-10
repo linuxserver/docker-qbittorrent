@@ -80,6 +80,12 @@ Due to issues with CSRF and port mapping, should you require to alter the port f
 
 For example, to set the port to 8090 you need to set -p 8090:8090 and -e WEBUI_PORT=8090
 
+### TORRENTING_PORT
+
+A bittorrent client can be an active or a passive node. Running your client as an active node has the advantage of being able to connect to both active and passive peers, and can potentially increase the number of incoming connections. This requires an open port on the host machine which might differ from container's internal one.
+
+Similarly to the WEBUI_PORT, to set the port to 6887 you need to pass -p 6887:6887, -p 6887:6887/udp and -e TORRENTING_PORT=6887 arguments to Docker.
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -97,6 +103,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
     volumes:
       - /path/to/qbittorrent/config:/config
       - /path/to/downloads:/downloads
@@ -116,6 +123,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
   -e WEBUI_PORT=8080 \
+  -e TORRENTING_PORT=6881 \
   -p 8080:8080 \
   -p 6881:6881 \
   -p 6881:6881/udp \
@@ -138,6 +146,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-e WEBUI_PORT=8080` | for changing the port of the web UI, see below for explanation |
+| `-e TORRENTING_PORT=6881` | for changing the port of tcp/udp connection, see below for explanation |
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
 
@@ -302,6 +311,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **10.02.24:** - Add torrenting port support.
 * **31.01.24:** - Rebase to Alpine 3.19.
 * **25.12.23:** - Only pull stable releases of qbittorrent-cli.
 * **07.10.23:** - Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar).
