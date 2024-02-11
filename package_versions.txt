@@ -4,7 +4,7 @@ Alba.CsConsoleFormat                               1.0.0.89                     
 BencodeNET                                         2.3.0.0                                                                                  dotnet  
 Bouncy Castle for .NET (netstandard2.0)            1.8.8.2                                                                                  dotnet  
 CommandLineUtils                                   2.4.4+3c2a4909757a51602dcca9b961d577511b85fd31.3c2a4909757a51602dcca9b961d577511b85fd31  dotnet  
-CsvHelper                                          12.0.0.0                                                                                 dotnet  
+CsvHelper                                          12.1.2                                                                                   dotnet  
 Json.NET                                           13.0.3.27908                                                                             dotnet  
 Microsoft.CSharp                                   4.700.22.56512                                                                           dotnet  
 Microsoft.VisualBasic                              4.700.22.56512                                                                           dotnet  
@@ -92,7 +92,7 @@ System.Net.WebSockets.Client                       4.700.22.56512               
 System.Numerics                                    4.700.22.56512                                                                           dotnet  
 System.Numerics.Vectors                            4.700.22.56512                                                                           dotnet  
 System.ObjectModel                                 4.700.22.56512                                                                           dotnet  
-System.Private.CoreLib                             3.1.32-servicing.22559.2+c17d273aa03d4b9d14c92248a91f0d0faa881b98                        dotnet  
+System.Private.CoreLib                             4.700.22.55902                                                                           dotnet  
 System.Private.DataContractSerialization           4.700.22.56512                                                                           dotnet  
 System.Private.Uri                                 4.700.22.56512                                                                           dotnet  
 System.Private.Xml                                 4.700.22.56512                                                                           dotnet  
@@ -208,7 +208,7 @@ libbz2                                             1.0.8-r6                     
 libc-utils                                         0.7.2-r5                                                                                 apk     
 libcrypto3                                         3.1.4-r5                                                                                 apk     
 libcurl                                            8.5.0-r0                                                                                 apk     
-libexpat                                           2.5.0-r2                                                                                 apk     
+libexpat                                           2.6.0-r0                                                                                 apk     
 libffi                                             3.4.4-r3                                                                                 apk     
 libgcc                                             13.2.1_git20231014-r0                                                                    apk     
 libgomp                                            13.2.1_git20231014-r0                                                                    apk     
