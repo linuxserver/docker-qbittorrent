@@ -33,6 +33,7 @@ param_ports:
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the web UI, see below for explanation"}
+  - { env_var: "TORRENTING_PORT", env_value: "6881", desc: "for changing the port of tcp/udp connection, see below for explanation" }
 
 # application setup block
 app_setup_block_enabled: true
@@ -49,8 +50,15 @@ app_setup_block: |
 
   For example, to set the port to 8090 you need to set -p 8090:8090 and -e WEBUI_PORT=8090
 
+  ### TORRENTING_PORT
+
+  A bittorrent client can be an active or a passive node. Running your client as an active node has the advantage of being able to connect to both active and passive peers, and can potentially increase the number of incoming connections. This requires an open port on the host machine which might differ from container's internal one.
+
+  Similarly to the WEBUI_PORT, to set the port to 6887 you need to pass -p 6887:6887, -p 6887:6887/udp and -e TORRENTING_PORT=6887 arguments to Docker.
+
 # changelog
 changelogs:
+  - { date: "10.02.24:", desc: "Add torrenting port support." }
   - { date: "31.01.24:", desc: "Rebase to Alpine 3.19."}
   - { date: "25.12.23:", desc: "Only pull stable releases of qbittorrent-cli."}
   - { date: "07.10.23:", desc: "Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar)."}
