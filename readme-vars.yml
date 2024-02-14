@@ -58,7 +58,8 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "10.02.24:", desc: "Add torrenting port support." }
+  - { date: "14.02.24:", desc: "Only set/override torrenting port if the optional env var is set." }
+  - { date: "14.02.24:", desc: "Add torrenting port support." }
   - { date: "31.01.24:", desc: "Remove obsolete compat packages."}
   - { date: "25.12.23:", desc: "Only pull stable releases of qbittorrent-cli."}
   - { date: "07.10.23:", desc: "Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar)."}

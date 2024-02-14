@@ -2,8 +2,10 @@
 # shellcheck shell=bash
 
 WEBUI_PORT=${WEBUI_PORT:-8080}
-TORRENTING_PORT=${TORRENTING_PORT:-6881}
+if [[ -n "${TORRENTING_PORT}" ]]; then
+    TORRENTING_PORT_ARG="--torrenting-port=${TORRENTING_PORT}"
+fi
 
 exec \
     s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost ${WEBUI_PORT}" \
-        s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" --torrenting-port="${TORRENTING_PORT}"
+        s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}

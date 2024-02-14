@@ -311,7 +311,8 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **10.02.24:** - Add torrenting port support.
+* **14.02.24:** - Only set/override torrenting port if the optional env var is set.
+* **14.02.24:** - Add torrenting port support.
 * **31.01.24:** - Remove obsolete compat packages.
 * **25.12.23:** - Only pull stable releases of qbittorrent-cli.
 * **07.10.23:** - Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar).
