@@ -236,10 +236,10 @@ nghttp2-libs                                       1.58.0-r0                    
 oniguruma                                          6.9.9-r0                                                                                 apk     
 pcre2                                              10.42-r2                                                                                 apk     
 procps-ng                                          4.0.4-r0                                                                                 apk     
-pyc                                                3.11.6-r1                                                                                apk     
-python3                                            3.11.6-r1                                                                                apk     
-python3-pyc                                        3.11.6-r1                                                                                apk     
-python3-pycache-pyc0                               3.11.6-r1                                                                                apk     
+pyc                                                3.11.8-r0                                                                                apk     
+python3                                            3.11.8-r0                                                                                apk     
+python3-pyc                                        3.11.8-r0                                                                                apk     
+python3-pycache-pyc0                               3.11.8-r0                                                                                apk     
 qbt                                                1.8.24012.1+00a638ba43f1a80a03cc8be139f586ce9886c908                                     dotnet  
 qt6-qtbase                                         6.6.1-r0                                                                                 apk     
 qt6-qtbase-sqlite                                  6.6.1-r0                                                                                 apk     
