@@ -208,7 +208,7 @@ libbz2                                             1.0.8-r6                     
 libc-utils                                         0.7.2-r5                                                                                 apk       
 libcrypto3                                         3.1.4-r5                                                                                 apk       
 libcurl                                            8.5.0-r0                                                                                 apk       
-libexpat                                           2.6.0-r0                                                                                 apk       
+libexpat                                           2.6.2-r0                                                                                 apk       
 libffi                                             3.4.4-r3                                                                                 apk       
 libgcc                                             13.2.1_git20231014-r0                                                                    apk       
 libgomp                                            13.2.1_git20231014-r0                                                                    apk       
