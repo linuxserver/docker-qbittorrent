@@ -178,7 +178,7 @@ alpine-baselayout                                  3.4.3-r2                     
 alpine-baselayout-data                             3.4.3-r2                                                                                 apk       
 alpine-keys                                        2.4-r1                                                                                   apk       
 alpine-release                                     3.19.1-r0                                                                                apk       
-apk-tools                                          2.14.0-r5                                                                                apk       
+apk-tools                                          2.14.3-r1                                                                                apk       
 bash                                               5.2.21-r0                                                                                apk       
 brotli-libs                                        1.1.0-r1                                                                                 apk       
 busybox                                            1.36.1-r15                                                                               apk       
