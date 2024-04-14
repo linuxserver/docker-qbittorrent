@@ -206,7 +206,7 @@ libblkid                                           2.39.3-r0                    
 libbsd                                             0.11.7-r3                                                                                apk       
 libbz2                                             1.0.8-r6                                                                                 apk       
 libc-utils                                         0.7.2-r5                                                                                 apk       
-libcrypto3                                         3.1.4-r5                                                                                 apk       
+libcrypto3                                         3.1.4-r6                                                                                 apk       
 libcurl                                            8.5.0-r0                                                                                 apk       
 libexpat                                           2.6.2-r0                                                                                 apk       
 libffi                                             3.4.4-r3                                                                                 apk       
@@ -221,7 +221,7 @@ libpanelw                                          6.4_p20231125-r0             
 libpcre2-16                                        10.42-r2                                                                                 apk       
 libproc2                                           4.0.4-r0                                                                                 apk       
 libproxy                                           0.5.3-r0                                                                                 apk       
-libssl3                                            3.1.4-r5                                                                                 apk       
+libssl3                                            3.1.4-r6                                                                                 apk       
 libstdc++                                          13.2.1_git20231014-r0                                                                    apk       
 libunistring                                       1.1-r2                                                                                   apk       
 linux-pam                                          1.5.3-r7                                                                                 apk       
