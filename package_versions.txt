@@ -178,7 +178,7 @@ alpine-baselayout                                  3.4.3-r2                     
 alpine-baselayout-data                             3.4.3-r2                                                                                 apk       
 alpine-keys                                        2.4-r1                                                                                   apk       
 alpine-release                                     3.19.1-r0                                                                                apk       
-apk-tools                                          2.14.3-r1                                                                                apk       
+apk-tools                                          2.14.4-r0                                                                                apk       
 bash                                               5.2.21-r0                                                                                apk       
 brotli-libs                                        1.1.0-r1                                                                                 apk       
 busybox                                            1.36.1-r15                                                                               apk       
@@ -194,6 +194,7 @@ curl                                               8.5.0-r0                     
 dbus-libs                                          1.14.10-r0                                                                               apk       
 double-conversion                                  3.3.0-r0                                                                                 apk       
 duktape                                            2.7.0-r1                                                                                 apk       
+findutils                                          4.9.0-r5                                                                                 apk       
 gdbm                                               1.23-r1                                                                                  apk       
 glib                                               2.78.4-r0                                                                                apk       
 icu-data-en                                        74.1-r0                                                                                  apk       
@@ -236,10 +237,10 @@ nghttp2-libs                                       1.58.0-r0                    
 oniguruma                                          6.9.9-r0                                                                                 apk       
 pcre2                                              10.42-r2                                                                                 apk       
 procps-ng                                          4.0.4-r0                                                                                 apk       
-pyc                                                3.11.8-r0                                                                                apk       
-python3                                            3.11.8-r0                                                                                apk       
-python3-pyc                                        3.11.8-r0                                                                                apk       
-python3-pycache-pyc0                               3.11.8-r0                                                                                apk       
+pyc                                                3.11.9-r0                                                                                apk       
+python3                                            3.11.9-r0                                                                                apk       
+python3-pyc                                        3.11.9-r0                                                                                apk       
+python3-pycache-pyc0                               3.11.9-r0                                                                                apk       
 qbt                                                1.8.24012.1+00a638ba43f1a80a03cc8be139f586ce9886c908                                     dotnet    
 qt6-qtbase                                         6.6.1-r0                                                                                 apk       
 qt6-qtbase-sqlite                                  6.6.1-r0                                                                                 apk       
