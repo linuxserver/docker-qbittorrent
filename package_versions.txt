@@ -224,7 +224,7 @@ libproxy                                           0.5.5-r0                     
 libpsl                                             0.21.5-r1                                                                                apk       
 libssl3                                            3.3.0-r1                                                                                 apk       
 libstdc++                                          13.2.1_git20240309-r0                                                                    apk       
-libtorrent-rasterbar                               2.0.10-r1                                                                                apk       
+libtorrent-rasterbar                               2.0.10-r2                                                                                apk       
 libunistring                                       1.2-r0                                                                                   apk       
 linux-pam                                          1.6.0-r0                                                                                 apk       
 mpdecimal                                          4.0.0-r0                                                                                 apk       
@@ -242,7 +242,7 @@ pyc                                                3.12.3-r1                    
 python3                                            3.12.3-r1                                                                                apk       
 python3-pyc                                        3.12.3-r1                                                                                apk       
 python3-pycache-pyc0                               3.12.3-r1                                                                                apk       
-qbittorrent-nox                                    4.6.4-r0                                                                                 apk       
+qbittorrent-nox                                    4.6.4-r1                                                                                 apk       
 qbt                                                1.8.24012.1+00a638ba43f1a80a03cc8be139f586ce9886c908                                     dotnet    
 qt6-qtbase                                         6.6.3-r0                                                                                 apk       
 qt6-qtbase-sqlite                                  6.6.3-r0                                                                                 apk       
