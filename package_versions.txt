@@ -186,6 +186,7 @@ busybox-binsh                                      1.36.1-r15                   
 c-ares                                             1.27.0-r0                                                                                apk       
 ca-certificates                                    20240226-r0                                                                              apk       
 ca-certificates-bundle                             20240226-r0                                                                              apk       
+catatonit                                          0.2.0-r0                                                                                 apk       
 coreutils                                          9.4-r2                                                                                   apk       
 coreutils-env                                      9.4-r2                                                                                   apk       
 coreutils-fmt                                      9.4-r2                                                                                   apk       
@@ -196,7 +197,7 @@ double-conversion                                  3.3.0-r0                     
 duktape                                            2.7.0-r1                                                                                 apk       
 findutils                                          4.9.0-r5                                                                                 apk       
 gdbm                                               1.23-r1                                                                                  apk       
-glib                                               2.78.4-r0                                                                                apk       
+glib                                               2.78.6-r0                                                                                apk       
 icu-data-en                                        74.1-r0                                                                                  apk       
 icu-libs                                           74.1-r0                                                                                  apk       
 jq                                                 1.7.1-r0                                                                                 apk       
