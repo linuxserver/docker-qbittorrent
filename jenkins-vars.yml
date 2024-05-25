@@ -7,7 +7,6 @@ custom_version_command: "curl -sL 'https://api.github.com/repos/userdocs/qbittor
 release_type: prerelease
 release_tag: libtorrentv1
 ls_branch: libtorrentv1
-build_armhf: false
 repo_vars:
   - CONTAINER_NAME = 'qbittorrent'
   - BUILD_VERSION_ARG = 'QBITTORRENT_VERSION'
@@ -17,13 +16,12 @@ repo_vars:
   - DEV_DOCKERHUB_IMAGE = 'lsiodev/qbittorrent'
   - PR_DOCKERHUB_IMAGE = 'lspipepr/qbittorrent'
   - DIST_IMAGE = 'alpine'
-  - DIST_TAG = '3.18'
   - MULTIARCH='true'
   - CI='true'
   - CI_WEB='true'
   - CI_PORT='8080'
   - CI_SSL='false'
-  - CI_DELAY='120'
-  - CI_DOCKERENV='TZ=US/Pacific'
-  - CI_AUTH='user:password'
+  - CI_DELAY='60'
+  - CI_DOCKERENV=''
+  - CI_AUTH=''
   - CI_WEBPATH=''
