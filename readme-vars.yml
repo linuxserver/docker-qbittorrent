@@ -23,7 +23,7 @@ common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Contains all relevant configuration files." }
+  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/appdata/config", desc: "Contains all relevant configuration files." }
   - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
@@ -58,6 +58,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "25.05.24:", desc: "Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL." }
   - { date: "14.02.24:", desc: "Only set/override torrenting port if the optional env var is set." }
   - { date: "14.02.24:", desc: "Add torrenting port support." }
   - { date: "31.01.24:", desc: "Remove obsolete compat packages."}

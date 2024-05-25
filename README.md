@@ -28,7 +28,7 @@ Find us at:
 
 # [linuxserver/qbittorrent](https://github.com/linuxserver/docker-qbittorrent)
 
-[![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fqbittorrent?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Fqbittorrent)
+[![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fqbittorrent?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh)
 [![GitHub Stars](https://img.shields.io/github/stars/linuxserver/docker-qbittorrent.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-qbittorrent)
 [![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-qbittorrent.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-qbittorrent/releases)
 [![GitHub Package Repository](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=GitHub%20Package&logo=github)](https://github.com/linuxserver/docker-qbittorrent/packages)
@@ -105,7 +105,7 @@ services:
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
-      - /path/to/appdata/config:/config
+      - /path/to/qbittorrent/appdata/config:/config
       - /path/to/downloads:/downloads
     ports:
       - 8080:8080
@@ -127,7 +127,7 @@ docker run -d \
   -p 8080:8080 \
   -p 6881:6881 \
   -p 6881:6881/udp \
-  -v /path/to/appdata/config:/config \
+  -v /path/to/qbittorrent/appdata/config:/config \
   -v /path/to/downloads:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/qbittorrent:latest
@@ -311,6 +311,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **25.05.24:** - Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL.
 * **14.02.24:** - Only set/override torrenting port if the optional env var is set.
 * **14.02.24:** - Add torrenting port support.
 * **31.01.24:** - Remove obsolete compat packages.
