@@ -105,7 +105,7 @@ services:
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
-      - /path/to/qbittorrent/appdata/config:/config
+      - /path/to/qbittorrent/appdata:/config
       - /path/to/downloads:/downloads
     ports:
       - 8080:8080
@@ -127,7 +127,7 @@ docker run -d \
   -p 8080:8080 \
   -p 6881:6881 \
   -p 6881:6881/udp \
-  -v /path/to/qbittorrent/appdata/config:/config \
+  -v /path/to/qbittorrent/appdata:/config \
   -v /path/to/downloads:/downloads \
   --restart unless-stopped \
   lscr.io/linuxserver/qbittorrent:latest
