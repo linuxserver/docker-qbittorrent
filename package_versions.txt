@@ -67,7 +67,7 @@ pyc                     3.12.3-r1              apk
 python3                 3.12.3-r1              apk     
 python3-pyc             3.12.3-r1              apk     
 python3-pycache-pyc0    3.12.3-r1              apk     
-qbittorrent-nox         4.6.4-r1               apk     
+qbittorrent-nox         4.6.5-r0               apk     
 qt6-qtbase              6.6.3-r0               apk     
 qt6-qtbase-sqlite       6.6.3-r0               apk     
 readline                8.2.10-r0              apk     
