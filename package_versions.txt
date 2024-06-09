@@ -33,7 +33,7 @@ libb2                   0.98.1-r3              apk
 libblkid                2.40.1-r1              apk     
 libbsd                  0.12.2-r0              apk     
 libbz2                  1.0.8-r6               apk     
-libcrypto3              3.3.0-r2               apk     
+libcrypto3              3.3.1-r0               apk     
 libcurl                 8.7.1-r0               apk     
 libeconf                0.6.3-r0               apk     
 libexpat                2.6.2-r0               apk     
@@ -50,7 +50,7 @@ libpcre2-16             10.43-r0               apk
 libproc2                4.0.4-r0               apk     
 libproxy                0.5.6-r0               apk     
 libpsl                  0.21.5-r1              apk     
-libssl3                 3.3.0-r2               apk     
+libssl3                 3.3.1-r0               apk     
 libstdc++               13.2.1_git20240309-r0  apk     
 libunistring            1.2-r0                 apk     
 linux-pam               1.6.0-r0               apk     
