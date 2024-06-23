@@ -3,12 +3,12 @@ NAME                    VERSION                TYPE
 alpine-baselayout       3.6.5-r0               apk     
 alpine-baselayout-data  3.6.5-r0               apk     
 alpine-keys             2.4-r1                 apk     
-apk-tools               2.14.4-r0              apk     
+apk-tools               2.14.4-r1              apk     
 bash                    5.2.26-r0              apk     
 brotli-libs             1.1.0-r2               apk     
 busybox                 1.36.1-r31             apk     
 busybox-binsh           1.36.1-r31             apk     
-c-ares                  1.28.1-r0              apk     
+c-ares                  1.31.0-r0              apk     
 ca-certificates         20240226-r0            apk     
 ca-certificates-bundle  20240226-r0            apk     
 catatonit               0.2.0-r0               apk     
@@ -22,7 +22,7 @@ double-conversion       3.3.0-r0               apk
 duktape                 2.7.0-r1               apk     
 findutils               4.9.0-r5               apk     
 gdbm                    1.23-r1                apk     
-glib                    2.80.2-r0              apk     
+glib                    2.80.3-r0              apk     
 icu-data-en             74.2-r0                apk     
 icu-libs                74.2-r0                apk     
 jq                      1.7.1-r0               apk     
@@ -47,7 +47,7 @@ libncursesw             6.4_p20240420-r0       apk
 libpanelw               6.4_p20240420-r0       apk     
 libpcre2-16             10.43-r0               apk     
 libproc2                4.0.4-r0               apk     
-libproxy                0.5.6-r0               apk     
+libproxy                0.5.7-r0               apk     
 libpsl                  0.21.5-r1              apk     
 libssl3                 3.3.1-r0               apk     
 libstdc++               13.2.1_git20240309-r0  apk     
