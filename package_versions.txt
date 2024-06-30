@@ -17,7 +17,7 @@ coreutils-env           9.5-r1                 apk
 coreutils-fmt           9.5-r1                 apk     
 coreutils-sha512sum     9.5-r1                 apk     
 curl                    8.8.0-r0               apk     
-dbus-libs               1.14.10-r1             apk     
+dbus-libs               1.14.10-r2             apk     
 double-conversion       3.3.0-r0               apk     
 duktape                 2.7.0-r1               apk     
 findutils               4.9.0-r5               apk     
@@ -32,7 +32,7 @@ libb2                   0.98.1-r3              apk
 libblkid                2.40.1-r1              apk     
 libbsd                  0.12.2-r0              apk     
 libbz2                  1.0.8-r6               apk     
-libcrypto3              3.3.1-r0               apk     
+libcrypto3              3.3.1-r1               apk     
 libcurl                 8.8.0-r0               apk     
 libeconf                0.6.3-r0               apk     
 libexpat                2.6.2-r0               apk     
@@ -48,8 +48,8 @@ libpanelw               6.4_p20240420-r0       apk
 libpcre2-16             10.43-r0               apk     
 libproc2                4.0.4-r0               apk     
 libproxy                0.5.7-r0               apk     
-libpsl                  0.21.5-r1              apk     
-libssl3                 3.3.1-r0               apk     
+libpsl                  0.21.5-r2              apk     
+libssl3                 3.3.1-r1               apk     
 libstdc++               13.2.1_git20240309-r0  apk     
 libtorrent-rasterbar    2.0.10-r2              apk     
 libunistring            1.2-r0                 apk     
