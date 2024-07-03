@@ -10,10 +10,8 @@ if [[ ! -f /config/qBittorrent/qBittorrent.conf ]]; then
 fi
 
 # chown download directory if currently not set to abc
-if [[ -d /downloads ]]; then
-    if [[ "$(stat -c '%U' /downloads)" != "abc" ]]; then
-        lsiown -R abc:abc /downloads
-    fi
+if grep -qe ' /downloads ' /proc/mounts; then
+    lsiown abc:abc /downloads
 fi
 
 # permissions
