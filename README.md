@@ -106,7 +106,7 @@ services:
       - TORRENTING_PORT=6881
     volumes:
       - /path/to/qbittorrent/appdata:/config
-      - /path/to/downloads:/downloads
+      - /path/to/downloads:/downloads #optional
     ports:
       - 8080:8080
       - 6881:6881
@@ -128,7 +128,7 @@ docker run -d \
   -p 6881:6881 \
   -p 6881:6881/udp \
   -v /path/to/qbittorrent/appdata:/config \
-  -v /path/to/downloads:/downloads \
+  -v /path/to/downloads:/downloads `#optional` \
   --restart unless-stopped \
   lscr.io/linuxserver/qbittorrent:libtorrentv1
 ```
