@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/unrar:latest as unrar
+FROM ghcr.io/linuxserver/unrar:latest AS unrar
 
 FROM ghcr.io/linuxserver/baseimage-alpine:3.20
 

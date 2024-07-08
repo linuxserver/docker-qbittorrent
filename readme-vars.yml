@@ -24,7 +24,6 @@ param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/appdata", desc: "Contains all relevant configuration files." }
-  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "8080", internal_port: "8080", port_desc: "WebUI" }
@@ -34,6 +33,11 @@ param_usage_include_env: true
 param_env_vars:
   - { env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the web UI, see below for explanation"}
   - { env_var: "TORRENTING_PORT", env_value: "6881", desc: "for changing the port of tcp/udp connection, see below for explanation" }
+opt_param_usage_include_vols: true
+opt_param_volumes:
+  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
+
+readonly_supported: true
 
 # application setup block
 app_setup_block_enabled: true
