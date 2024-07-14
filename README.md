@@ -86,6 +86,11 @@ A bittorrent client can be an active or a passive node. Running your client as a
 
 Similarly to the WEBUI_PORT, to set the port to 6887 you need to pass -p 6887:6887, -p 6887:6887/udp and -e TORRENTING_PORT=6887 arguments to Docker.
 
+## Read-Only Operation
+
+This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
+
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -149,6 +154,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e TORRENTING_PORT=6881` | for changing the port of tcp/udp connection, see below for explanation |
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
+| `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
 
 ## Environment variables from files (Docker secrets)
 
