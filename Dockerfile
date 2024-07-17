@@ -39,7 +39,7 @@ RUN \
   fi && \
   curl -o \
     /tmp/qbt.tar.gz -L \
-    "https://github.com/fedarovich/qbittorrent-cli/releases/download/${QBT_CLI_VERSION}/qbt-linux-alpine-x64-${QBT_CLI_VERSION#v}.tar.gz" && \
+    "https://github.com/fedarovich/qbittorrent-cli/releases/download/v1.8.24199.1/qbt-linux-alpine-x64-net6-${QBT_CLI_VERSION#v}.tar.gz" && \
   tar xf \
     /tmp/qbt.tar.gz -C \
     /qbt && \
