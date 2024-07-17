@@ -31,6 +31,18 @@ RUN \
   fi && \
   apk add -U --upgrade --no-cache \
     qbittorrent-nox==${QBITTORRENT_VERSION} && \
+  echo "***** install qbitorrent-cli ****" && \
+  mkdir /qbt && \
+  if [ -z ${QBT_CLI_VERSION+x} ]; then \
+    QBT_CLI_VERSION=$(curl -sL "https://api.github.com/repos/fedarovich/qbittorrent-cli/releases/latest" \
+    | jq -r '. | .tag_name'); \
+  fi && \
+  curl -o \
+    /tmp/qbt.tar.gz -L \
+    "https://github.com/fedarovich/qbittorrent-cli/releases/download/${QBT_CLI_VERSION}/qbt-linux-alpine-x64-${QBT_CLI_VERSION#v}.tar.gz" && \
+  tar xf \
+    /tmp/qbt.tar.gz -C \
+    /qbt && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   rm -rf \
