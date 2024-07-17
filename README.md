@@ -317,6 +317,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **17.07.24:** - Restore qbittorrent-cli as it now supports openssl 3.
 * **25.05.24:** - Rebase to Alpine 3.20, remove qbittorrent-cli as it still requires openssl 1.1 which is EOL.
 * **14.02.24:** - Only set/override torrenting port if the optional env var is set.
 * **14.02.24:** - Add torrenting port support.
