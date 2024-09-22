@@ -191,13 +191,13 @@ coreutils                                          9.5-r1                       
 coreutils-env                                      9.5-r1                                                                                   apk       
 coreutils-fmt                                      9.5-r1                                                                                   apk       
 coreutils-sha512sum                                9.5-r1                                                                                   apk       
-curl                                               8.10.0-r0                                                                                apk       
+curl                                               8.9.1-r2                                                                                 apk       
 dbus-libs                                          1.14.10-r1                                                                               apk       
 double-conversion                                  3.3.0-r0                                                                                 apk       
 duktape                                            2.7.0-r1                                                                                 apk       
 findutils                                          4.9.0-r5                                                                                 apk       
 gdbm                                               1.23-r1                                                                                  apk       
-glib                                               2.80.4-r0                                                                                apk       
+glib                                               2.80.5-r0                                                                                apk       
 icu-data-en                                        74.2-r0                                                                                  apk       
 icu-libs                                           74.2-r0                                                                                  apk       
 jq                                                 1.7.1-r0                                                                                 apk       
@@ -208,7 +208,7 @@ libblkid                                           2.40.1-r1                    
 libbsd                                             0.12.2-r0                                                                                apk       
 libbz2                                             1.0.8-r6                                                                                 apk       
 libcrypto3                                         3.3.2-r0                                                                                 apk       
-libcurl                                            8.10.0-r0                                                                                apk       
+libcurl                                            8.9.1-r2                                                                                 apk       
 libeconf                                           0.6.3-r0                                                                                 apk       
 libexpat                                           2.6.3-r0                                                                                 apk       
 libffi                                             3.4.6-r0                                                                                 apk       
