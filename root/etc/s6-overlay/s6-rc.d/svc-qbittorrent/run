@@ -6,6 +6,11 @@ if [[ -n "${TORRENTING_PORT}" ]]; then
     TORRENTING_PORT_ARG="--torrenting-port=${TORRENTING_PORT}"
 fi
 
+WEBUI_ADDRESS=$(grep -Po "^WebUI\\\Address=\K(.*)" /config/qBittorrent/qBittorrent.conf)
+if [[ -z ${WEBUI_ADDRESS} ]] || [[ ${WEBUI_ADDRESS} == "*" ]]; then
+    WEBUI_ADDRESS="localhost"
+fi
+
 exec \
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost ${WEBUI_PORT}" \
+    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT}" \
         s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}

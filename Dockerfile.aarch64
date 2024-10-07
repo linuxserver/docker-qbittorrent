@@ -21,6 +21,7 @@ XDG_DATA_HOME="/config"
 RUN \
   echo "**** install packages ****" && \
   apk add --no-cache \
+    grep \
     icu-libs \
     p7zip \
     python3 \
