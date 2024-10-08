@@ -198,6 +198,7 @@ duktape                                            2.7.0-r1                     
 findutils                                          4.10.0-r0                                                                                apk       
 gdbm                                               1.24-r0                                                                                  apk       
 glib                                               2.82.1-r0                                                                                apk       
+grep                                               3.11-r0                                                                                  apk       
 icu-data-en                                        74.2-r0                                                                                  apk       
 icu-libs                                           74.2-r0                                                                                  apk       
 jq                                                 1.7.1-r0                                                                                 apk       
@@ -239,10 +240,10 @@ nghttp2-libs                                       1.63.0-r0                    
 oniguruma                                          6.9.9-r0                                                                                 apk       
 pcre2                                              10.43-r0                                                                                 apk       
 procps-ng                                          4.0.4-r2                                                                                 apk       
-pyc                                                3.12.6-r0                                                                                apk       
-python3                                            3.12.6-r0                                                                                apk       
-python3-pyc                                        3.12.6-r0                                                                                apk       
-python3-pycache-pyc0                               3.12.6-r0                                                                                apk       
+pyc                                                3.12.7-r0                                                                                apk       
+python3                                            3.12.7-r0                                                                                apk       
+python3-pyc                                        3.12.7-r0                                                                                apk       
+python3-pycache-pyc0                               3.12.7-r0                                                                                apk       
 qbittorrent-nox                                    5.0.0-r1                                                                                 apk       
 qbt                                                1.8.24199.1+738bca0d7d7585cf40629f13a59b6198eaf6fe64                                     dotnet    
 qt6-qtbase                                         6.7.2-r2                                                                                 apk       
