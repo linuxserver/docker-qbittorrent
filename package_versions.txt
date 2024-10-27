@@ -240,10 +240,10 @@ nghttp2-libs                                       1.63.0-r0                    
 oniguruma                                          6.9.9-r0                                                                                 apk       
 pcre2                                              10.43-r0                                                                                 apk       
 procps-ng                                          4.0.4-r2                                                                                 apk       
-pyc                                                3.12.7-r0                                                                                apk       
-python3                                            3.12.7-r0                                                                                apk       
-python3-pyc                                        3.12.7-r0                                                                                apk       
-python3-pycache-pyc0                               3.12.7-r0                                                                                apk       
+pyc                                                3.12.7-r1                                                                                apk       
+python3                                            3.12.7-r1                                                                                apk       
+python3-pyc                                        3.12.7-r1                                                                                apk       
+python3-pycache-pyc0                               3.12.7-r1                                                                                apk       
 qbittorrent-nox                                    5.0.0-r2                                                                                 apk       
 qbt                                                1.8.24285.1+c5794123bd204e629729e52e7177834c4ba3bfc2                                     dotnet    
 qt6-qtbase                                         6.7.2-r2                                                                                 apk       
@@ -252,7 +252,7 @@ readline                                           8.2.13-r0                    
 scanelf                                            1.3.8-r0                                                                                 apk       
 shadow                                             4.16.0-r0                                                                                apk       
 skalibs                                            2.14.2.0-r2                                                                              apk       
-sqlite-libs                                        3.46.1-r0                                                                                apk       
+sqlite-libs                                        3.47.0-r0                                                                                apk       
 ssl_client                                         1.36.1-r32                                                                               apk       
 tzdata                                             2024b-r1                                                                                 apk       
 utmps-libs                                         0.1.2.2-r3                                                                               apk       
