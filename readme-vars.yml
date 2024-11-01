@@ -62,6 +62,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "01.11.24:", desc: "Ingest qbittorrent from github rather than Alpine repo." }
   - { date: "17.07.24:", desc: "Restore qbittorrent-cli as it now supports openssl 3." }
   - { date: "25.05.24:", desc: "Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL." }
   - { date: "14.02.24:", desc: "Only set/override torrenting port if the optional env var is set." }
