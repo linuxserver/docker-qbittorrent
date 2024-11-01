@@ -3,7 +3,7 @@
 # jenkins variables
 project_name: docker-qbittorrent
 external_type: na
-custom_version_command: "curl -sL 'https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases' | jq -r 'first(.[] | select(.prerelease == true) | .tag_name)'"
+custom_version_command: "curl -sL 'https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases' | jq -r 'first(.[] | select(.prerelease == false) | .tag_name)'"
 release_type: stable
 release_tag: latest
 ls_branch: master
