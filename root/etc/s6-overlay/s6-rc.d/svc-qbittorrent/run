@@ -13,4 +13,4 @@ fi
 
 exec \
     s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT}" \
-        s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}
+        s6-setuidgid abc /app/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}
