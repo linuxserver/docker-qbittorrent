@@ -28,7 +28,7 @@ RUN \
     qt6-qtbase-sqlite && \
   if [ -z ${QBITTORRENT_VERSION+x} ]; then \
      QBITTORRENT_VERSION=$(curl -sL "https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases" | \
-     jq -r 'first(.[] | select(.prerelease == true) | .tag_name)'); \
+     jq -r 'first(.[] | select(.prerelease == false) | .tag_name)'); \
   fi && \
   curl -o \
     /app/qbittorrent-nox -L \
