@@ -219,8 +219,8 @@ libidn2                                            2.3.7-r0                     
 libintl                                            0.22.5-r0                                                                                apk       
 libmd                                              1.1.0-r0                                                                                 apk       
 libmount                                           2.40.1-r1                                                                                apk       
-libncursesw                                        6.4_p20240420-r1                                                                         apk       
-libpanelw                                          6.4_p20240420-r1                                                                         apk       
+libncursesw                                        6.4_p20240420-r2                                                                         apk       
+libpanelw                                          6.4_p20240420-r2                                                                         apk       
 libpcre2-16                                        10.43-r0                                                                                 apk       
 libproc2                                           4.0.4-r0                                                                                 apk       
 libproxy                                           0.5.6-r0                                                                                 apk       
@@ -233,7 +233,7 @@ mpdecimal                                          4.0.0-r0                     
 mscorlib                                           6.0.3524.45918                                                                           dotnet    
 musl                                               1.2.5-r0                                                                                 apk       
 musl-utils                                         1.2.5-r0                                                                                 apk       
-ncurses-terminfo-base                              6.4_p20240420-r1                                                                         apk       
+ncurses-terminfo-base                              6.4_p20240420-r2                                                                         apk       
 netcat-openbsd                                     1.226-r0                                                                                 apk       
 netstandard                                        6.0.3524.45918                                                                           dotnet    
 nghttp2-libs                                       1.62.1-r0                                                                                apk       
