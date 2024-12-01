@@ -185,7 +185,7 @@ busybox                                            1.37.0-r7                    
 busybox-binsh                                      1.37.0-r7                                                                                apk       
 c-ares                                             1.34.3-r0                                                                                apk       
 ca-certificates                                    20240705-r0                                                                              apk       
-ca-certificates-bundle                             20240705-r0                                                                              apk       
+ca-certificates-bundle                             20241010-r0                                                                              apk       
 catatonit                                          0.2.0-r0                                                                                 apk       
 coreutils                                          9.5-r1                                                                                   apk       
 coreutils-env                                      9.5-r1                                                                                   apk       
@@ -252,7 +252,7 @@ readline                                           8.2.13-r0                    
 scanelf                                            1.3.8-r1                                                                                 apk       
 shadow                                             4.16.0-r1                                                                                apk       
 skalibs-libs                                       2.14.3.0-r0                                                                              apk       
-sqlite-libs                                        3.47.0-r0                                                                                apk       
+sqlite-libs                                        3.47.1-r0                                                                                apk       
 ssl_client                                         1.37.0-r7                                                                                apk       
 tzdata                                             2024b-r1                                                                                 apk       
 utmps-libs                                         0.1.2.3-r2                                                                               apk       
