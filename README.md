@@ -86,7 +86,6 @@ A bittorrent client can be an active or a passive node. Running your client as a
 
 Similarly to the WEBUI_PORT, to set the port to 6887 you need to pass -p 6887:6887, -p 6887:6887/udp and -e TORRENTING_PORT=6887 arguments to Docker.
 
- 
 ## Read-Only Operation
 
 This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
@@ -94,6 +93,9 @@ This image can be run with a read-only container filesystem. For details please 
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
+
+>[!NOTE]
+>Unless a parameter is flaged as 'optional', it is *mandatory* and a value must be provided.
 
 ### docker-compose (recommended, [click here for more info](https://docs.linuxserver.io/general/docker-compose))
 
@@ -144,9 +146,9 @@ Containers are configured using parameters passed at runtime (such as those abov
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 8080` | WebUI |
-| `-p 6881` | tcp connection port |
-| `-p 6881/udp` | udp connection port |
+| `-p 8080:8080` | WebUI |
+| `-p 6881:6881` | tcp connection port |
+| `-p 6881:6881/udp` | udp connection port |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
