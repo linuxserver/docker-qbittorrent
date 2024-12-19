@@ -6,39 +6,34 @@ project_url: "https://www.qbittorrent.org/"
 project_logo: "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/qbittorrent-icon.png"
 project_blurb: "The [{{ project_name|capitalize }}]({{ project_url }}) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
 development_versions: true
 development_versions_items:
-  - { tag: "latest", desc: "Stable qbittorrent releases" }
-  - { tag: "libtorrentv1", desc: "Static qbittorrent builds using libtorrent v1" }
-
+  - {tag: "latest", desc: "Stable qbittorrent releases"}
+  - {tag: "libtorrentv1", desc: "Static qbittorrent builds using libtorrent v1"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/appdata", desc: "Contains all relevant configuration files." }
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/appdata", desc: "Contains all relevant configuration files."}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "8080", internal_port: "8080", port_desc: "WebUI" }
-  - { external_port: "6881", internal_port: "6881", port_desc: "tcp connection port" }
-  - { external_port: "6881", internal_port: "6881/udp", port_desc: "udp connection port" }
+  - {external_port: "8080", internal_port: "8080", port_desc: "WebUI"}
+  - {external_port: "6881", internal_port: "6881", port_desc: "tcp connection port"}
+  - {external_port: "6881", internal_port: "6881/udp", port_desc: "udp connection port"}
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the web UI, see below for explanation"}
-  - { env_var: "TORRENTING_PORT", env_value: "6881", desc: "for changing the port of tcp/udp connection, see below for explanation" }
+  - {env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the web UI, see below for explanation"}
+  - {env_var: "TORRENTING_PORT", env_value: "6881", desc: "for changing the port of tcp/udp connection, see below for explanation"}
 opt_param_usage_include_vols: true
 opt_param_volumes:
-  - { vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk." }
-
+  - {vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk."}
 readonly_supported: true
-
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -59,49 +54,87 @@ app_setup_block: |
   A bittorrent client can be an active or a passive node. Running your client as an active node has the advantage of being able to connect to both active and passive peers, and can potentially increase the number of incoming connections. This requires an open port on the host machine which might differ from container's internal one.
 
   Similarly to the WEBUI_PORT, to set the port to 6887 you need to pass -p 6887:6887, -p 6887:6887/udp and -e TORRENTING_PORT=6887 arguments to Docker.
-
+# init diagram
+init_diagram: |
+  "qbittorrent:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-crontab-config -> init-config-end
+    init-qbittorrent-config -> init-config-end
+    init-config -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    base -> init-migrations
+    init-config-end -> init-mods
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-config -> init-qbittorrent-config
+    init-custom-files -> init-services
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-qbittorrent
+    svc-qbittorrent -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine:edge"
+  }
+  "qbittorrent:latest" <- Base Images
 # changelog
 changelogs:
-  - { date: "17.07.24:", desc: "Restore qbittorrent-cli as it now supports openssl 3." }
-  - { date: "25.05.24:", desc: "Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL." }
-  - { date: "14.02.24:", desc: "Only set/override torrenting port if the optional env var is set." }
-  - { date: "14.02.24:", desc: "Add torrenting port support." }
-  - { date: "31.01.24:", desc: "Remove obsolete compat packages."}
-  - { date: "25.12.23:", desc: "Only pull stable releases of qbittorrent-cli."}
-  - { date: "07.10.23:", desc: "Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar)."}
-  - { date: "10.08.23:", desc: "Bump unrar to 6.2.10."}
-  - { date: "17.06.23:", desc: "Deprecate armhf as per [https://www.linuxserver.io/armhf](https://www.linuxserver.io/armhf)." }
-  - { date: "10.06.23:", desc: "Bump unrar to 6.2.8." }
-  - { date: "23.02.23:", desc: "Add qt6-qtbase-sqlite to support SQLite database for resume files."}
-  - { date: "29.11.22:", desc: "Add openssl1.1-compat for qbittorrent-cli." }
-  - { date: "31.10.22:", desc: "Add libtorrentv1 branch." }
-  - { date: "31.08.22:", desc: "Rebase to Alpine Edge again to follow latest releases." }
-  - { date: "12.08.22:", desc: "Bump unrar to 6.1.7." }
-  - { date: "16.06.22:", desc: "Rebase to Alpine 3.16 from edge." }
-  - { date: "25.05.22:", desc: "Fetch qbitorrent-cli from upstream repo." }
-  - { date: "02.03.22:", desc: "Add unrar, 7zip, and qbitorrent-cli." }
-  - { date: "01.03.22:", desc: "Add python for search plugin support." }
-  - { date: "23.02.22:", desc: "Rebase to Alpine Edge, install from Alpine repos." }
-  - { date: "19.02.22:", desc: "Add jq to build-stage" }
-  - { date: "07.01.22:", desc: "Rebase to Alpine, build from source." }
-  - { date: "06.01.22:", desc: "Deprecate unstable branch." }
-  - { date: "10.02.21:", desc: "Rebase to focal." }
-  - { date: "20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information." }
-  - { date: "12.11.20:", desc: "Stop creating /config/data directory on startup" }
-  - { date: "03.04.20:", desc: "Fix adding search engine plugin" }
-  - { date: "02.08.19:", desc: "Add qbitorrent-cli for processing scripts." }
-  - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
-  - { date: "14.01.19:", desc: "Rebase to Ubuntu, add multi arch and pipeline logic." }
-  - { date: "25.09.18:", desc: "Use buildstage type build, bump qbitorrent to 4.1.3." }
-  - { date: "14.08.18:", desc: "Rebase to alpine 3.8, bump libtorrent to 1.1.9 and qbitorrent to 4.1.2." }
-  - { date: "08.06.18:", desc: "Bump qbitorrent to 4.1.1." }
-  - { date: "26.04.18:", desc: "Bump libtorrent to 1.1.7." }
-  - { date: "02.03.18:", desc: "Bump qbitorrent to 4.0.4 and libtorrent to 1.1.6." }
-  - { date: "02.01.18:", desc: "Deprecate cpu_core routine lack of scaling." }
-  - { date: "19.12.17:", desc: "Update to v4.0.3." }
-  - { date: "09.02.17:", desc: "Rebase to alpine 3.7" }
-  - { date: "01.12.17:", desc: "Update to v4.0.2." }
-  - { date: "27.11.17:", desc: "Update to v4 and use cpu_core routine to speed up builds." }
-  - { date: "16.09.17:", desc: "Bump to 3.3.16, Add WEBUI_PORT variable and notes to README to allow changing port of webui." }
-  - { date: "01.08.17:", desc: "Initial Release." }
-  - { date: "12.02.18:", desc: "Initial Release." }
+  - {date: "17.07.24:", desc: "Restore qbittorrent-cli as it now supports openssl 3."}
+  - {date: "25.05.24:", desc: "Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL."}
+  - {date: "14.02.24:", desc: "Only set/override torrenting port if the optional env var is set."}
+  - {date: "14.02.24:", desc: "Add torrenting port support."}
+  - {date: "31.01.24:", desc: "Remove obsolete compat packages."}
+  - {date: "25.12.23:", desc: "Only pull stable releases of qbittorrent-cli."}
+  - {date: "07.10.23:", desc: "Install unrar from [linuxserver repo](https://github.com/linuxserver/docker-unrar)."}
+  - {date: "10.08.23:", desc: "Bump unrar to 6.2.10."}
+  - {date: "17.06.23:", desc: "Deprecate armhf as per [https://www.linuxserver.io/armhf](https://www.linuxserver.io/armhf)."}
+  - {date: "10.06.23:", desc: "Bump unrar to 6.2.8."}
+  - {date: "23.02.23:", desc: "Add qt6-qtbase-sqlite to support SQLite database for resume files."}
+  - {date: "29.11.22:", desc: "Add openssl1.1-compat for qbittorrent-cli."}
+  - {date: "31.10.22:", desc: "Add libtorrentv1 branch."}
+  - {date: "31.08.22:", desc: "Rebase to Alpine Edge again to follow latest releases."}
+  - {date: "12.08.22:", desc: "Bump unrar to 6.1.7."}
+  - {date: "16.06.22:", desc: "Rebase to Alpine 3.16 from edge."}
+  - {date: "25.05.22:", desc: "Fetch qbitorrent-cli from upstream repo."}
+  - {date: "02.03.22:", desc: "Add unrar, 7zip, and qbitorrent-cli."}
+  - {date: "01.03.22:", desc: "Add python for search plugin support."}
+  - {date: "23.02.22:", desc: "Rebase to Alpine Edge, install from Alpine repos."}
+  - {date: "19.02.22:", desc: "Add jq to build-stage"}
+  - {date: "07.01.22:", desc: "Rebase to Alpine, build from source."}
+  - {date: "06.01.22:", desc: "Deprecate unstable branch."}
+  - {date: "10.02.21:", desc: "Rebase to focal."}
+  - {date: "20.01.21:", desc: "Deprecate `UMASK_SET` in favor of UMASK in baseimage, see above for more information."}
+  - {date: "12.11.20:", desc: "Stop creating /config/data directory on startup"}
+  - {date: "03.04.20:", desc: "Fix adding search engine plugin"}
+  - {date: "02.08.19:", desc: "Add qbitorrent-cli for processing scripts."}
+  - {date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag."}
+  - {date: "14.01.19:", desc: "Rebase to Ubuntu, add multi arch and pipeline logic."}
+  - {date: "25.09.18:", desc: "Use buildstage type build, bump qbitorrent to 4.1.3."}
+  - {date: "14.08.18:", desc: "Rebase to alpine 3.8, bump libtorrent to 1.1.9 and qbitorrent to 4.1.2."}
+  - {date: "08.06.18:", desc: "Bump qbitorrent to 4.1.1."}
+  - {date: "26.04.18:", desc: "Bump libtorrent to 1.1.7."}
+  - {date: "02.03.18:", desc: "Bump qbitorrent to 4.0.4 and libtorrent to 1.1.6."}
+  - {date: "02.01.18:", desc: "Deprecate cpu_core routine lack of scaling."}
+  - {date: "19.12.17:", desc: "Update to v4.0.3."}
+  - {date: "09.02.17:", desc: "Rebase to alpine 3.7"}
+  - {date: "01.12.17:", desc: "Update to v4.0.2."}
+  - {date: "27.11.17:", desc: "Update to v4 and use cpu_core routine to speed up builds."}
+  - {date: "16.09.17:", desc: "Bump to 3.3.16, Add WEBUI_PORT variable and notes to README to allow changing port of webui."}
+  - {date: "01.08.17:", desc: "Initial Release."}
+  - {date: "12.02.18:", desc: "Initial Release."}
