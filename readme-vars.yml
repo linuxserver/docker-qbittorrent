@@ -34,6 +34,7 @@ opt_param_usage_include_vols: true
 opt_param_volumes:
   - {vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk."}
 readonly_supported: true
+nonroot_supported: true
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -47,7 +48,7 @@ app_setup_block: |
 
   Due to issues with CSRF and port mapping, should you require to alter the port for the web UI you need to change both sides of the -p 8080 switch AND set the WEBUI_PORT variable to the new port.
 
-  For example, to set the port to 8090 you need to set -p 8090:8090 and -e WEBUI_PORT=8090
+  For example, to set the port to 8090 you need to set -p 8123:8123 and -e WEBUI_PORT=8123
 
   ### TORRENTING_PORT
 
