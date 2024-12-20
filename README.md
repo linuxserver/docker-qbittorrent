@@ -90,6 +90,10 @@ Similarly to the WEBUI_PORT, to set the port to 6887 you need to pass -p 6887:68
 
 This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
 
+## Non-Root Operation
+
+This image can be run with a non-root user. For details please [read the docs](https://docs.linuxserver.io/misc/non-root/).
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -157,6 +161,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
 | `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
+| `--user=1000:1000` | Run container with a non-root user. Please [read the docs](https://docs.linuxserver.io/misc/non-root/). |
 
 ## Environment variables from files (Docker secrets)
 
@@ -320,6 +325,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.12.24:** - Rebase to Alpine 3.21.
 * **17.07.24:** - Restore qbittorrent-cli as it now supports openssl 3.
 * **25.05.24:** - Rebase to Alpine 3.20, remove qbittorrent-cli as it still requires openssl 1.1 which is EOL.
 * **14.02.24:** - Only set/override torrenting port if the optional env var is set.
