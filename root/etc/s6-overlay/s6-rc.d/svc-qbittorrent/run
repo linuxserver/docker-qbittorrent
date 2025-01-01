@@ -11,6 +11,12 @@ if [[ -z ${WEBUI_ADDRESS} ]] || [[ ${WEBUI_ADDRESS} == "*" ]]; then
     WEBUI_ADDRESS="localhost"
 fi
 
-exec \
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT}" \
-        s6-setuidgid abc /app/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    exec \
+        s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT}" \
+            s6-setuidgid abc /app/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}
+else
+    exec \
+        s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT}" \
+            /app/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}
+fi

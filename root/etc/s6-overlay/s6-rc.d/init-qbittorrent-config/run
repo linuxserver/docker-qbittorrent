@@ -9,11 +9,13 @@ if [[ ! -f /config/qBittorrent/qBittorrent.conf ]]; then
     cp /defaults/qBittorrent.conf /config/qBittorrent/qBittorrent.conf
 fi
 
-# chown download directory if currently not set to abc
-if grep -qe ' /downloads ' /proc/mounts; then
-    lsiown abc:abc /downloads
-fi
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    # chown download directory if currently not set to abc
+    if grep -qe ' /downloads ' /proc/mounts; then
+        lsiown abc:abc /downloads
+    fi
 
-# permissions
-lsiown -R abc:abc \
-    /config
+    # permissions
+    lsiown -R abc:abc \
+        /config
+fi
