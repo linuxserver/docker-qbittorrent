@@ -6,6 +6,7 @@ project_url: "https://www.qbittorrent.org/"
 project_logo: "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/qbittorrent-icon.png"
 project_blurb: "The [{{ project_name|capitalize }}]({{ project_url }}) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Downloaders"
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
