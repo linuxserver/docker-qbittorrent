@@ -228,7 +228,7 @@ libssl3                                            3.3.2-r4                     
 libstdc++                                          14.2.0-r5                                                                                apk       
 libtorrent-rasterbar                               2.0.10-r3                                                                                apk       
 libunistring                                       1.3-r0                                                                                   apk       
-linux-pam                                          1.6.1-r1                                                                                 apk       
+linux-pam                                          1.7.0-r0                                                                                 apk       
 mpdecimal                                          4.0.0-r0                                                                                 apk       
 mscorlib                                           6.0.3524.45918                                                                           dotnet    
 musl                                               1.2.5-r9                                                                                 apk       
@@ -256,6 +256,6 @@ sqlite-libs                                        3.48.0-r0                    
 ssl_client                                         1.37.0-r13                                                                               apk       
 tzdata                                             2025a-r0                                                                                 apk       
 utmps-libs                                         0.1.2.3-r2                                                                               apk       
-xz-libs                                            5.6.3-r0                                                                                 apk       
+xz-libs                                            5.6.4-r0                                                                                 apk       
 zlib                                               1.3.1-r2                                                                                 apk       
 zstd-libs                                          1.5.6-r2                                                                                 apk       
