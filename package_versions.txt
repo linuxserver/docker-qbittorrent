@@ -198,7 +198,7 @@ double-conversion                                  3.3.0-r0                     
 duktape                                            2.7.0-r1                                                                                 apk       
 findutils                                          4.10.0-r0                                                                                apk       
 gdbm                                               1.24-r0                                                                                  apk       
-glib                                               2.82.4-r0                                                                                apk       
+glib                                               2.82.5-r0                                                                                apk       
 grep                                               3.11-r0                                                                                  apk       
 icu-data-en                                        74.2-r0                                                                                  apk       
 icu-libs                                           74.2-r0                                                                                  apk       
@@ -212,7 +212,7 @@ libcrypto3                                         3.3.3-r0                     
 libcurl                                            8.12.1-r0                                                                                apk       
 libeconf                                           0.6.3-r0                                                                                 apk       
 libexpat                                           2.6.4-r0                                                                                 apk       
-libffi                                             3.4.6-r0                                                                                 apk       
+libffi                                             3.4.7-r0                                                                                 apk       
 libgcc                                             14.2.0-r4                                                                                apk       
 libgomp                                            14.2.0-r4                                                                                apk       
 libidn2                                            2.3.7-r0                                                                                 apk       
