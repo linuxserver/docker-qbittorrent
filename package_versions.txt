@@ -192,7 +192,7 @@ coreutils                                          9.5-r2                       
 coreutils-env                                      9.5-r2                                                                                   apk       
 coreutils-fmt                                      9.5-r2                                                                                   apk       
 coreutils-sha512sum                                9.5-r2                                                                                   apk       
-curl                                               8.12.1-r0                                                                                apk       
+curl                                               8.12.1-r1                                                                                apk       
 dbus-libs                                          1.14.10-r4                                                                               apk       
 double-conversion                                  3.3.0-r0                                                                                 apk       
 duktape                                            2.7.0-r1                                                                                 apk       
@@ -209,9 +209,9 @@ libblkid                                           2.40.4-r0                    
 libbsd                                             0.12.2-r0                                                                                apk       
 libbz2                                             1.0.8-r6                                                                                 apk       
 libcrypto3                                         3.3.3-r0                                                                                 apk       
-libcurl                                            8.12.1-r0                                                                                apk       
+libcurl                                            8.12.1-r1                                                                                apk       
 libeconf                                           0.6.3-r0                                                                                 apk       
-libexpat                                           2.6.4-r0                                                                                 apk       
+libexpat                                           2.7.0-r0                                                                                 apk       
 libffi                                             3.4.7-r0                                                                                 apk       
 libgcc                                             14.2.0-r4                                                                                apk       
 libgomp                                            14.2.0-r4                                                                                apk       
