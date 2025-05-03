@@ -81,7 +81,7 @@ pyc                                                       3.12.10-r0        apk
 python3                                                   3.12.10-r0        apk       
 python3-pyc                                               3.12.10-r0        apk       
 python3-pycache-pyc0                                      3.12.10-r0        apk       
-qbittorrent-nox                                           5.0.5-r0          apk       
+qbittorrent-nox                                           5.1.0-r0          apk       
 qbt                                                       1.8.24285.1       dotnet    
 qt6-qtbase                                                6.8.2-r2          apk       
 qt6-qtbase-sqlite                                         6.8.2-r2          apk       
@@ -90,7 +90,7 @@ runtimepack.Microsoft.NETCore.App.Runtime.linux-musl-x64  6.0.35            dotn
 scanelf                                                   1.3.8-r1          apk       
 shadow                                                    4.17.3-r0         apk       
 skalibs-libs                                              2.14.3.0-r0       apk       
-sqlite-libs                                               3.49.1-r0         apk       
+sqlite-libs                                               3.49.1-r1         apk       
 ssl_client                                                1.37.0-r16        apk       
 tzdata                                                    2025b-r0          apk       
 utmps-libs                                                0.1.2.3-r2        apk       
