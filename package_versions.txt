@@ -72,7 +72,7 @@ mpdecimal                                                 4.0.0-r0          apk
 musl                                                      1.2.5-r10         apk       
 musl-utils                                                1.2.5-r10         apk       
 ncurses-terminfo-base                                     6.5_p20250412-r0  apk       
-netcat-openbsd                                            1.228.1-r0        apk       
+netcat-openbsd                                            1.229.1-r0        apk       
 nghttp2-libs                                              1.65.0-r0         apk       
 oniguruma                                                 6.9.10-r0         apk       
 pcre2                                                     10.43-r1          apk       
