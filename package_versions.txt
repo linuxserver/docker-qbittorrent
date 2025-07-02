@@ -46,14 +46,14 @@ libb2                                                     0.98.1-r3         apk
 libblkid                                                  2.41.1-r0         apk       
 libbsd                                                    0.12.2-r0         apk       
 libbz2                                                    1.0.8-r6          apk       
-libcrypto3                                                3.5.0-r0          apk       
+libcrypto3                                                3.5.1-r0          apk       
 libcurl                                                   8.14.1-r1         apk       
 libeconf                                                  0.7.9-r0          apk       
 libexpat                                                  2.7.1-r0          apk       
 libffi                                                    3.5.1-r0          apk       
 libgcc                                                    14.3.0-r5         apk       
 libgomp                                                   14.3.0-r5         apk       
-libidn2                                                   2.3.7-r0          apk       
+libidn2                                                   2.3.8-r0          apk       
 libintl                                                   0.24.1-r0         apk       
 libmd                                                     1.1.0-r0          apk       
 libmount                                                  2.41.1-r0         apk       
@@ -61,9 +61,9 @@ libncursesw                                               6.5_p20250614-r0  apk
 libpanelw                                                 6.5_p20250614-r0  apk       
 libpcre2-16                                               10.43-r1          apk       
 libproc2                                                  4.0.4-r3          apk       
-libproxy                                                  0.5.9-r0          apk       
+libproxy                                                  0.5.10-r0         apk       
 libpsl                                                    0.21.5-r3         apk       
-libssl3                                                   3.5.0-r0          apk       
+libssl3                                                   3.5.1-r0          apk       
 libstdc++                                                 14.3.0-r5         apk       
 libtorrent-rasterbar                                      2.0.11-r0         apk       
 libunistring                                              1.3-r0            apk       
@@ -81,7 +81,7 @@ pyc                                                       3.12.11-r0        apk
 python3                                                   3.12.11-r0        apk       
 python3-pyc                                               3.12.11-r0        apk       
 python3-pycache-pyc0                                      3.12.11-r0        apk       
-qbittorrent-nox                                           5.1.1-r0          apk       
+qbittorrent-nox                                           5.1.2-r0          apk       
 qbt                                                       1.8.24285.1       dotnet    
 qt6-qtbase                                                6.8.3-r0          apk       
 qt6-qtbase-sqlite                                         6.8.3-r0          apk       
