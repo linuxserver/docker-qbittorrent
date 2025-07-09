@@ -2,7 +2,7 @@
 
 FROM ghcr.io/linuxserver/unrar:latest AS unrar
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.21
+FROM ghcr.io/linuxserver/baseimage-alpine:3.22
 
 # set version label
 ARG BUILD_DATE
