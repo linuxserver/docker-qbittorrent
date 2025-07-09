@@ -93,7 +93,7 @@ init_diagram: |
     svc-qbittorrent -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine:3.21"
+    "baseimage-alpine:3.22"
   }
   "qbittorrent:libtorrentv1" <- Base Images
 # changelog
