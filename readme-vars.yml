@@ -98,6 +98,7 @@ init_diagram: |
   "qbittorrent:libtorrentv1" <- Base Images
 # changelog
 changelogs:
+  - {date: "09.07.25:", desc: "Rebase to Alpine 3.21."}
   - {date: "20.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "17.07.24:", desc: "Restore qbittorrent-cli as it now supports openssl 3."}
   - {date: "25.05.24:", desc: "Rebase to Alpine 3.20, remove qbittorrent-cli as it still requires openssl 1.1 which is EOL."}
