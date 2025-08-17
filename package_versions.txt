@@ -17,7 +17,7 @@ alpine-baselayout                                         3.7.0-r0              
 alpine-baselayout-data                                    3.7.0-r0                  apk       
 alpine-keys                                               2.5-r0                    apk       
 apk-tools                                                 3.0.0_rc5_git20250715-r0  apk       
-bash                                                      5.3.3-r0                  apk       
+bash                                                      5.3.3-r1                  apk       
 brotli-libs                                               1.1.0-r2                  apk       
 busybox                                                   1.37.0-r22                apk       
 busybox-binsh                                             1.37.0-r22                apk       
@@ -69,8 +69,8 @@ libtorrent-rasterbar                                      2.0.11-r0             
 libunistring                                              1.3-r0                    apk       
 linux-pam                                                 1.7.0-r4                  apk       
 mpdecimal                                                 4.0.1-r0                  apk       
-musl                                                      1.2.5-r17                 apk       
-musl-utils                                                1.2.5-r17                 apk       
+musl                                                      1.2.5-r19                 apk       
+musl-utils                                                1.2.5-r19                 apk       
 ncurses-terminfo-base                                     6.5_p20250705-r0          apk       
 netcat-openbsd                                            1.229.1-r0                apk       
 nghttp2-libs                                              1.66.0-r0                 apk       
@@ -83,14 +83,14 @@ python3-pyc                                               3.12.11-r0            
 python3-pycache-pyc0                                      3.12.11-r0                apk       
 qbittorrent-nox                                           5.1.2-r1                  apk       
 qbt                                                       1.8.24285.1               dotnet    
-qt6-qtbase                                                6.9.1-r1                  apk       
-qt6-qtbase-sqlite                                         6.9.1-r1                  apk       
+qt6-qtbase                                                6.9.1-r2                  apk       
+qt6-qtbase-sqlite                                         6.9.1-r2                  apk       
 readline                                                  8.3.1-r0                  apk       
 runtimepack.Microsoft.NETCore.App.Runtime.linux-musl-x64  6.0.35                    dotnet    
 scanelf                                                   1.3.8-r2                  apk       
 shadow                                                    4.18.0-r0                 apk       
 skalibs-libs                                              2.14.4.0-r0               apk       
-sqlite-libs                                               3.50.4-r0                 apk       
+sqlite-libs                                               3.50.4-r1                 apk       
 ssl_client                                                1.37.0-r22                apk       
 tzdata                                                    2025b-r0                  apk       
 utmps-libs                                                0.1.3.1-r0                apk       
