@@ -35,7 +35,7 @@ double-conversion                                         3.3.1-r0              
 duktape-libs                                              2.7.0-r2                  apk       
 findutils                                                 4.10.0-r0                 apk       
 gdbm                                                      1.26-r0                   apk       
-glib                                                      2.84.4-r0                 apk       
+glib                                                      2.84.4-r1                 apk       
 grep                                                      3.12-r0                   apk       
 icu-data-en                                               76.1-r1                   apk       
 icu-libs                                                  76.1-r1                   apk       
