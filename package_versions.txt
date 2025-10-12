@@ -16,7 +16,7 @@ acl-libs                                                  2.3.2-r1          apk
 alpine-baselayout                                         3.7.0-r0          apk       
 alpine-baselayout-data                                    3.7.0-r0          apk       
 alpine-keys                                               2.5-r0            apk       
-alpine-release                                            3.22.1-r0         apk       
+alpine-release                                            3.22.2-r0         apk       
 apk-tools                                                 2.14.9-r3         apk       
 bash                                                      5.2.37-r0         apk       
 brotli-libs                                               1.1.0-r2          apk       
@@ -77,10 +77,10 @@ nghttp2-libs                                              1.65.0-r0         apk
 oniguruma                                                 6.9.10-r0         apk       
 pcre2                                                     10.43-r1          apk       
 procps-ng                                                 4.0.4-r3          apk       
-pyc                                                       3.12.11-r0        apk       
-python3                                                   3.12.11-r0        apk       
-python3-pyc                                               3.12.11-r0        apk       
-python3-pycache-pyc0                                      3.12.11-r0        apk       
+pyc                                                       3.12.12-r0        apk       
+python3                                                   3.12.12-r0        apk       
+python3-pyc                                               3.12.12-r0        apk       
+python3-pycache-pyc0                                      3.12.12-r0        apk       
 qbt                                                       1.8.24285.1       dotnet    
 qt6-qtbase                                                6.8.3-r0          apk       
 qt6-qtbase-sqlite                                         6.8.3-r0          apk       
