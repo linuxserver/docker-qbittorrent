@@ -31,6 +31,9 @@ param_usage_include_env: true
 param_env_vars:
   - {env_var: "WEBUI_PORT", env_value: "8080", desc: "for changing the port of the web UI, see below for explanation"}
   - {env_var: "TORRENTING_PORT", env_value: "6881", desc: "for changing the port of tcp/udp connection, see below for explanation"}
+opt_param_env_vars:
+  - {env_var: "WEBUI_USER", env_value: "", desc: "Set the WebUI username. If unset, defaults to 'admin'."}
+  - {env_var: "WEBUI_PASS", env_value: "", desc: "Set the WebUI password. If unset, a random password is generated on startup."}
 opt_param_usage_include_vols: true
 opt_param_volumes:
   - {vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk."}
@@ -99,6 +102,7 @@ init_diagram: |
   "qbittorrent:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "23.09.25:", desc: "Add optional WEBUI_USER and WEBUI_PASS environment variables."}
   - {date: "17.07.24:", desc: "Restore qbittorrent-cli as it now supports openssl 3."}
   - {date: "25.05.24:", desc: "Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL."}
   - {date: "14.02.24:", desc: "Only set/override torrenting port if the optional env var is set."}
