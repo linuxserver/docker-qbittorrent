@@ -13,10 +13,10 @@ Portable.Xaml                                             0.18.0            dotn
 QBittorrent.Client                                        1.9.24285.1       dotnet    
 System.Security.Cryptography.ProtectedData                5.0.0             dotnet    
 acl-libs                                                  2.3.2-r1          apk       
-alpine-baselayout                                         3.7.1-r5          apk       
-alpine-baselayout-data                                    3.7.1-r5          apk       
+alpine-baselayout                                         3.7.1-r6          apk       
+alpine-baselayout-data                                    3.7.1-r6          apk       
 alpine-keys                                               2.6-r0            apk       
-apk-tools                                                 3.0.0_rc6-r2      apk       
+apk-tools                                                 3.0.0_rc7-r0      apk       
 bash                                                      5.3.3-r1          apk       
 brotli-libs                                               1.1.0-r2          apk       
 busybox                                                   1.37.0-r24        apk       
@@ -40,7 +40,7 @@ grep                                                      3.12-r0           apk
 icu-data-en                                               76.1-r1           apk       
 icu-libs                                                  76.1-r1           apk       
 jq                                                        1.8.1-r0          apk       
-libapk                                                    3.0.0_rc6-r2      apk       
+libapk                                                    3.0.0_rc7-r0      apk       
 libattr                                                   2.5.2-r2          apk       
 libb2                                                     0.98.1-r3         apk       
 libblkid                                                  2.41.2-r0         apk       
@@ -51,8 +51,8 @@ libcurl                                                   8.16.0-r1         apk
 libeconf                                                  0.8.0-r0          apk       
 libexpat                                                  2.7.3-r0          apk       
 libffi                                                    3.5.2-r0          apk       
-libgcc                                                    15.2.0-r1         apk       
-libgomp                                                   15.2.0-r1         apk       
+libgcc                                                    15.2.0-r2         apk       
+libgomp                                                   15.2.0-r2         apk       
 libidn2                                                   2.3.8-r0          apk       
 libintl                                                   0.24.1-r1         apk       
 libmd                                                     1.1.0-r0          apk       
@@ -64,7 +64,7 @@ libproc2                                                  4.0.4-r3          apk
 libproxy                                                  0.5.10-r0         apk       
 libpsl                                                    0.21.5-r3         apk       
 libssl3                                                   3.5.4-r0          apk       
-libstdc++                                                 15.2.0-r1         apk       
+libstdc++                                                 15.2.0-r2         apk       
 libtorrent-rasterbar                                      2.0.11-r0         apk       
 libunistring                                              1.3-r0            apk       
 linux-pam                                                 1.7.1-r0          apk       
@@ -72,7 +72,7 @@ mpdecimal                                                 4.0.1-r0          apk
 musl                                                      1.2.5-r21         apk       
 musl-utils                                                1.2.5-r21         apk       
 ncurses-terminfo-base                                     6.5_p20251010-r0  apk       
-netcat-openbsd                                            1.229.1-r0        apk       
+netcat-openbsd                                            1.234.1-r0        apk       
 nghttp2-libs                                              1.67.1-r0         apk       
 nghttp3                                                   1.11.0-r0         apk       
 oniguruma                                                 6.9.10-r0         apk       
@@ -94,7 +94,7 @@ skalibs-libs                                              2.14.4.0-r0       apk
 sqlite-libs                                               3.50.4-r1         apk       
 ssl_client                                                1.37.0-r24        apk       
 tzdata                                                    2025b-r0          apk       
-usr-merge-nag                                             3.7.1-r5          apk       
+usr-merge-nag                                             3.7.1-r6          apk       
 utmps-libs                                                0.1.3.1-r0        apk       
 xz-libs                                                   5.8.1-r0          apk       
 zlib                                                      1.3.1-r2          apk       
