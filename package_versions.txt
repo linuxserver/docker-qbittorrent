@@ -16,7 +16,7 @@ acl-libs                                                  2.3.2-r1          apk
 alpine-baselayout                                         3.7.1-r6          apk       
 alpine-baselayout-data                                    3.7.1-r6          apk       
 alpine-keys                                               2.6-r0            apk       
-apk-tools                                                 3.0.0_rc7-r0      apk       
+apk-tools                                                 3.0.0_rc8-r0      apk       
 at-spi2-core                                              2.58.1-r0         apk       
 at-spi2-core-libs                                         2.58.1-r0         apk       
 avahi-libs                                                0.8-r22           apk       
@@ -25,7 +25,7 @@ brotli-libs                                               1.1.0-r2          apk
 busybox                                                   1.37.0-r25        apk       
 busybox-binsh                                             1.37.0-r25        apk       
 c-ares                                                    1.34.5-r0         apk       
-ca-certificates                                           20250911-r0       apk       
+ca-certificates                                           20251003-r0       apk       
 ca-certificates-bundle                                    20251003-r0       apk       
 cairo                                                     1.18.4-r0         apk       
 cairo-gobject                                             1.18.4-r0         apk       
@@ -35,7 +35,7 @@ coreutils-env                                             9.8-r1            apk
 coreutils-fmt                                             9.8-r1            apk       
 coreutils-sha512sum                                       9.8-r1            apk       
 cups-libs                                                 2.4.13-r0         apk       
-curl                                                      8.17.0-r0         apk       
+curl                                                      8.17.0-r1         apk       
 dbus-libs                                                 1.16.2-r1         apk       
 double-conversion                                         3.3.1-r0          apk       
 duktape-libs                                              2.7.0-r2          apk       
@@ -61,7 +61,7 @@ hwdata-pci                                                0.400-r0          apk
 icu-data-en                                               76.1-r1           apk       
 icu-libs                                                  76.1-r1           apk       
 jq                                                        1.8.1-r0          apk       
-libapk                                                    3.0.0_rc7-r0      apk       
+libapk                                                    3.0.0_rc8-r0      apk       
 libatk-1.0                                                2.58.1-r0         apk       
 libatk-bridge-2.0                                         2.58.1-r0         apk       
 libattr                                                   2.5.2-r2          apk       
@@ -70,7 +70,7 @@ libblkid                                                  2.41.2-r0         apk
 libbsd                                                    0.12.2-r0         apk       
 libbz2                                                    1.0.8-r6          apk       
 libcrypto3                                                3.5.4-r0          apk       
-libcurl                                                   8.17.0-r0         apk       
+libcurl                                                   8.17.0-r1         apk       
 libdrm                                                    2.4.128-r0        apk       
 libeconf                                                  0.8.0-r0          apk       
 libelf                                                    0.194-r0          apk       
