@@ -322,7 +322,8 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **09.07.25:** - Rebase to Alpine 3.21.
+* **28.12.25:** - Rebase to Alpine 3.23.
+* **09.07.25:** - Rebase to Alpine 3.22.
 * **20.12.24:** - Rebase to Alpine 3.21.
 * **17.07.24:** - Restore qbittorrent-cli as it now supports openssl 3.
 * **25.05.24:** - Rebase to Alpine 3.20, remove qbittorrent-cli as it still requires openssl 1.1 which is EOL.
