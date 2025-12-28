@@ -1,11 +1,6 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-WEBUI_PORT=${WEBUI_PORT:-8080}
-if [[ -n "${TORRENTING_PORT}" ]]; then
-    TORRENTING_PORT_ARG="--torrenting-port=${TORRENTING_PORT}"
-fi
-
 WEBUI_ADDRESS=$(grep -Po "^WebUI\\\Address=\K(.*)" /config/qBittorrent/qBittorrent.conf)
 if [[ -z ${WEBUI_ADDRESS} ]] || [[ ${WEBUI_ADDRESS} == "*" ]]; then
     WEBUI_ADDRESS="localhost"
@@ -13,9 +8,9 @@ fi
 
 if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
 exec \
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT}" \
-        s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}
+    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT:-8080}" \
+        s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT+--torrenting-port=${TORRENTING_PORT}}
 else
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT}" \
-        /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT_ARG}
+    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z ${WEBUI_ADDRESS} ${WEBUI_PORT:-8080}" \
+        /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}" ${TORRENTING_PORT+--torrenting-port=${TORRENTING_PORT}}
 fi
