@@ -13,8 +13,8 @@ Portable.Xaml                                             0.18.0            dotn
 QBittorrent.Client                                        1.9.24285.1       dotnet    
 System.Security.Cryptography.ProtectedData                5.0.0             dotnet    
 acl-libs                                                  2.3.2-r1          apk       
-alpine-baselayout                                         3.7.1-r10         apk       
-alpine-baselayout-data                                    3.7.1-r10         apk       
+alpine-baselayout                                         3.7.1-r11         apk       
+alpine-baselayout-data                                    3.7.1-r11         apk       
 alpine-keys                                               2.6-r0            apk       
 apk-tools                                                 3.0.4-r0          apk       
 bash                                                      5.3.9-r1          apk       
@@ -32,7 +32,7 @@ coreutils-sha512sum                                       9.9-r0            apk
 curl                                                      8.18.0-r0         apk       
 dbus-libs                                                 1.16.2-r1         apk       
 double-conversion                                         3.4.0-r0          apk       
-duktape-libs                                              2.7.0-r2          apk       
+duktape-libs                                              2.7.0-r3          apk       
 findutils                                                 4.10.0-r0         apk       
 gdbm                                                      1.26-r0           apk       
 glib                                                      2.86.4-r0         apk       
