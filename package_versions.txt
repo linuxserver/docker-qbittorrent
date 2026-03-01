@@ -1,5 +1,5 @@
 NAME                                                      VERSION           TYPE     
-7zip                                                      25.01-r0          apk       
+7zip                                                      26.00-r0          apk       
 Alba.CsConsoleFormat                                      1.0.0             dotnet    
 BencodeNET                                                2.3.0             dotnet    
 CsvHelper                                                 12.1.2            dotnet    
@@ -13,10 +13,10 @@ Portable.Xaml                                             0.18.0            dotn
 QBittorrent.Client                                        1.9.24285.1       dotnet    
 System.Security.Cryptography.ProtectedData                5.0.0             dotnet    
 acl-libs                                                  2.3.2-r1          apk       
-alpine-baselayout                                         3.7.1-r11         apk       
-alpine-baselayout-data                                    3.7.1-r11         apk       
+alpine-baselayout                                         3.7.1-r12         apk       
+alpine-baselayout-data                                    3.7.1-r12         apk       
 alpine-keys                                               2.6-r0            apk       
-apk-tools                                                 3.0.4-r0          apk       
+apk-tools                                                 3.0.5-r0          apk       
 bash                                                      5.3.9-r1          apk       
 brotli-libs                                               1.2.0-r0          apk       
 busybox                                                   1.37.0-r31        apk       
@@ -25,10 +25,10 @@ c-ares                                                    1.34.6-r0         apk
 ca-certificates                                           20251003-r0       apk       
 ca-certificates-bundle                                    20251003-r0       apk       
 catatonit                                                 0.2.1-r0          apk       
-coreutils                                                 9.9-r0            apk       
-coreutils-env                                             9.9-r0            apk       
-coreutils-fmt                                             9.9-r0            apk       
-coreutils-sha512sum                                       9.9-r0            apk       
+coreutils                                                 9.10-r1           apk       
+coreutils-env                                             9.10-r1           apk       
+coreutils-fmt                                             9.10-r1           apk       
+coreutils-sha512sum                                       9.10-r1           apk       
 curl                                                      8.18.0-r0         apk       
 dbus-libs                                                 1.16.2-r1         apk       
 double-conversion                                         3.4.0-r0          apk       
@@ -40,7 +40,7 @@ grep                                                      3.12-r0           apk
 icu-data-en                                               78.1-r0           apk       
 icu-libs                                                  78.1-r0           apk       
 jq                                                        1.8.1-r0          apk       
-libapk                                                    3.0.4-r0          apk       
+libapk                                                    3.0.5-r0          apk       
 libattr                                                   2.5.2-r2          apk       
 libb2                                                     0.98.1-r3         apk       
 libblkid                                                  2.41.3-r0         apk       
