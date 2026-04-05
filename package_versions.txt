@@ -83,7 +83,7 @@ libgcc                                                    15.2.0-r2         apk
 libgomp                                                   15.2.0-r2         apk       
 libice                                                    1.1.2-r0          apk       
 libidn2                                                   2.3.8-r0          apk       
-libinput-libs                                             1.30.0-r0         apk       
+libinput-libs                                             1.30.3-r0         apk       
 libintl                                                   0.24.1-r1         apk       
 libjpeg-turbo                                             3.1.2-r0          apk       
 libmagic                                                  5.46-r2           apk       
