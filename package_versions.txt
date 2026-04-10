@@ -69,7 +69,7 @@ libtorrent-rasterbar                                      2.0.11-r1         apk
 libunistring                                              1.4.1-r0          apk       
 linux-pam                                                 1.7.1-r2          apk       
 mpdecimal                                                 4.0.1-r0          apk       
-musl                                                      1.2.6-r1          apk       
+musl                                                      1.2.6-r2          apk       
 musl-utils                                                1.2.6-r0          apk       
 ncurses-terminfo-base                                     6.6_p20260328-r0  apk       
 netcat-openbsd                                            1.234.1-r0        apk       
