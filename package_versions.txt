@@ -57,8 +57,8 @@ libidn2                                                   2.3.8-r0          apk
 libintl                                                   0.24.1-r1         apk       
 libmd                                                     1.1.0-r0          apk       
 libmount                                                  2.41.4-r0         apk       
-libncursesw                                               6.6_p20260328-r0  apk       
-libpanelw                                                 6.6_p20260328-r0  apk       
+libncursesw                                               6.6_p20260404-r0  apk       
+libpanelw                                                 6.6_p20260404-r0  apk       
 libpcre2-16                                               10.47-r0          apk       
 libproc2                                                  4.0.6-r0          apk       
 libproxy                                                  0.5.12-r0         apk       
@@ -70,8 +70,8 @@ libunistring                                              1.4.1-r0          apk
 linux-pam                                                 1.7.1-r2          apk       
 mpdecimal                                                 4.0.1-r0          apk       
 musl                                                      1.2.6-r2          apk       
-musl-utils                                                1.2.6-r0          apk       
-ncurses-terminfo-base                                     6.6_p20260328-r0  apk       
+musl-utils                                                1.2.6-r2          apk       
+ncurses-terminfo-base                                     6.6_p20260404-r0  apk       
 netcat-openbsd                                            1.234.1-r0        apk       
 nghttp2-libs                                              1.68.1-r0         apk       
 oniguruma                                                 6.9.10-r0         apk       
@@ -88,9 +88,9 @@ qt6-qtbase-sqlite                                         6.11.0-r0         apk
 readline                                                  8.3.3-r1          apk       
 runtimepack.Microsoft.NETCore.App.Runtime.linux-musl-x64  6.0.35            dotnet    
 scanelf                                                   1.3.9-r1          apk       
-shadow                                                    4.18.0-r0         apk       
+shadow                                                    4.18.0-r1         apk       
 skalibs-libs                                              2.14.5.1-r0       apk       
-sqlite-libs                                               3.51.2-r1         apk       
+sqlite-libs                                               3.53.0-r0         apk       
 ssl_client                                                1.37.0-r31        apk       
 tzdata                                                    2026a-r0          apk       
 utmps-libs                                                0.1.3.2-r1        apk       
