@@ -23,7 +23,7 @@ busybox                                                   1.37.0-r31        apk
 busybox-binsh                                             1.37.0-r31        apk       
 c-ares                                                    1.34.6-r0         apk       
 ca-certificates                                           20251003-r0       apk       
-ca-certificates-bundle                                    20251003-r0       apk       
+ca-certificates-bundle                                    20260413-r0       apk       
 catatonit                                                 0.2.1-r0          apk       
 coreutils                                                 9.10-r1           apk       
 coreutils-env                                             9.10-r1           apk       
@@ -50,11 +50,11 @@ libcrypto3                                                3.5.6-r0          apk
 libcurl                                                   8.19.0-r0         apk       
 libeconf                                                  0.8.3-r0          apk       
 libexpat                                                  2.7.5-r0          apk       
-libffi                                                    3.5.2-r0          apk       
+libffi                                                    3.5.2-r1          apk       
 libgcc                                                    15.2.0-r3         apk       
 libgomp                                                   15.2.0-r3         apk       
 libidn2                                                   2.3.8-r0          apk       
-libintl                                                   0.24.1-r1         apk       
+libintl                                                   1.0-r0            apk       
 libmd                                                     1.1.0-r0          apk       
 libmount                                                  2.41.4-r0         apk       
 libncursesw                                               6.6_p20260404-r0  apk       
@@ -66,7 +66,7 @@ libpsl                                                    0.21.5-r3         apk
 libssl3                                                   3.5.6-r0          apk       
 libstdc++                                                 15.2.0-r3         apk       
 libtorrent-rasterbar                                      2.0.11-r1         apk       
-libunistring                                              1.4.1-r0          apk       
+libunistring                                              1.4.2-r0          apk       
 linux-pam                                                 1.7.1-r2          apk       
 mpdecimal                                                 4.0.1-r0          apk       
 musl                                                      1.2.6-r2          apk       
