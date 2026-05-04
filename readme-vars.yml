@@ -13,8 +13,8 @@ available_architectures:
 # development version
 development_versions: true
 development_versions_items:
-  - {tag: "latest", desc: "Stable qbittorrent releases"}
-  - {tag: "libtorrentv1", desc: "Static qbittorrent builds using libtorrent v1"}
+  - {tag: "latest", desc: "Stable qbittorrent releases using libtorrent v2"}
+  - {tag: "libtorrentv1", desc: "Stable qbittorrent releases using libtorrent v1"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
