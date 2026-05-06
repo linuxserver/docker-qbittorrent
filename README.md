@@ -60,8 +60,8 @@ This image provides various versions that are available via tags. Please read th
 
 | Tag | Available | Description |
 | :----: | :----: |--- |
-| latest | ✅ | Stable qbittorrent releases |
-| libtorrentv1 | ✅ | Static qbittorrent builds using libtorrent v1 |
+| latest | ✅ | Stable qbittorrent releases using libtorrent v2 |
+| libtorrentv1 | ✅ | Stable qbittorrent releases using libtorrent v1 |
 
 ## Application Setup
 

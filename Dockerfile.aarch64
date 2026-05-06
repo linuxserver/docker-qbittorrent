@@ -24,16 +24,15 @@ RUN \
     grep \
     icu-libs \
     p7zip \
-    python3 \
-    qt6-qtbase-sqlite && \
+    python3 && \
   echo "**** install qbittorrent ****" && \
   if [ -z ${QBITTORRENT_VERSION+x} ]; then \
     QBITTORRENT_VERSION=$(curl -sL "https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases" | \
-    jq -r 'first(.[] | select(.prerelease == true) | .tag_name)'); \
+    jq -r 'first(.[] | select(.prerelease == true) | .tag_name)' | awk -F '-' '{print $2}'); \
   fi && \
   curl -o \
     /app/qbittorrent-nox -L \
-    "https://github.com/userdocs/qbittorrent-nox-static/releases/download/${QBITTORRENT_VERSION}/aarch64-qbittorrent-nox" && \
+    "https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-${QBITTORRENT_VERSION}/aarch64-qbittorrent-nox" && \
   chmod +x /app/qbittorrent-nox && \
   echo "***** install qbitorrent-cli ****" && \
   mkdir /qbt && \
