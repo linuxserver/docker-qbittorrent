@@ -119,6 +119,7 @@ services:
       - 8080:8080
       - 6881:6881
       - 6881:6881/udp
+    stop_grace_period: "10s" #optional
     restart: unless-stopped
 ```
 
@@ -137,6 +138,7 @@ docker run -d \
   -p 6881:6881/udp \
   -v /path/to/qbittorrent/appdata:/config \
   -v /path/to/downloads:/downloads `#optional` \
+  --stop-timeout="10s" `#optional` \
   --restart unless-stopped \
   lscr.io/linuxserver/qbittorrent:latest
 ```
@@ -157,6 +159,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e TORRENTING_PORT=6881` | for changing the port of tcp/udp connection, see below for explanation |
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
+| `--stop-timeout=` | If you have a large number of torrents you may need to increase the container stop timeout to ensure a clean shutdown. |
 | `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
 | `--user=1000:1000` | Run container with a non-root user. Please [read the docs](https://docs.linuxserver.io/misc/non-root/). |
 
