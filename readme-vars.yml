@@ -33,6 +33,8 @@ param_env_vars:
 opt_param_usage_include_vols: true
 opt_param_volumes:
   - {vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk."}
+opt_custom_params:
+  - {name: "stop-timeout", name_compose: "stop_grace_period", value: "10s", desc: "If you have a large number of torrents you may need to increase the container stop timeout to ensure a clean shutdown."}
 readonly_supported: true
 nonroot_supported: true
 # application setup block
