@@ -9,6 +9,22 @@ if [[ ! -f /config/qBittorrent/qBittorrent.conf ]]; then
     cp /defaults/qBittorrent.conf /config/qBittorrent/qBittorrent.conf
 fi
 
+# set WebUI password from environment variable if provided
+if [[ -n ${WEBUI_PASSWORD} ]]; then
+    HASH=$(python3 -c "
+import hashlib, os, base64, sys
+password = sys.argv[1].encode('utf-8')
+salt = os.urandom(16)
+dk = hashlib.pbkdf2_hmac('sha512', password, salt, 100000)
+print('@ByteArray(' + base64.b64encode(salt).decode() + ':' + base64.b64encode(dk).decode() + ')', end='')
+" "${WEBUI_PASSWORD}")
+    if grep -qF "WebUI\\Password_PBKDF2=" /config/qBittorrent/qBittorrent.conf; then
+        sed -i "s|^WebUI\\\\Password_PBKDF2=.*|WebUI\\\\Password_PBKDF2=${HASH}|" /config/qBittorrent/qBittorrent.conf
+    else
+        printf "WebUI\\\\Password_PBKDF2=%s\\n" "${HASH}" >> /config/qBittorrent/qBittorrent.conf
+    fi
+fi
+
 if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
     # chown download directory if currently not set to abc
     if grep -qe ' /downloads ' /proc/mounts; then

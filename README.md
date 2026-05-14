@@ -83,6 +83,12 @@ A bittorrent client can be an active or a passive node. Running your client as a
 
 Similarly to the WEBUI_PORT, to set the port to 6887 you need to pass -p 6887:6887, -p 6887:6887/udp and -e TORRENTING_PORT=6887 arguments to Docker.
 
+### WEBUI_PASSWORD variable
+
+You can set a persistent WebUI password at container startup by passing `-e WEBUI_PASSWORD=yourpassword`. This will configure the `admin` user's password on every container start, overriding both the auto-generated temporary password and any password previously set via the web UI.
+
+If `WEBUI_PASSWORD` is not set, the default qBittorrent behaviour applies: a temporary password is printed to the container log on each startup until you set a password through the web UI.
+
 ## Read-Only Operation
 
 This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
@@ -157,6 +163,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-e WEBUI_PORT=8080` | for changing the port of the web UI, see below for explanation |
 | `-e TORRENTING_PORT=6881` | for changing the port of tcp/udp connection, see below for explanation |
+| `-e WEBUI_PASSWORD=` | set a persistent WebUI password for the admin user at startup (optional) |
 | `-v /config` | Contains all relevant configuration files. |
 | `-v /downloads` | Location of downloads on disk. |
 | `--stop-timeout=` | If you have a large number of torrents you may need to increase the container stop timeout to ensure a clean shutdown. |
