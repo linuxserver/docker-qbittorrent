@@ -89,6 +89,9 @@ You can set a persistent WebUI password at container startup by passing `-e WEBU
 
 If `WEBUI_PASSWORD` is not set, the default qBittorrent behaviour applies: a temporary password is printed to the container log on each startup until you set a password through the web UI.
 
+>[!NOTE]
+>Like all Docker environment variables, `WEBUI_PASSWORD` is visible to anyone with access to the container's configuration (e.g. via `docker inspect`). For sensitive deployments, use Docker secrets with the `FILE__WEBUI_PASSWORD` mechanism described below.
+
 ## Read-Only Operation
 
 This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
