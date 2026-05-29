@@ -29,9 +29,8 @@ jobs:
           echo "> [!NOTE]" >> $GITHUB_STEP_SUMMARY
           echo "> External trigger running off of master branch. To disable this trigger, add \`qbittorrent_master\` into the Github organizational variable \`SKIP_EXTERNAL_TRIGGER\`." >> $GITHUB_STEP_SUMMARY
           printf "\n## Retrieving external version\n\n" >> $GITHUB_STEP_SUMMARY
-          EXT_RELEASE=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
-            && awk '/^P:'"qbittorrent-nox"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://')
-          echo "Type is \`alpine_repo\`" >> $GITHUB_STEP_SUMMARY
+          EXT_RELEASE=$(curl -u ${{ secrets.CR_USER }}:${{ secrets.CR_PAT }} -sL 'https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases' | jq -r 'first(.[] | select(.prerelease == false) | .tag_name)' | awk -F '-' '{print $2}')
+          echo "Type is \`custom_version_command\`" >> $GITHUB_STEP_SUMMARY
           if grep -q "^qbittorrent_master_${EXT_RELEASE}" <<< "${SKIP_EXTERNAL_TRIGGER}"; then
             echo "> [!WARNING]" >> $GITHUB_STEP_SUMMARY
             echo "> Github organizational variable \`SKIP_EXTERNAL_TRIGGER\` matches current external release; skipping trigger." >> $GITHUB_STEP_SUMMARY
@@ -106,13 +105,6 @@ jobs:
           echo "Last pushed version: \`${IMAGE_VERSION}\`" >> $GITHUB_STEP_SUMMARY
           if [ "${EXT_RELEASE_SANITIZED}" == "${IMAGE_VERSION}" ]; then
             echo "Sanitized version \`${EXT_RELEASE_SANITIZED}\` already pushed, exiting" >> $GITHUB_STEP_SUMMARY
-            exit 0
-          elif [[ $(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/community/aarch64/APKINDEX.tar.gz" | tar -xz -C /tmp && awk '/^P:'"qbittorrent-nox"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://') != "${EXT_RELEASE}" ]]; then
-            echo "New version \`${EXT_RELEASE}\` found; but not all arch repos updated yet; exiting" >> $GITHUB_STEP_SUMMARY
-            FAILURE_REASON="New version ${EXT_RELEASE} for qbittorrent tag latest is detected, however not all arch repos are updated yet. Will try again later."
-            curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
-              "description": "**Trigger Failed** \n**Reason:** '"${FAILURE_REASON}"' \n"}],
-              "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
             exit 0
           elif [ $(curl -s https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-qbittorrent/job/master/lastBuild/api/json | jq -r '.building') == "true" ]; then
             echo "New version \`${EXT_RELEASE}\` found; but there already seems to be an active build on Jenkins; exiting" >> $GITHUB_STEP_SUMMARY

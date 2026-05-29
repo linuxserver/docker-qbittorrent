@@ -2,7 +2,7 @@
 
 FROM ghcr.io/linuxserver/unrar:latest AS unrar
 
-FROM ghcr.io/linuxserver/baseimage-alpine:edge
+FROM ghcr.io/linuxserver/baseimage-alpine:3.23
 
 # set version label
 ARG BUILD_DATE
@@ -24,14 +24,16 @@ RUN \
     grep \
     icu-libs \
     p7zip \
-    python3 \
-    qt6-qtbase-sqlite && \
+    python3 && \
+  echo "**** install qbittorrent ****" && \
   if [ -z ${QBITTORRENT_VERSION+x} ]; then \
-    QBITTORRENT_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
-    && awk '/^P:qbittorrent-nox$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
+    QBITTORRENT_VERSION=$(curl -sL "https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases" | \
+    jq -r 'first(.[] | select(.prerelease == false) | .tag_name)'  | awk -F '-' '{print $2}'); \
   fi && \
-  apk add -U --upgrade --no-cache \
-    qbittorrent-nox==${QBITTORRENT_VERSION} && \
+  curl -o \
+    /app/qbittorrent-nox -L \
+    "https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-${QBITTORRENT_VERSION}/x86_64-qbittorrent-nox" && \
+  chmod +x /app/qbittorrent-nox && \
   echo "***** install qbitorrent-cli ****" && \
   mkdir /qbt && \
   if [ -z ${QBT_CLI_VERSION+x} ]; then \

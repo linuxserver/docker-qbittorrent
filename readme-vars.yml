@@ -4,7 +4,7 @@
 project_name: qbittorrent
 project_url: "https://www.qbittorrent.org/"
 project_logo: "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/qbittorrent-icon.png"
-project_blurb: "The [{{ project_name|capitalize }}]({{ project_url }}) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library."
+project_blurb: "The [{{ project_name|capitalize }}]({{ project_url }}) is a bittorrent client programmed in C++ / Qt that uses libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_categories: "Downloaders"
 # supported architectures
@@ -14,8 +14,8 @@ available_architectures:
 # development version
 development_versions: true
 development_versions_items:
-  - {tag: "latest", desc: "Stable qbittorrent releases"}
-  - {tag: "libtorrentv1", desc: "Static qbittorrent builds using libtorrent v1"}
+  - {tag: "latest", desc: "Stable qbittorrent releases using libtorrent v2"}
+  - {tag: "libtorrentv1", desc: "Stable qbittorrent releases using libtorrent v1"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
@@ -37,6 +37,8 @@ opt_param_env_vars:
 opt_param_usage_include_vols: true
 opt_param_volumes:
   - {vol_path: "/downloads", vol_host_path: "/path/to/downloads", desc: "Location of downloads on disk."}
+opt_custom_params:
+  - {name: "stop-timeout", name_compose: "stop_grace_period", value: "10s", desc: "If you have a large number of torrents you may need to increase the container stop timeout to ensure a clean shutdown."}
 readonly_supported: true
 nonroot_supported: true
 # application setup block
@@ -97,12 +99,13 @@ init_diagram: |
     svc-qbittorrent -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine:edge"
+    "baseimage-alpine:3.23"
   }
   "qbittorrent:latest" <- Base Images
 # changelog
 changelogs:
   - {date: "23.09.25:", desc: "Add optional WEBUI_USER and WEBUI_PASS environment variables."}
+  - {date: "04.05.26:", desc: "Switch to static builds for parity with libtorrentv1 branch. Rebase to Alpine 3.23."}
   - {date: "17.07.24:", desc: "Restore qbittorrent-cli as it now supports openssl 3."}
   - {date: "25.05.24:", desc: "Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL."}
   - {date: "14.02.24:", desc: "Only set/override torrenting port if the optional env var is set."}

@@ -27,9 +27,6 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/qbittorrent'
     PR_DOCKERHUB_IMAGE = 'lspipepr/qbittorrent'
     DIST_IMAGE = 'alpine'
-    DIST_TAG = 'edge'
-    DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/edge/community/'
-    DIST_REPO_PACKAGES = 'qbittorrent-nox'
     MULTIARCH='true'
     CI='true'
     CI_WEB='true'
@@ -78,6 +75,8 @@ pipeline {
            '''
         script{
           env.EXIT_STATUS = ''
+          env.CI_TEST_ATTEMPTED = ''
+          env.PUSH_ATTEMPTED = ''
           env.LS_RELEASE = sh(
             script: '''docker run --rm quay.io/skopeo/stable:v1 inspect docker://ghcr.io/${LS_USER}/${CONTAINER_NAME}:latest 2>/dev/null | jq -r '.Labels.build_version' | awk '{print $3}' | grep '\\-ls' || : ''',
             returnStdout: true).trim()
@@ -145,15 +144,14 @@ pipeline {
     /* ########################
        External Release Tagging
        ######################## */
-    // If this is an alpine repo change for external version determine an md5 from the version string
-    stage("Set tag Alpine Repo"){
+    // If this is a custom command to determine version use that command
+    stage("Set tag custom bash"){
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: '''curl -sL "${DIST_REPO}x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
-                       && awk '/^P:'"${DIST_REPO_PACKAGES}"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://' ''',
+            script: ''' curl -sL 'https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases' | jq -r 'first(.[] | select(.prerelease == false) | .tag_name)' | awk -F '-' '{print $2}' ''',
             returnStdout: true).trim()
-            env.RELEASE_LINK = 'alpine_repo'
+            env.RELEASE_LINK = 'custom_command'
         }
       }
     }
@@ -212,6 +210,7 @@ pipeline {
           env.META_TAG = env.EXT_RELEASE_CLEAN + '-ls' + env.LS_TAG_NUMBER
           env.EXT_RELEASE_TAG = 'version-' + env.EXT_RELEASE_CLEAN
           env.BUILDCACHE = 'docker.io/lsiodev/buildcache,registry.gitlab.com/linuxserver.io/docker-jenkins-builder/lsiodev-buildcache,ghcr.io/linuxserver/lsiodev-buildcache,quay.io/linuxserver.io/lsiodev-buildcache'
+          env.CITEST_IMAGETAG = 'latest'
         }
       }
     }
@@ -237,6 +236,7 @@ pipeline {
           env.EXT_RELEASE_TAG = 'version-' + env.EXT_RELEASE_CLEAN
           env.DOCKERHUB_LINK = 'https://hub.docker.com/r/' + env.DEV_DOCKERHUB_IMAGE + '/tags/'
           env.BUILDCACHE = 'docker.io/lsiodev/buildcache,registry.gitlab.com/linuxserver.io/docker-jenkins-builder/lsiodev-buildcache,ghcr.io/linuxserver/lsiodev-buildcache,quay.io/linuxserver.io/lsiodev-buildcache'
+          env.CITEST_IMAGETAG = 'develop'
         }
       }
     }
@@ -262,6 +262,7 @@ pipeline {
           env.CODE_URL = 'https://github.com/' + env.LS_USER + '/' + env.LS_REPO + '/pull/' + env.PULL_REQUEST
           env.DOCKERHUB_LINK = 'https://hub.docker.com/r/' + env.PR_DOCKERHUB_IMAGE + '/tags/'
           env.BUILDCACHE = 'docker.io/lsiodev/buildcache,registry.gitlab.com/linuxserver.io/docker-jenkins-builder/lsiodev-buildcache,ghcr.io/linuxserver/lsiodev-buildcache,quay.io/linuxserver.io/lsiodev-buildcache'
+          env.CITEST_IMAGETAG = 'develop'
         }
       }
     }
@@ -284,7 +285,7 @@ pipeline {
                   -v ${WORKSPACE}:/mnt \
                   -e AWS_ACCESS_KEY_ID=\"${S3_KEY}\" \
                   -e AWS_SECRET_ACCESS_KEY=\"${S3_SECRET}\" \
-                  ghcr.io/linuxserver/baseimage-alpine:3.20 s6-envdir -fn -- /var/run/s6/container_environment /bin/bash -c "\
+                  ghcr.io/linuxserver/baseimage-alpine:3.23 s6-envdir -fn -- /var/run/s6/container_environment /bin/bash -c "\
                     apk add --no-cache python3 && \
                     python3 -m venv /lsiopy && \
                     pip install --no-cache-dir -U pip && \
@@ -593,7 +594,7 @@ pipeline {
           --label \"org.opencontainers.image.licenses=GPL-3.0-only\" \
           --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
           --label \"org.opencontainers.image.title=Qbittorrent\" \
-          --label \"org.opencontainers.image.description=The [Qbittorrent](https://www.qbittorrent.org/) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.\" \
+          --label \"org.opencontainers.image.description=The [Qbittorrent](https://www.qbittorrent.org/) is a bittorrent client programmed in C++ / Qt that uses libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg.\" \
           --no-cache --pull -t ${IMAGE}:${META_TAG} --platform=linux/amd64 \
           --provenance=true --sbom=true --builder=container --load \
           --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
@@ -619,13 +620,16 @@ pipeline {
                     echo $GITHUB_TOKEN | docker login ghcr.io -u LinuxServer-CI --password-stdin
                     echo $GITLAB_TOKEN | docker login registry.gitlab.com -u LinuxServer.io --password-stdin
                     echo $QUAYPASS | docker login quay.io -u $QUAYUSER --password-stdin
+
                     if [[ "${PACKAGE_CHECK}" != "true" ]]; then
+                      declare -A pids
                       IFS=',' read -ra CACHE <<< "$BUILDCACHE"
                       for i in "${CACHE[@]}"; do
                         docker push ${i}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} &
+                        pids[$!]="$i"
                       done
-                      for p in $(jobs -p); do
-                        wait "$p" || { echo "job $p failed" >&2; exit 1; }
+                      for p in "${!pids[@]}"; do
+                        wait "$p" || { [[ "${pids[$p]}" != *"quay.io"* ]] && exit 1; }
                       done
                     fi
                 '''
@@ -659,7 +663,7 @@ pipeline {
               --label \"org.opencontainers.image.licenses=GPL-3.0-only\" \
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.title=Qbittorrent\" \
-              --label \"org.opencontainers.image.description=The [Qbittorrent](https://www.qbittorrent.org/) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.\" \
+              --label \"org.opencontainers.image.description=The [Qbittorrent](https://www.qbittorrent.org/) is a bittorrent client programmed in C++ / Qt that uses libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg.\" \
               --no-cache --pull -t ${IMAGE}:amd64-${META_TAG} --platform=linux/amd64 \
               --provenance=true --sbom=true --builder=container --load \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
@@ -685,13 +689,16 @@ pipeline {
                         echo $GITHUB_TOKEN | docker login ghcr.io -u LinuxServer-CI --password-stdin
                         echo $GITLAB_TOKEN | docker login registry.gitlab.com -u LinuxServer.io --password-stdin
                         echo $QUAYPASS | docker login quay.io -u $QUAYUSER --password-stdin
+
                         if [[ "${PACKAGE_CHECK}" != "true" ]]; then
+                          declare -A pids
                           IFS=',' read -ra CACHE <<< "$BUILDCACHE"
                           for i in "${CACHE[@]}"; do
                             docker push ${i}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} &
+                            pids[$!]="$i"
                           done
-                          for p in $(jobs -p); do
-                            wait "$p" || { echo "job $p failed" >&2; exit 1; }
+                          for p in "${!pids[@]}"; do
+                            wait "$p" || { [[ "${pids[$p]}" != *"quay.io"* ]] && exit 1; }
                           done
                         fi
                     '''
@@ -718,7 +725,7 @@ pipeline {
               --label \"org.opencontainers.image.licenses=GPL-3.0-only\" \
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.title=Qbittorrent\" \
-              --label \"org.opencontainers.image.description=The [Qbittorrent](https://www.qbittorrent.org/) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.\" \
+              --label \"org.opencontainers.image.description=The [Qbittorrent](https://www.qbittorrent.org/) is a bittorrent client programmed in C++ / Qt that uses libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg.\" \
               --no-cache --pull -f Dockerfile.aarch64 -t ${IMAGE}:arm64v8-${META_TAG} --platform=linux/arm64 \
               --provenance=true --sbom=true --builder=container --load \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
@@ -745,12 +752,14 @@ pipeline {
                         echo $GITLAB_TOKEN | docker login registry.gitlab.com -u LinuxServer.io --password-stdin
                         echo $QUAYPASS | docker login quay.io -u $QUAYUSER --password-stdin
                         if [[ "${PACKAGE_CHECK}" != "true" ]]; then
+                          declare -A pids
                           IFS=',' read -ra CACHE <<< "$BUILDCACHE"
                           for i in "${CACHE[@]}"; do
                             docker push ${i}:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} &
+                            pids[$!]="$i"
                           done
-                          for p in $(jobs -p); do
-                            wait "$p" || { echo "job $p failed" >&2; exit 1; }
+                          for p in "${!pids[@]}"; do
+                            wait "$p" || { [[ "${pids[$p]}" != *"quay.io"* ]] && exit 1; }
                           done
                         fi
                     '''
@@ -864,6 +873,7 @@ pipeline {
           script{
             env.CI_URL = 'https://ci-tests.linuxserver.io/' + env.IMAGE + '/' + env.META_TAG + '/index.html'
             env.CI_JSON_URL = 'https://ci-tests.linuxserver.io/' + env.IMAGE + '/' + env.META_TAG + '/report.json'
+            env.CI_TEST_ATTEMPTED = 'true'
           }
           sh '''#! /bin/bash
                 set -e
@@ -875,7 +885,7 @@ pipeline {
                     CI_DOCKERENV="LSIO_FIRST_PARTY=true"
                   fi
                 fi
-                docker pull ghcr.io/linuxserver/ci:latest
+                docker pull ghcr.io/linuxserver/ci:${CITEST_IMAGETAG}
                 if [ "${MULTIARCH}" == "true" ]; then
                   docker pull ghcr.io/linuxserver/lsiodev-buildcache:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} --platform=arm64
                   docker tag ghcr.io/linuxserver/lsiodev-buildcache:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} ${IMAGE}:arm64v8-${META_TAG}
@@ -899,7 +909,9 @@ pipeline {
                 -e WEB_PATH=\"${CI_WEBPATH}\" \
                 -e NODE_NAME=\"${NODE_NAME}\" \
                 -e SYFT_IMAGE_TAG=\"${CI_SYFT_IMAGE_TAG:-${SYFT_IMAGE_TAG}}\" \
-                -t ghcr.io/linuxserver/ci:latest \
+                -e COMMIT_SHA=\"${COMMIT_SHA}\" \
+                -e BUILD_NUMBER=\"${BUILD_NUMBER}\" \
+                -t ghcr.io/linuxserver/ci:${CITEST_IMAGETAG} \
                 python3 test_build.py'''
         }
       }
@@ -914,6 +926,9 @@ pipeline {
         environment name: 'EXIT_STATUS', value: ''
       }
       steps {
+        script{
+          env.PUSH_ATTEMPTED = 'true'
+        }
         retry_backoff(5,5) {
           sh '''#! /bin/bash
                 set -e
@@ -925,9 +940,11 @@ pipeline {
                           CACHEIMAGE=${i}
                       fi
                   done
-                  docker buildx imagetools create --prefer-index=false -t ${PUSHIMAGE}:${META_TAG} -t ${PUSHIMAGE}:latest -t ${PUSHIMAGE}:${EXT_RELEASE_TAG} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER}
+                  docker buildx imagetools create --prefer-index=false -t ${PUSHIMAGE}:${META_TAG} -t ${PUSHIMAGE}:latest -t ${PUSHIMAGE}:${EXT_RELEASE_TAG} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} || \
+                    { if [[ "${PUSHIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
                   if [ -n "${SEMVER}" ]; then
-                    docker buildx imagetools create --prefer-index=false -t ${PUSHIMAGE}:${SEMVER} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER}
+                    docker buildx imagetools create --prefer-index=false -t ${PUSHIMAGE}:${SEMVER} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} || \
+                      { if [[ "${PUSHIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
                   fi
                 done
               '''
@@ -941,31 +958,45 @@ pipeline {
         environment name: 'EXIT_STATUS', value: ''
       }
       steps {
+        script{
+          env.PUSH_ATTEMPTED = 'true'
+        }
         retry_backoff(5,5) {
           sh '''#! /bin/bash
                 set -e
                 for MANIFESTIMAGE in "${IMAGE}" "${GITLABIMAGE}" "${GITHUBIMAGE}" "${QUAYIMAGE}"; do
-                  [[ ${MANIFESTIMAGE%%/*} =~ \\. ]] && MANIFESTIMAGEPLUS="${MANIFESTIMAGE}" || MANIFESTIMAGEPLUS="docker.io/${MANIFESTIMAGE}"
+                  if [[ "${MANIFESTIMAGE%%/*}" =~ \\. ]]; then
+                    MANIFESTIMAGEPLUS="${MANIFESTIMAGE}"
+                  else
+                    MANIFESTIMAGEPLUS="docker.io/${MANIFESTIMAGE}"
+                  fi
                   IFS=',' read -ra CACHE <<< "$BUILDCACHE"
                   for i in "${CACHE[@]}"; do
                       if [[ "${MANIFESTIMAGEPLUS}" == "$(cut -d "/" -f1 <<< ${i})"* ]]; then
                           CACHEIMAGE=${i}
                       fi
                   done
-                  docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:amd64-${META_TAG} -t ${MANIFESTIMAGE}:amd64-latest -t ${MANIFESTIMAGE}:amd64-${EXT_RELEASE_TAG} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER}
-                  docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:arm64v8-${META_TAG} -t ${MANIFESTIMAGE}:arm64v8-latest -t ${MANIFESTIMAGE}:arm64v8-${EXT_RELEASE_TAG} ${CACHEIMAGE}:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER}
+                  docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:amd64-${META_TAG} -t ${MANIFESTIMAGE}:amd64-latest -t ${MANIFESTIMAGE}:amd64-${EXT_RELEASE_TAG} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} || \
+                    { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
+                  docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:arm64v8-${META_TAG} -t ${MANIFESTIMAGE}:arm64v8-latest -t ${MANIFESTIMAGE}:arm64v8-${EXT_RELEASE_TAG} ${CACHEIMAGE}:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} || \
+                    { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
                   if [ -n "${SEMVER}" ]; then
-                    docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:amd64-${SEMVER} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER}
-                    docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:arm64v8-${SEMVER} ${CACHEIMAGE}:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER}
+                    docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:amd64-${SEMVER} ${CACHEIMAGE}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} || \
+                      { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
+                    docker buildx imagetools create --prefer-index=false -t ${MANIFESTIMAGE}:arm64v8-${SEMVER} ${CACHEIMAGE}:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} || \
+                      { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
                   fi
                 done
                 for MANIFESTIMAGE in "${IMAGE}" "${GITLABIMAGE}" "${GITHUBIMAGE}" "${QUAYIMAGE}"; do
-                  docker buildx imagetools create -t ${MANIFESTIMAGE}:latest ${MANIFESTIMAGE}:amd64-latest ${MANIFESTIMAGE}:arm64v8-latest
-                  docker buildx imagetools create -t ${MANIFESTIMAGE}:${META_TAG} ${MANIFESTIMAGE}:amd64-${META_TAG} ${MANIFESTIMAGE}:arm64v8-${META_TAG}
-
-                  docker buildx imagetools create -t ${MANIFESTIMAGE}:${EXT_RELEASE_TAG} ${MANIFESTIMAGE}:amd64-${EXT_RELEASE_TAG} ${MANIFESTIMAGE}:arm64v8-${EXT_RELEASE_TAG}
+                  docker buildx imagetools create -t ${MANIFESTIMAGE}:latest ${MANIFESTIMAGE}:amd64-latest ${MANIFESTIMAGE}:arm64v8-latest || \
+                    { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
+                  docker buildx imagetools create -t ${MANIFESTIMAGE}:${META_TAG} ${MANIFESTIMAGE}:amd64-${META_TAG} ${MANIFESTIMAGE}:arm64v8-${META_TAG} || \
+                    { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
+                  docker buildx imagetools create -t ${MANIFESTIMAGE}:${EXT_RELEASE_TAG} ${MANIFESTIMAGE}:amd64-${EXT_RELEASE_TAG} ${MANIFESTIMAGE}:arm64v8-${EXT_RELEASE_TAG} || \
+                    { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
                   if [ -n "${SEMVER}" ]; then
-                    docker buildx imagetools create -t ${MANIFESTIMAGE}:${SEMVER} ${MANIFESTIMAGE}:amd64-${SEMVER} ${MANIFESTIMAGE}:arm64v8-${SEMVER}
+                    docker buildx imagetools create -t ${MANIFESTIMAGE}:${SEMVER} ${MANIFESTIMAGE}:amd64-${SEMVER} ${MANIFESTIMAGE}:arm64v8-${SEMVER} || \
+                      { if [[ "${MANIFESTIMAGE}" != "${QUAYIMAGE}" ]]; then exit 1; fi; }
                   fi
                 done
               '''
@@ -983,23 +1014,41 @@ pipeline {
         environment name: 'EXIT_STATUS', value: ''
       }
       steps {
-        echo "Pushing New tag for current commit ${META_TAG}"
-        sh '''curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST https://api.github.com/repos/${LS_USER}/${LS_REPO}/git/tags \
-        -d '{"tag":"'${META_TAG}'",\
-             "object": "'${COMMIT_SHA}'",\
-             "message": "Tagging Release '${EXT_RELEASE_CLEAN}'-ls'${LS_TAG_NUMBER}' to master",\
-             "type": "commit",\
-             "tagger": {"name": "LinuxServer-CI","email": "ci@linuxserver.io","date": "'${GITHUB_DATE}'"}}' '''
-        echo "Pushing New release for Tag"
         sh '''#! /bin/bash
-              echo "Updating external repo packages to ${EXT_RELEASE_CLEAN}" > releasebody.json
-              echo '{"tag_name":"'${META_TAG}'",\
-                     "target_commitish": "master",\
-                     "name": "'${META_TAG}'",\
-                     "body": "**CI Report:**\\n\\n'${CI_URL:-N/A}'\\n\\n**LinuxServer Changes:**\\n\\n'${LS_RELEASE_NOTES}'\\n\\n**Remote Changes:**\\n\\n' > start
-              printf '","draft": false,"prerelease": false}' >> releasebody.json
-              paste -d'\\0' start releasebody.json > releasebody.json.done
-              curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST https://api.github.com/repos/${LS_USER}/${LS_REPO}/releases -d @releasebody.json.done'''
+              echo "Auto-generating release notes"
+              if [ "$(git tag --points-at HEAD)" != "" ]; then
+                echo "Existing tag points to current commit, suggesting no new LS changes"
+                AUTO_RELEASE_NOTES="No changes"
+              else
+                AUTO_RELEASE_NOTES=$(curl -fsL -H "Authorization: token ${GITHUB_TOKEN}" -H "Accept: application/vnd.github+json" -X POST https://api.github.com/repos/${LS_USER}/${LS_REPO}/releases/generate-notes  \
+                  -d '{"tag_name":"'${META_TAG}'",\
+                      "target_commitish": "master"}' \
+                  | jq -r '.body' | sed 's|## What.s Changed||')
+              fi
+              echo "Pushing New tag for current commit ${META_TAG}"
+              curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST https://api.github.com/repos/${LS_USER}/${LS_REPO}/git/tags \
+                -d '{"tag":"'${META_TAG}'",\
+                  "object": "'${COMMIT_SHA}'",\
+                  "message": "Tagging Release '${EXT_RELEASE_CLEAN}'-ls'${LS_TAG_NUMBER}' to master",\
+                  "type": "commit",\
+                  "tagger": {"name": "LinuxServer-CI","email": "ci@linuxserver.io","date": "'${GITHUB_DATE}'"}}'
+              echo "Pushing New release for Tag"
+              echo "Updating to ${EXT_RELEASE_CLEAN}" > releasebody.json
+              jq -n \
+                --arg tag_name "$META_TAG" \
+                --arg target_commitish "master" \
+                --arg ci_url "${CI_URL:-N/A}" \
+                --arg ls_notes "$AUTO_RELEASE_NOTES" \
+                --arg remote_notes "$(cat releasebody.json)" \
+                '{
+                  "tag_name": $tag_name,
+                  "target_commitish": $target_commitish,
+                  "name": $tag_name,
+                  "body": ("**CI Report:**\\n\\n" + $ci_url + "\\n\\n**LinuxServer Changes:**\\n\\n" + $ls_notes + "\\n\\n**Remote Changes:**\\n\\n" + $remote_notes),
+                  "draft": false,
+                  "prerelease": false                }' > releasebody.json.done
+              curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST https://api.github.com/repos/${LS_USER}/${LS_REPO}/releases -d @releasebody.json.done
+        '''
       }
     }
     // Add protection to the release branch
@@ -1037,98 +1086,13 @@ EOF
           ) '''
       }
     }
-    // If this is a Pull request send the CI link as a comment on it
-    stage('Pull Request Comment') {
-      when {
-        not {environment name: 'CHANGE_ID', value: ''}
-        environment name: 'EXIT_STATUS', value: ''
-      }
-      steps {
-        sh '''#! /bin/bash
-            # Function to retrieve JSON data from URL
-            get_json() {
-              local url="$1"
-              local response=$(curl -s "$url")
-              if [ $? -ne 0 ]; then
-                echo "Failed to retrieve JSON data from $url"
-                return 1
-              fi
-              local json=$(echo "$response" | jq .)
-              if [ $? -ne 0 ]; then
-                echo "Failed to parse JSON data from $url"
-                return 1
-              fi
-              echo "$json"
-            }
-
-            build_table() {
-              local data="$1"
-
-              # Get the keys in the JSON data
-              local keys=$(echo "$data" | jq -r 'to_entries | map(.key) | .[]')
-
-              # Check if keys are empty
-              if [ -z "$keys" ]; then
-                echo "JSON report data does not contain any keys or the report does not exist."
-                return 1
-              fi
-
-              # Build table header
-              local header="| Tag | Passed |\\n| --- | --- |\\n"
-
-              # Loop through the JSON data to build the table rows
-              local rows=""
-              for build in $keys; do
-                local status=$(echo "$data" | jq -r ".[\\"$build\\"].test_success")
-                if [ "$status" = "true" ]; then
-                  status="✅"
-                else
-                  status="❌"
-                fi
-                local row="| "$build" | "$status" |\\n"
-                rows="${rows}${row}"
-              done
-
-              local table="${header}${rows}"
-              local escaped_table=$(echo "$table" | sed 's/\"/\\\\"/g')
-              echo "$escaped_table"
-            }
-
-            if [[ "${CI}" = "true" ]]; then
-              # Retrieve JSON data from URL
-              data=$(get_json "$CI_JSON_URL")
-              # Create table from JSON data
-              table=$(build_table "$data")
-              echo -e "$table"
-
-              curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
-                -H "Accept: application/vnd.github.v3+json" \
-                "https://api.github.com/repos/$LS_USER/$LS_REPO/issues/$PULL_REQUEST/comments" \
-                -d "{\\"body\\": \\"I am a bot, here are the test results for this PR: \\n${CI_URL}\\n${SHELLCHECK_URL}\\n${table}\\"}"
-            else
-              curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
-                -H "Accept: application/vnd.github.v3+json" \
-                "https://api.github.com/repos/$LS_USER/$LS_REPO/issues/$PULL_REQUEST/comments" \
-                -d "{\\"body\\": \\"I am a bot, here is the pushed image/manifest for this PR: \\n\\n\\`${GITHUBIMAGE}:${META_TAG}\\`\\"}"
-            fi
-            '''
-
-      }
-    }
   }
   /* ######################
-     Send status to Discord
+     Comment on PR and Send status to Discord
      ###################### */
   post {
     always {
-      sh '''#!/bin/bash
-            rm -rf /config/.ssh/id_sign
-            rm -rf /config/.ssh/id_sign.pub
-            git config --global --unset gpg.format
-            git config --global --unset user.signingkey
-            git config --global --unset commit.gpgsign
-        '''
-      script{
+      script {
         env.JOB_DATE = sh(
             script: '''date '+%Y-%m-%dT%H:%M:%S%:z' ''',
             returnStdout: true).trim()
@@ -1171,6 +1135,94 @@ EOF
                  "username": "Jenkins"}' ${BUILDS_DISCORD} '''
         }
       }
+      script {
+        if (env.GITHUBIMAGE =~ /lspipepr/){
+          if (env.CI_TEST_ATTEMPTED == "true" || env.PUSH_ATTEMPTED == "true"){
+            sh '''#! /bin/bash
+                  # Function to retrieve JSON data from URL
+                  get_json() {
+                    local url="$1"
+                    local response=$(curl -s "$url")
+                    if [ $? -ne 0 ]; then
+                      echo "Failed to retrieve JSON data from $url"
+                      return 1
+                    fi
+                    local json=$(echo "$response" | jq .)
+                    if [ $? -ne 0 ]; then
+                      echo "Failed to parse JSON data from $url"
+                      return 1
+                    fi
+                    echo "$json"
+                  }
+
+                  build_table() {
+                    local data="$1"
+
+                    # Get the keys in the JSON data
+                    local keys=$(echo "$data" | jq -r 'to_entries | map(.key) | .[]')
+
+                    # Check if keys are empty
+                    if [ -z "$keys" ]; then
+                      echo "JSON report data does not contain any keys or the report does not exist."
+                      return 1
+                    fi
+
+                    # Build table header
+                    local header="| Tag | Passed |\\n| --- | --- |\\n"
+
+                    # Loop through the JSON data to build the table rows
+                    local rows=""
+                    for build in $keys; do
+                      local status=$(echo "$data" | jq -r ".[\\"$build\\"].test_success")
+                      if [ "$status" = "true" ]; then
+                        status="✅"
+                      else
+                        status="❌"
+                      fi
+                      local row="| "$build" | "$status" |\\n"
+                      rows="${rows}${row}"
+                    done
+
+                    local table="${header}${rows}"
+                    local escaped_table=$(echo "$table" | sed 's/\"/\\\\"/g')
+                    echo "$escaped_table"
+                  }
+
+                  if [[ "${CI}" = "true" ]]; then
+                    # Retrieve JSON data from URL
+                    data=$(get_json "$CI_JSON_URL")
+                    # Create table from JSON data
+                    table=$(build_table "$data")
+                    echo -e "$table"
+
+                    curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+                      -H "Accept: application/vnd.github.v3+json" \
+                      "https://api.github.com/repos/$LS_USER/$LS_REPO/issues/$PULL_REQUEST/comments" \
+                      -d "{\\"body\\": \\"I am a bot, here are the test results for this PR for commit ${COMMIT_SHA:0:7} : \\n${CI_URL}\\n${SHELLCHECK_URL}\\n${table}\\"}"
+                  else
+                    curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+                      -H "Accept: application/vnd.github.v3+json" \
+                      "https://api.github.com/repos/$LS_USER/$LS_REPO/issues/$PULL_REQUEST/comments" \
+                      -d "{\\"body\\": \\"I am a bot, here is the pushed image/manifest for this PR for commit ${COMMIT_SHA:0:7} : \\n\\n\\`${GITHUBIMAGE}:${META_TAG}\\`\\"}"
+                  fi
+                  '''
+          } else {
+            sh '''#! /bin/bash
+                  curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+                    -H "Accept: application/vnd.github.v3+json" \
+                    "https://api.github.com/repos/$LS_USER/$LS_REPO/issues/$PULL_REQUEST/comments" \
+                    -d "{\\"body\\": \\"I am a bot, the build for PR commit ${COMMIT_SHA:0:7} failed and as a result no CI test was attempted and no images were pushed.\\"}"
+            '''
+          }
+        }
+      }
+      sh '''#!/bin/bash
+            rm -rf /config/.ssh/id_sign
+            rm -rf /config/.ssh/id_sign.pub
+            git config --global --unset gpg.format
+            git config --global --unset user.signingkey
+            git config --global --unset commit.gpgsign
+        '''
     }
     cleanup {
       sh '''#! /bin/bash
