@@ -325,6 +325,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **05.07.26:** - Rebase to Alpine 3.24.
 * **04.05.26:** - Switch to static builds for parity with libtorrentv1 branch. Rebase to Alpine 3.23.
 * **17.07.24:** - Restore qbittorrent-cli as it now supports openssl 3.
 * **25.05.24:** - Remove qbittorrent-cli as it still requires openssl 1.1 which is EOL.
