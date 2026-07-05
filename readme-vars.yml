@@ -100,6 +100,7 @@ init_diagram: |
   "qbittorrent:libtorrentv1" <- Base Images
 # changelog
 changelogs:
+  - {date: "05.07.26:", desc: "Rebase to Alpine 3.24."}
   - {date: "28.12.25:", desc: "Rebase to Alpine 3.23."}
   - {date: "09.07.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "20.12.24:", desc: "Rebase to Alpine 3.21."}
