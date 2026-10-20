@@ -1230,7 +1230,7 @@ pipeline {
                   "type": "commit",\
                   "tagger": {"name": "LinuxServer-CI","email": "ci@linuxserver.io","date": "'${GITHUB_DATE}'"}}'
               echo "Pushing New release for Tag"
-              echo "Updating to ${EXT_RELEASE_CLEAN}" > releasebody.json
+              curl -H "Authorization: token ${GITHUB_TOKEN}" -s "https://api.github.com/repos/qbittorrent/qbittorrent/releases/tags/release-${EXT_RELEASE%%_v2*}" | jq -r '. |.body' | sed -e 's| #\\([0-9]*\\)| [#\\1](https://github.com/qbittorrent/qBittorrent/pull/\\1)|g' > releasebody.json
               jq -n \
                 --arg tag_name "$META_TAG" \
                 --arg target_commitish "master" \
