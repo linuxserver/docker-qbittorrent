@@ -28,7 +28,7 @@ RUN \
   echo "**** install qbittorrent ****" && \
   if [ -z ${QBITTORRENT_VERSION+x} ]; then \
     QBITTORRENT_VERSION=$(curl -sL "https://api.github.com/repos/userdocs/qbittorrent-nox-static/releases" | \
-    jq -r 'first(.[] | select(.prerelease == true) | .tag_name)' | awk -F '-' '{print $2}'); \
+    jq -r 'first(.[] | select(.prerelease == true) | select(.tag_name | contains("v1.2")) | .tag_name)' | awk -F '-' '{print $2}'); \
   fi && \
   curl -o \
     /app/qbittorrent-nox -L \
