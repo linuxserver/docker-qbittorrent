@@ -30,7 +30,7 @@ coreutils                                                 9.11-r0           apk
 coreutils-env                                             9.11-r0           apk       
 coreutils-fmt                                             9.11-r0           apk       
 coreutils-sha512sum                                       9.11-r0           apk       
-curl                                                      8.22.0-r0         apk       
+curl                                                      8.23.0-r0         apk       
 findutils                                                 4.10.0-r1         apk       
 gdbm                                                      1.26-r0           apk       
 grep                                                      3.12-r0           apk       
@@ -42,7 +42,7 @@ libattr                                                   2.5.2-r2          apk
 libbsd                                                    0.12.2-r0         apk       
 libbz2                                                    1.0.8-r6          apk       
 libcrypto3                                                3.5.9-r0          apk       
-libcurl                                                   8.22.0-r0         apk       
+libcurl                                                   8.23.0-r0         apk       
 libexpat                                                  2.9.0-r0          apk       
 libffi                                                    3.5.2-r1          apk       
 libgcc                                                    15.2.0-r5         apk       
@@ -66,10 +66,10 @@ nghttp2-libs                                              1.70.0-r0         apk
 oniguruma                                                 6.9.10-r0         apk       
 pcre2                                                     10.49-r0          apk       
 procps-ng                                                 4.0.6-r0          apk       
-pyc                                                       3.14.8-r0         apk       
-python3                                                   3.14.8-r0         apk       
-python3-pyc                                               3.14.8-r0         apk       
-python3-pycache-pyc0                                      3.14.8-r0         apk       
+pyc                                                       3.14.10-r1        apk       
+python3                                                   3.14.10-r1        apk       
+python3-pyc                                               3.14.10-r1        apk       
+python3-pycache-pyc0                                      3.14.10-r1        apk       
 qbt                                                       1.8.24285.1       dotnet    
 readline                                                  8.3.3-r1          apk       
 runtimepack.Microsoft.NETCore.App.Runtime.linux-musl-x64  6.0.35            dotnet    
