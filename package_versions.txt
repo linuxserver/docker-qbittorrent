@@ -44,7 +44,7 @@ libbz2                                                    1.0.8-r6          apk
 libcrypto3                                                3.5.9-r1          apk       
 libcurl                                                   8.23.0-r0         apk       
 libexpat                                                  2.10.0-r0         apk       
-libffi                                                    3.5.2-r1          apk       
+libffi                                                    3.8.1-r0          apk       
 libgcc                                                    15.2.0-r5         apk       
 libidn2                                                   2.3.8-r0          apk       
 libintl                                                   1.0-r0            apk       
@@ -66,10 +66,11 @@ nghttp2-libs                                              1.70.0-r0         apk
 oniguruma                                                 6.9.10-r0         apk       
 pcre2                                                     10.49-r0          apk       
 procps-ng                                                 4.0.6-r0          apk       
-pyc                                                       3.14.10-r1        apk       
-python3                                                   3.14.10-r1        apk       
-python3-pyc                                               3.14.10-r1        apk       
-python3-pycache-pyc0                                      3.14.10-r1        apk       
+pyc                                                       3.14.10-r2        apk       
+python3                                                   3.14.10-r2        apk       
+python3-ndbm                                              3.14.10-r3        apk       
+python3-pyc                                               3.14.10-r2        apk       
+python3-pycache-pyc0                                      3.14.10-r2        apk       
 qbt                                                       1.8.24285.1       dotnet    
 readline                                                  8.3.3-r1          apk       
 runtimepack.Microsoft.NETCore.App.Runtime.linux-musl-x64  6.0.35            dotnet    
